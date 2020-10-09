@@ -1,0 +1,421 @@
+html, body{
+    font-size:10px; background-color:var(--primary-color); 
+}
+@font-face{
+    font-family:Roboto; src:url('fonts/Roboto-Light.ttf'); 
+}
+@font-face{
+    font-family:RobotoBold; src:url('fonts/Roboto-Bold.ttf'); 
+}
+:root{
+    --primary-color:white; --secondary-color:rgb(180, 180, 180); --font-color:rgb(18,18,18); --logo-filter:invert(0%); --shadow-color:rgb(220,220,220); --hover-filter:invert(100%);
+}
+[data-theme="dark"]{
+    --primary-color:rgb(25,25,25); --secondary-color:rgb(75, 75, 75); --font-color:rgb(237, 237, 237); --logo-filter:invert(100%); --shadow-color:rgb(35,35,35); --hover-filter:invert(0%);
+}
+#btntop{
+    display:none; position:fixed; bottom:1.05rem; right:2.1rem; z-index:99; border:none; outline:none; background-color:rgb(182, 45, 45); cursor:pointer; padding:.35rem 1.05rem .35rem 1.05rem !important; color:white; transition:.2s all; 
+}
+#btntop:hover{
+    background-color:rgb(150, 21, 21); transition:.2s all; 
+}
+.navbar{
+    background-color:rgb(18,18,18) !important; padding:2.1rem;
+}
+.navbar-nav{
+    margin-left:4.2rem; width:1.5rem !important; 
+}
+li a{
+    color:rgb(237,237,237) !important; font-family:'Roboto'; font-size:1.8rem; letter-spacing:.04rem; margin-right:1.4rem !important; font-weight:800; transition:.2s all; 
+}
+li a:hover, .active a, .back:hover, .email:hover, .arrow:hover{
+    color:rgb(182, 45, 45) !important; transition:.2s all; 
+}
+.navbar-toggler{
+    outline:none; border:none; background-color:transparent; padding:0rem !important; 
+}
+.navbar-toggler:focus{
+    outline:none !important; 
+}
+.icon-bar{
+    width:3rem; height:.3rem; background-color:rgb(237,237,237); display:block; transition:.3s all; margin:.4rem 0rem .4rem 0rem; 
+}
+.navbar-toggler .top-bar{
+    transform:rotate(29deg); 
+}
+.navbar-toggler .middle-bar{
+    opacity:0; 
+}
+.navbar-toggler .bottom-bar{
+    transform:rotate(-29deg); 
+}
+.navbar-toggler.collapsed .top-bar{
+    transform:rotate(0); 
+}
+.navbar-toggler.collapsed .middle-bar{
+    opacity:1; 
+}
+.navbar-toggler.collapsed .bottom-bar{
+    transform:rotate(0); 
+}
+.navbar-brand img{
+    width:150px; margin-top:-.5rem; filter:invert(100%); 
+}
+.theme-switch-wrapper{
+    display:flex; align-items:center; 
+}
+.theme-switch-wrapper a{
+    color:rgb(237,237,237) !important; font-family:'Roboto'; font-size:1.8rem; letter-spacing:.04rem; margin:0rem 1.05rem 0rem 0rem; font-weight:800; 
+}
+.theme-switch{
+    display:inline-block; height:1rem; position:relative; width:4rem; margin-top:.35rem; 
+}
+.theme-switch input{
+    display:none; 
+}
+.slider{
+    background-color:rgb(200,200,200); bottom:0; cursor:pointer; left:0; position:absolute; right:0; top:0; transition:.3s; 
+}
+.slider:before{
+    background-color:rgb(237,237,237); bottom:-.5rem; content:""; height:2rem; left:0; position:absolute; transition:.3s; width:2rem; 
+}
+input:checked + .slider{
+    background-color:var(--secondary-color); 
+}
+input:checked + .slider:before{
+    transform:translateX(2rem); 
+}
+.slider.round{
+    border-radius:40px; 
+}
+.slider.round:before{
+    border-radius:50%; 
+}
+.header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .modelkonten, .multimed{
+    margin-top:7.9rem; background-color:var(--primary-color); border-radius:0; 
+}
+.home{
+    background-color:var(--primary-color); border-radius:0; margin-top:-2rem; 
+}
+.header{
+    padding:0 !important; 
+}
+.home .row{
+    margin-bottom:.7rem; 
+}
+.logo{
+    width:55%; margin-bottom:1.05rem; filter:var(--logo-filter); 
+}
+.cov{
+    margin-top:1.05rem; max-width:100%; 
+}
+.bar h4{
+    margin-top:2.1rem; 
+}
+.albumart{
+    width:100%; transition:.2s all; 
+}
+.mv{
+    width:100%; transition:.2s all; 
+}
+.aboutkonten p{
+    padding:0px 14rem 0px 14rem; 
+}
+.email{
+    color:var(--font-color); transition:.2s all; 
+}
+.baris{
+    display:flex; flex-wrap:wrap; margin:0rem -1.75rem 0rem -1.4rem !important; 
+}
+.column, .kolom{
+    width:22.48%; margin:1.4rem; height:100%; overflow:hidden; position:relative; display:inline-block;
+}
+.column img, .kolom img{
+    width:100%; background-size:cover; background-repeat:no-repeat; transition:.3s all;
+}
+.column:hover img, .column:focus img{
+    transform:translateY(-3px);
+}
+.column:hover img:before, .column:focus img:before,.kolom:hover img:before, .kolom:focus img:before, .kolom:hover .overlay, .kolom:focus .overlay{
+    display:block; 
+}
+.column:hover .artistoverlay, .column:focus .artistoverlay{
+    height:30%; 
+}
+.overlay{
+    display:none; position:absolute; top:0; left:0; bottom:0; right:0; margin:0; padding:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.9); 
+}
+.artistoverlay{
+    display:block; position:absolute; top:1; left:0; bottom:0; right:0; margin:0; padding:0; width:100%; height:0%; background-color:black !important; transition:.3s; 
+}
+.artistname{
+    margin-top:8%; font-size:2.45rem; color:rgb(245, 245, 245); text-align:center; font-family:'Roboto'; letter-spacing:.04rem; 
+}
+.teks{
+    margin-top:37%; font-size:2.2rem; color:rgb(245, 245, 245); text-align:center; font-family:'RobotoBold'; 
+}
+.albumname{
+    font-weight:100; font-size:1.45rem !important; color:rgb(213, 213, 213); font-family:'Roboto'; 
+}
+.back{
+    color:var(--font-color); font-weight:100; font-family:'Roboto'; transition:.2s all; 
+}
+.arrow{
+    float:right; color:var(--font-color) !important; font-weight:100; font-family:'Roboto'; transition:.2s all; 
+}
+.profil{
+    width:90%; border-radius:50%; 
+}
+.name{
+    text-align:left; 
+}
+.cover{
+    width:80%;
+}
+.socmed{
+    filter:var(--logo-filter); width:3.4rem; height:3.4rem; margin:.1rem; border-radius:50%; transition:.2s all; 
+}
+.artistdetail .socmed{
+    float:right; margin:1.05rem .2rem 0rem .2rem !important; transition:.2s all; 
+}
+.socmed:hover{
+    filter:var(--hover-filter); transition:.2s all; 
+}
+.date{
+    text-align:center; margin:-2.1rem 0rem 3.5rem 0rem; font-family:'Roboto'; font-weight:100; 
+}
+ol li, .artistdetail ul li{
+    color:var(--font-color) !important; font-size:1.45rem !important; font-family:'Roboto'; margin-left:-1.05rem
+}
+.nominasi{
+    font-weight:lighter; color:var(--font-color); 
+}
+.duration{
+    font-weight:100 !important; color:var(--font-color) !important; 
+}
+.carousel-control-next{
+    height:90%; margin:.7rem 9.4rem 0rem 0rem; opacity:100;
+}
+.carousel-control-prev{
+    height:90%; margin:.7rem 0rem 0rem 9.4rem; opacity:100;
+}
+.carousel-control-prev .fa-chevron-left, .carousel-control-next .fa-chevron-right{
+    color:var(--secondary-color); font-size:3rem; transition:.2s all; 
+}
+.carousel-control-prev .fa-chevron-left:hover, .carousel-control-next .fa-chevron-right:hover{
+    color:var(--font-color); font-size:3rem; transition:.2s all; 
+}
+.conthumb {
+    position: relative;
+}
+.thumbnail{
+    width:60%; margin:.7rem 0rem .35rem 0rem; transition:none !important; transition:.2s all; 
+}
+.playbtn{
+    position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:transparent; color:rgb(245, 245, 245); font-size:3.5rem; padding:1.05rem 2.1rem; border-radius:50%; cursor:pointer; border:4px solid rgb(245, 245, 245); transition:.2s all;
+}
+.playbtn:hover, .playbtn:focus{
+    outline:none !important;color:rgb(200, 200, 200); border:4px solid rgb(200, 200, 200); transition:.2s all;
+}
+.modal{
+    background-color:rgba(0, 0, 0, 0.9) !important; overflow:hidden!important; 
+}
+.modal-content{
+    background-color:transparent !important; outline:none !important; border:none !important; 
+}
+.video_popup{
+    width:88% !important; height:564px !important; margin-top:1rem; 
+}
+.close{
+    color:white; font-size:4.2rem; margin-right:.7rem; margin-top:.7rem; z-index:100; transition:.2s all; 
+}
+.close:hover, .close:focus{
+    color:white; outline:none !important; transition:.2s all; 
+}
+.tmcov{
+    height:10rem;
+}
+.thumb{
+    width:100%; height:100%; cursor:pointer; transition:none !important; object-fit:cover !important;
+}
+.dsc{
+    margin:.35rem 0rem .35rem 0rem;
+}
+.mv:hover, .albumart:hover, .thumb:hover{
+    filter:blur(3px); transition:.2s all; 
+}
+#expandedImg{
+    width:60%; height:375px; margin-top:1.4rem; 
+}
+#imgtext{
+    margin-left:20%; margin-bottom:4.2rem !important; 
+}
+#btnpaging{
+    outline:none; background-color:transparent; padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--font-color); font-size:1.45rem; font-family:'Roboto'; font-weight:bold; transition:.2s all; 
+}
+#btnpagingactive{
+    outline:none; background-color:var(--font-color); padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--primary-color); font-size:1.45rem; font-family:'Roboto'; font-weight:bold;
+}
+#btnpaging:hover{
+    background-color:var(--secondary-color); color:var(--font-color); transition:.2s all; 
+}
+.page-footer{
+    margin-top:-2rem; width:100%; background-color:rgb(18,18,18); padding:1.4rem 1.05rem 1.05rem 1.05rem;
+}
+.page-footer h5{
+    font-weight:lighter; text-align:right; line-height:2.8rem; padding-left:0rem !important; color:rgb(237,237,237) !important;
+}
+.dropup{
+    width:50%;
+}
+.dropdown{
+    cursor:pointer; width:94%; color:rgb(237,237,237); line-height:2.8rem; font-weight:bolder; font-size:1.45rem !important; font-family:'Roboto'; letter-spacing:.04rem; text-align:left; background-color:rgb(42,42,42); padding:0rem 1.05rem 0rem 1.05rem !important; border:none;
+}
+.dropup:hover .dropdown-menu{
+    display:block;
+}
+.dropup:hover .dropdown{
+    background-color:rgb(75,75,75) !important;
+}
+.dropdown-menu{
+    background-color:rgb(42,42,42); padding:1.05rem; border:none; border-radius:0;
+}
+.dropdown-menu li a{
+    text-decoration:none !important; color:rgb(237,237,237) !important; line-height:2.8rem; font-size:1.45rem !important; font-family:'Roboto'; letter-spacing:.04rem;
+}
+.fa-caret-up{
+    float:right !important;
+}
+.dropdown-menu li a:hover{
+    color:rgb(182, 45, 45) !important; text-decoration:underline !important;
+}
+hr{
+    height:1px !important; background-color:var(--font-color); margin:-1.05rem 0rem 3.15rem 0rem; 
+}
+.multimed hr{
+    margin:.35rem 0rem 0rem 0rem;
+}
+p{
+    color:var(--font-color); font-family:'Roboto'; font-size:1.45rem; letter-spacing:.04rem; 
+}
+h1{
+    text-align:center; color:var(--font-color); font-family:'RobotoBold'; font-weight:bold; margin-bottom:1.75rem; font-size:4rem; letter-spacing:.04rem; 
+}
+h3{
+    text-align:center; color:var(--font-color); font-family:'Roboto'; font-size:2.4rem; font-weight:bolder; letter-spacing:.04rem; 
+}
+h4{
+    color:var(--font-color); font-family:'Roboto'; font-weight:600; font-size:1.7rem; letter-spacing:.04rem; 
+}
+h5{
+    color:var(--font-color) !important; font-size:1.45rem !important; padding-left:1.05rem !important; font-family:'Roboto'; font-weight:bold; letter-spacing:.04rem; 
+}
+h6{
+    font-size:1.45rem !important; letter-spacing:.04rem; 
+}
+@media screen and (max-width:1080px){
+    .column, .kolom{
+        width:22%; 
+    }
+    .dropup{
+        width:100%;
+    }
+    .dropdown{
+        width:100%; padding:.35rem 1.05rem .35rem 1.05rem !important; 
+    }
+    .dropdown-menu{
+        width:100%;
+    }
+}
+@media screen and (max-width:780px){
+    #btntop{
+        right:1.4rem;
+    }
+    .theme-switch-wrapper{
+        margin-top:2.1rem; 
+    }
+    .navbar{
+        padding:.7rem 1.05rem .7rem 1.05rem !important; 
+    }
+    .navbar-nav{
+        margin-left:0rem !important; line-height:1.4; margin-top:1.75rem !important; 
+    }
+    .navbar-brand img{
+        margin-top:-.05rem !important; 
+    }
+    .header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
+        margin-top:7rem;
+    }
+    .post, .logo, .profil, .cov, .cover, .column, .thumbnail, #expandedImg{
+        width:100% !important; 
+    }
+    .aboutkonten p{
+        padding:0rem !important; 
+    }
+    .container{
+        padding:1.4rem !important; 
+    }
+    .baris{
+        margin:0rem -.7rem 0rem -.7rem !important; 
+    }
+    .gridthumb{
+        width:100% !important;
+    }
+    .kolom{
+        width:45.7%; height:100%; margin:.7rem; 
+    }
+    .colartis{
+        margin:1.4rem .7rem 1.4rem .7rem !important; 
+    }
+    .teks{
+        display:none; 
+    }
+    .artistname{
+        margin-top:9% !important; 
+    }
+    .name{
+        text-align:center; margin-top:.35rem; 
+    }
+    .artistdetail .socmed{
+        margin:-1.4rem .18rem 2.1rem .18rem !important; float:none !important; 
+    }
+    .date{
+        margin-bottom:1.4rem; 
+    }
+    .tracklist{
+        margin-top:3rem; 
+    }
+    h5{
+        padding-left:.7rem !important; 
+    }
+    .carousel-control-next, .carousel-control-prev{
+        height:81% !important; margin:.7rem -1.4rem 0rem -1.4rem !important;
+    }
+    .carousel-control-prev .fa-chevron-left, .carousel-control-next .fa-chevron-right{
+        color:white;
+    }
+    .playbtn{
+        font-size:2.1rem; padding:.7rem 1.4rem;
+    }
+    .video_popup{
+        width:100% !important; height:198px !important; margin-top:50% !important; 
+    }
+    #expandedImg{
+        width:100%; height:176px; 
+    }
+    .tmcov{
+        height:11rem !important;
+    }
+    #imgtext{
+        margin-left:0%; 
+    }
+    .multimed hr{
+        margin:.7rem 0rem 0rem 0rem;
+    }
+    .page-footer h5{
+        text-align:left !important; line-height:2.4rem !important
+    }
+    .dropup{
+        margin-bottom:1.4rem;
+    }
+}

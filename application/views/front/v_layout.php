@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title><?=$PageTitle?></title>
+        <link rel="icon" type="image/png" href="<?=base_url()?>Asset/img/tbl.jpg">
+        <link rel="stylesheet" href="<?=base_url()?>Asset/fonts/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="<?=base_url()?>Asset/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?=base_url()?>Asset/style.css">
+        <script src="<?=base_url()?>Asset/js/jquery-3.2.1.min.js"></script>
+        <script src="<?=base_url()?>Asset/js/bootstrap.min.js"></script>
+        <script src="<?=base_url()?>Asset/js/lazysizes.min.js"></script>
+        <script src="<?=base_url()?>Asset/js/widgets.js"></script>
+    </head>
+    <body oncontextmenu='return false' onselectstart='return false'>
+        <!-- Go To Top -->
+        <button id="btntop" title="Go to top"><i class="fas fa-chevron-up fa-lg"></i></button>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <!-- Navbar Logo -->
+                <a href="<?=base_url()?>" class="navbar-brand">
+                    <img src="<?=base_url()?>Asset/img/logo-black.png">
+                </a>
+                <!-- Navbar Toggler -->
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>			
+                </button>
+                <!-- Navbar Menu -->
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="<?php echo $active == "Home" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="<?=base_url()?>">Home</a>
+                        </li>
+                        <li class="<?php echo $active == "About" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="<?=base_url('About')?>">About</a>
+                        </li>
+                        <li class="<?php echo $active == "Artists" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="<?=base_url('Artists')?>">Artists</a>
+                        </li>
+                        <li class="<?php echo $active == "Multimedia" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="<?=base_url()?>Multimedia/1">Multimedia</a>
+                        </li>
+                        <li class="<?php echo $active == "Audition" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="https://www.instagram.com/theblacklabel_audition" target="_blank">Audition</a>
+                        </li>
+                    </ul>
+                    <!-- Navbar Dark Mode Switch -->
+                    <div class="theme-switch-wrapper">
+                        <a>Theme</a>
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Konten -->
+        <?php $this->load->view($content);?>
+        
+        <!-- Footer -->
+        <div class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="dropup">
+                            <div class="dropdown">
+                                <div class="row">
+                                    <div class="col-sm-9 col-10">YG Family Site</div>
+                                    <div class="col-sm-3 col-2"><span class="fas fa-caret-up"></span></div>
+                                </div>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://ygfamily.com" target="_blank">YG Entertainment</a></li>
+                                <li><a href="https://yg-life.com/?lang=ko" target="_blank">YG Life</a></li>
+                                <li><a href="http://www.ygselect.com/shop/artist_setting.html" target="_blank">YG Select</a></li>
+                                <li><a href="https://ygx.co.kr" target="_blank">YGX Entertainment</a></li>
+                                <li><a href="https://ygfamily.com/artist/Actors.asp?LANGDIV=K&ATYPE=1" target="_blank">YG Stage</a></li>
+                                <li><a href="https://ygkplus.com/" target="_blank">YG KPlus</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5>Copyright &copy; 2020 The Black Label, Ltd. All rights reserved</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //Twitter Custom CSS
+            $('.twitter-feed').delegate('#twitter-widget-0', 'DOMSubtreeModified propertychange', function () {
+                customizeTweetMedia();
+            });
+            var customizeTweetMedia = function () {
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').hover(function(){$(this).css("background-color", "black");}, function(){$(this).css("background-color", "rgb(30,30,30)");});
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('background-color', 'rgb(30,30,30)');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('padding', '21px');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('border-bottom', '1px solid rgb(73,73,73)');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet-media').css('display', 'none');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-name').css('color', 'rgb(245,245,245)'); 
+                $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-screenName').css('display', 'none');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('margin-top', '21px');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('font-family', 'Roboto');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('font-size', '14px');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('color', 'rgb(245,245,245)');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('ul.timeline-tweet-actions').css('display', 'none');
+
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-TweetList').bind('DOMSubtreeModified propertychange', function () {
+                    customizeTweetMedia(this);
+                });
+            }
+
+            $('.dropdown-toggle').dropdown();
+            
+            //Go to top
+            $(document).ready(function() {
+                $('#btntop').click(function() {
+                    $("html, body").animate({scrollTop: 0}, 300);
+                });
+            }); 
+            var mybutton = document.getElementById("btntop");
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            
+            //Switch to dark mode
+            const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                }
+                else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }    
+            }
+            toggleSwitch.addEventListener('change', switchTheme, false);
+            function switchTheme(e) {
+                if (e.target.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark'); //add this
+                }
+                else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light'); //add this
+                }    
+            }
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+            if (currentTheme) {
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                if (currentTheme === 'dark') {
+                    toggleSwitch.checked = true;
+                }
+            }
+
+            //Load more album
+            $(document).ready(function() {
+                var url = window.location.href;
+                var idx = url.indexOf("Artist_Detail");
+                var id = url.substring(idx).split("/")[1];
+                var limit = 4;
+                var start = 0;
+                var action = 'inactive';
+                function load_album_data(limit, start, id) {
+                    $.ajax({
+                        url: "<?=base_url('TBLController/loadalbum')?>",
+                        method: "POST",
+                        data: {limit:limit, start:start, id:id},
+                        cache: false,
+                        success:function(data) {
+                            $('#loadalbum').append(data);
+                            if(data == '') {
+                                action = 'active';
+                            }
+                            else {
+                                action = 'inactive';
+                            }
+                        }
+                    });
+                }
+                if(action == 'inactive') {
+                    action = 'active';
+                    load_album_data(limit, start, id);
+                }
+                $(window).scroll(function() {
+                    if($(window).scrollTop() + $(window).height() > $("#loadalbum").height() && action == 'inactive') {
+                        action = 'active';
+                        start = start + limit;
+                        setTimeout(function() {
+                            load_album_data(limit, start, id);
+                        }, 1000);
+                    }
+                });
+            });
+
+            //Autoplay video
+            $(document).ready(function(){
+                function toggle_video_modal() {   
+                    $(".playbtn").on("click", function(e){  
+                        $("#Modal").modal({
+                            backdrop: 'static'
+                        });
+                        e.preventDefault();  
+                        var id = $(this).attr('data-youtube-id');
+                        var autoplay = '?autoplay=1';
+                        var src = '//www.youtube.com/embed/'+id+autoplay;
+                        $(".video_popup").attr('src', src);
+                    });
+                    function close_video_modal() {  
+                        event.preventDefault();
+                        $(".video_popup").attr('src', ''); 
+                    }
+                    $('body').on('click', '.close', function(event) {     
+                        close_video_modal();     
+                    });
+                    $('body').keyup(function(e) {
+                        if (e.keyCode == 27) { 
+                            close_video_modal(); 
+                        }
+                    });
+                }
+                toggle_video_modal();
+            });
+
+            //Change video
+            function myFunction(imgs) {
+                var expandImg = document.getElementById("expandedImg");
+                var imgText = document.getElementById("imgtext");
+                expandImg.src = imgs.alt;
+                imgText.innerHTML = imgs.id;
+                $("html, body").animate({scrollTop: 0}, 300);
+            }
+        </script>
+    </body>
+</html>
+        
