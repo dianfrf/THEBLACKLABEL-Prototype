@@ -14,6 +14,7 @@ Cara menggunakan website:
 Library Javascript yang digunakan:
 1. Library Twitter widget: Asset/js/widgets.js
 2. Library lazy load image: Asset/js/lazysizes.min.js
+3. Library modal video: Asset/js/modal-video.min.js dan jquery-modal-video.min.js
 
 System Requirement:
 1. https://codeigniter.com/userguide3/general/requirements.html
