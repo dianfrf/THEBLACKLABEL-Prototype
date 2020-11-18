@@ -8,10 +8,13 @@
         <link rel="stylesheet" href="<?=base_url()?>Asset/fonts/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="<?=base_url()?>Asset/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=base_url()?>Asset/style.css">
+        <link rel="stylesheet" href="<?=base_url()?>Asset/css/modal-video.min.css">
         <script src="<?=base_url()?>Asset/js/jquery-3.2.1.min.js"></script>
         <script src="<?=base_url()?>Asset/js/bootstrap.min.js"></script>
         <script src="<?=base_url()?>Asset/js/lazysizes.min.js"></script>
         <script src="<?=base_url()?>Asset/js/widgets.js"></script>
+        <script src="<?=base_url()?>Asset/js/jquery-modal-video.min.js"></script>
+        <script src="<?=base_url()?>Asset/js/modal-video.min.js"></script>
     </head>
     <body oncontextmenu='return false' onselectstart='return false'>
         <!-- Go To Top -->
@@ -61,7 +64,7 @@
             </div>
         </nav>
 
-        <!-- Konten -->
+        <!-- Content -->
         <?php $this->load->view($content);?>
         
         <!-- Footer -->
@@ -115,8 +118,6 @@
                     customizeTweetMedia(this);
                 });
             }
-
-            $('.dropdown-toggle').dropdown();
             
             //Go to top
             $(document).ready(function() {
@@ -205,33 +206,7 @@
             });
 
             //Autoplay video
-            $(document).ready(function(){
-                function toggle_video_modal() {   
-                    $(".playbtn").on("click", function(e){  
-                        $("#Modal").modal({
-                            backdrop: 'static'
-                        });
-                        e.preventDefault();  
-                        var id = $(this).attr('data-youtube-id');
-                        var autoplay = '?autoplay=1';
-                        var src = '//www.youtube.com/embed/'+id+autoplay;
-                        $(".video_popup").attr('src', src);
-                    });
-                    function close_video_modal() {  
-                        event.preventDefault();
-                        $(".video_popup").attr('src', ''); 
-                    }
-                    $('body').on('click', '.close', function(event) {     
-                        close_video_modal();     
-                    });
-                    $('body').keyup(function(e) {
-                        if (e.keyCode == 27) { 
-                            close_video_modal(); 
-                        }
-                    });
-                }
-                toggle_video_modal();
-            });
+            $(".playbtn").modalVideo();
 
             //Change video
             function myFunction(imgs) {

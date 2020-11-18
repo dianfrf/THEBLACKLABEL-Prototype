@@ -75,18 +75,9 @@
         <!-- Video Thumbnail -->
         <div class="conthumb">
             <center><img src="<?=base_url()?>Asset/img/thumbnail/<?=$video->thumbnail;?>" alt="<?=$video->video_name?>" class="thumbnail lazyload"></center>
-            <button class="playbtn" data-toggle="modal" data-target="#Modal" data-youtube-id="<?=$video->link;?>"><i class="fas fa-play"></i></button>
+            <button class="playbtn" data-video-id="<?=$video->link;?>"><i class="fas fa-play"></i></button>
         </div>
         <p style="text-align: center"><?php $cetak = substr($video->video_name,0,40);If($video->video_name == $cetak) {echo "$cetak M/V";}else {echo "$cetak...";}?></p>
     <?php } } else {} ?>
-        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <button class="close" data-dismiss="modal">&times;</button>
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <!-- Play Video -->
-                    <center><iframe class="video_popup" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
