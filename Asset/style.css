@@ -224,7 +224,7 @@ ol li, .artistdetail ul li{
     width:100%; height:100%; cursor:pointer; transition:none !important; object-fit:cover !important;
 }
 .dsc{
-    margin:.35rem 0rem .35rem 0rem;
+    margin:.35rem 0rem 0rem 0rem;
 }
 .mv:hover, .albumart:hover, .thumb:hover{
     filter:blur(3px); transition:.2s all; 
@@ -236,10 +236,10 @@ ol li, .artistdetail ul li{
     margin-left:20%; margin-bottom:4.2rem !important; 
 }
 #btnpaging{
-    outline:none; background-color:transparent; padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--font-color); font-size:1.45rem; font-family:'Roboto'; font-weight:bold; transition:.2s all; 
+    outline:none; background-color:transparent; padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--font-color); font-size:1.45rem; font-family:'Roboto'; transition:.2s all; 
 }
 #btnpagingactive{
-    outline:none; background-color:var(--font-color); padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--primary-color); font-size:1.45rem; font-family:'Roboto'; font-weight:bold;
+    outline:none; background-color:var(--font-color); padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--primary-color); font-size:1.45rem; font-family:'Roboto';
 }
 #btnpaging:hover{
     background-color:var(--secondary-color); color:var(--font-color); transition:.2s all; 

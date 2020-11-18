@@ -13,7 +13,7 @@
             <div class="kolom gridthumb">
                 <!-- Video Thumbnail -->
                 <div class="tmcov">
-                    <img src="<?=base_url()?>Asset/img/thumbnail/<?=$multimedia->thumbnail;?>" alt="https://www.youtube.com/embed/<?=$multimedia->link;?>" class="thumb lazyload" onclick="myFunction(this)" id="<b><?=$multimedia->video_name;?></b><br><?=$multimedia->name;?> | <?=date("Y.m.d", strtotime($multimedia->release_date));?>">
+                    <img src="<?=base_url()?>Asset/img/thumbnail/<?=$multimedia->thumbnail;?>" alt="https://www.youtube.com/embed/<?=$multimedia->link;?>" class="thumb lazyload" onclick="myFunction(this)" id="<b><?=$multimedia->video_name;?></b><br><?=$multimedia->name;?> - <?=date("Y.m.d", strtotime($multimedia->release_date));?>">
                 </div>
                 <p class="dsc"><b><?php $cetak = substr($multimedia->video_name,0,37);If($multimedia->video_name == $cetak) {echo $cetak;}else {echo "$cetak...";}?></b><br><?=$multimedia->name;?> - <?=date("Y.m.d", strtotime($multimedia->video_release_date));?></p>
             </div>
