@@ -10,7 +10,7 @@
                         <img src="<?=base_url()?>Asset/img/artists/<?=$a->picture?>" class="lazyload">
                     </a> 
                     <div class="card-body">
-                        <div class="artistname"><strong><?=$a->name?></strong></div>
+                        <h3><?=$a->name?></h3>
                     </div>   
                 </div>
             </div>
