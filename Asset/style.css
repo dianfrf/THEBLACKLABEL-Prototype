@@ -124,32 +124,38 @@ input:checked + .slider:before{
 .email{
     color:var(--font-color); transition:.2s all; 
 }
+.colartis{
+    margin: 1.4rem 0rem 1.75rem 0rem;
+}
+.colartis .card{
+    border:none;
+}
+.colartis .card-body{
+    background-color:rgb(18,18,18);
+}
+.colartis img, .kolom img{
+    width:100%; background-size:cover; background-repeat:no-repeat; transition:.3s all;
+}
+.colartis img{
+    filter:grayscale(100%);
+}
+.colartis img:hover{
+    filter:grayscale(0%);
+}
+.artistname{
+    font-size:2.45rem; color:rgb(245, 245, 245); text-align:center; font-family:'Roboto'; letter-spacing:.04rem; 
+}
 .baris{
     display:flex; flex-wrap:wrap; margin:0rem -1.75rem 0rem -1.4rem !important; 
 }
-.column, .kolom{
+.kolom{
     width:22.48%; margin:1.4rem; height:100%; overflow:hidden; position:relative; display:inline-block;
 }
-.column img, .kolom img{
-    width:100%; background-size:cover; background-repeat:no-repeat; transition:.3s all;
-}
-.column:hover img, .column:focus img{
-    transform:translateY(-3px);
-}
-.column:hover img:before, .column:focus img:before,.kolom:hover img:before, .kolom:focus img:before, .kolom:hover .overlay, .kolom:focus .overlay{
+.kolom:hover img:before, .kolom:focus img:before, .kolom:hover .overlay, .kolom:focus .overlay{
     display:block; 
-}
-.column:hover .artistoverlay, .column:focus .artistoverlay{
-    height:30%; 
 }
 .overlay{
     display:none; position:absolute; top:0; left:0; bottom:0; right:0; margin:0; padding:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.9); 
-}
-.artistoverlay{
-    display:block; position:absolute; top:1; left:0; bottom:0; right:0; margin:0; padding:0; width:100%; height:0%; background-color:black !important; transition:.3s; 
-}
-.artistname{
-    margin-top:8%; font-size:2.45rem; color:rgb(245, 245, 245); text-align:center; font-family:'Roboto'; letter-spacing:.04rem; 
 }
 .teks{
     margin-top:36%; font-size:2.2rem; color:rgb(245, 245, 245); text-align:center; font-family:'RobotoBold'; 
@@ -299,7 +305,7 @@ h6{
     font-size:1.45rem !important; letter-spacing:.04rem; 
 }
 @media screen and (max-width:1080px){
-    .column, .kolom{
+    .kolom{
         width:22%; 
     }
     .dropup{
@@ -350,13 +356,10 @@ h6{
         width:45.7%; height:100%; margin:.7rem; 
     }
     .colartis{
-        margin:1.4rem .7rem 1.4rem .7rem !important; 
+        margin:1.4rem 0rem 1.4rem 0rem !important; 
     }
     .teks{
         display:none; 
-    }
-    .artistname{
-        margin-top:9% !important; 
     }
     .name{
         text-align:center; margin-top:.35rem; 
