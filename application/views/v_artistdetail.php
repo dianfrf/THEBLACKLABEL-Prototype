@@ -49,8 +49,8 @@
                 <p><?=$detail->description;?></p>
                 <br>
             <?php if($hitfilm > 0) { ?>
-                <h4>Filmography :</h4>
-                <!-- Show All Awards -->
+                <h4>FILMOGRAPHY :</h4>
+                <!-- Show All Filmography -->
                 <ul>
                 <?php foreach ($tampil_film as $tf) { ?>
                     <li><h5><?=$tf->tahun;?> <b class="nominasi"><?=$tf->nama_film;?></b></h5></li>
@@ -58,8 +58,13 @@
                 </ul>
                 <br>
             <?php } else {}
+                if($detail->commercial != null) { ?>
+                <h4>COMMERCIALS :</h4>
+                <!-- Show All Commercials -->
+                <p><?=$detail->commercial?></p>
+            <?php } else{}
                 if($hitung > 0) { ?>
-                <h4>Awards :</h4>
+                <h4>AWARDS :</h4>
                 <!-- Show All Awards -->
                 <ul>
                 <?php foreach ($tampil_trofi as $trofi) { ?>
@@ -74,7 +79,7 @@
     <?php if($count > 0) { ?>
         <h3>DISCOGRAPHY</h3>
         <!-- Show All Artist Albums -->
-        <div class="baris" id="loadalbum"></div>
+        <div class="row rowalbum" id="loadalbum"></div>
     <?php } else {} ?>
     </div>
 </div>

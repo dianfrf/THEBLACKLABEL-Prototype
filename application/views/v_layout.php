@@ -36,9 +36,6 @@
                 <!-- Navbar Menu -->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="<?php echo $active == "Home" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="<?=base_url()?>">Home</a>
-                        </li>
                         <li class="<?php echo $active == "About" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="<?=base_url('About')?>">About</a>
                         </li>
@@ -54,7 +51,7 @@
                     </ul>
                     <!-- Navbar Dark Mode Switch -->
                     <div class="theme-switch-wrapper">
-                        <a>Theme</a>
+                        <a>Dark Mode</a>
                         <label class="theme-switch" for="checkbox">
                             <input type="checkbox" id="checkbox" />
                             <div class="slider round"></div>
@@ -90,7 +87,7 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <h5>Copyright &copy; 2020 The Black Label, Ltd. All rights reserved</h5>
+                        <h5>Copyright &copy; 2020 The Black Label. All rights reserved</h5>
                     </div>
                 </div>
             </div>

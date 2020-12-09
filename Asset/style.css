@@ -7,18 +7,35 @@ html, body{
 @font-face{
     font-family:RobotoBold; src:url('fonts/Roboto-Bold.ttf'); 
 }
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track { 
+    background:rgb(120,120,120); 
+}
+::-webkit-scrollbar-thumb {
+    background:rgb(40,40,40);
+}
+
+/* theme color */
 :root{
     --primary-color:white; --secondary-color:rgb(180, 180, 180); --font-color:rgb(18,18,18); --logo-filter:invert(0%); --shadow-color:rgb(220,220,220); --hover-filter:invert(100%);
 }
 [data-theme="dark"]{
     --primary-color:rgb(25,25,25); --secondary-color:rgb(75, 75, 75); --font-color:rgb(237, 237, 237); --logo-filter:invert(100%); --shadow-color:rgb(35,35,35); --hover-filter:invert(0%);
 }
+
+/* button go to top */
 #btntop{
     display:none; position:fixed; bottom:1.05rem; right:2.1rem; z-index:99; border:none; outline:none; background-color:rgb(182, 45, 45); cursor:pointer; padding:.35rem 1.05rem .35rem 1.05rem !important; color:white; transition:.2s all; 
 }
 #btntop:hover{
     background-color:rgb(150, 21, 21); transition:.2s all; 
 }
+
+/* navbar */
 .navbar{
     background-color:rgb(18,18,18) !important; padding:2.1rem;
 }
@@ -41,13 +58,13 @@ li a:hover, .active a, .back:hover, .email:hover, .arrow:hover{
     width:3rem; height:.3rem; background-color:rgb(237,237,237); display:block; transition:.3s all; margin:.4rem 0rem .4rem 0rem; 
 }
 .navbar-toggler .top-bar{
-    transform:rotate(29deg); 
+    transform:rotate(28deg); 
 }
 .navbar-toggler .middle-bar{
     opacity:0; 
 }
 .navbar-toggler .bottom-bar{
-    transform:rotate(-29deg); 
+    transform:rotate(-28deg); 
 }
 .navbar-toggler.collapsed .top-bar{
     transform:rotate(0); 
@@ -61,6 +78,8 @@ li a:hover, .active a, .back:hover, .email:hover, .arrow:hover{
 .navbar-brand img{
     width:150px; margin-top:-.5rem; filter:invert(100%); 
 }
+
+/* dark mode slider */
 .theme-switch-wrapper{
     display:flex; align-items:center; 
 }
@@ -91,23 +110,19 @@ input:checked + .slider:before{
 .slider.round:before{
     border-radius:50%; 
 }
-.header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .modelkonten, .multimed{
+.header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
     margin-top:7.9rem; background-color:var(--primary-color); border-radius:0; 
+}
+
+/* home menu */
+.header{
+    padding:0 !important; 
 }
 .home{
     background-color:var(--primary-color); border-radius:0; margin-top:-2rem; 
 }
-.header{
-    padding:0 !important; 
-}
 .home .row{
     margin-bottom:.7rem; 
-}
-.logo{
-    width:55%; margin-bottom:1.05rem; filter:var(--logo-filter); 
-}
-.cov{
-    margin-top:1.05rem; max-width:100%; 
 }
 .bar h4{
     margin-top:2.1rem; 
@@ -118,12 +133,25 @@ input:checked + .slider:before{
 .mv{
     width:100%; transition:.2s all; 
 }
+.mv:hover, .albumart:hover, .thumb:hover{
+    filter:blur(3px); transition:.2s all; 
+}
+
+/* about menu */
+.logo{
+    width:55%; margin-bottom:1.05rem; filter:var(--logo-filter); 
+}
+.cov{
+    margin-top:1.05rem; max-width:100%; 
+}
 .aboutkonten p{
     padding:0px 14rem 0px 14rem; 
 }
 .email{
     color:var(--font-color); transition:.2s all; 
 }
+
+/* artist menu */
 .colartis{
     margin: 1.4rem 0rem 1.75rem 0rem;
 }
@@ -137,32 +165,16 @@ input:checked + .slider:before{
     width:100%; background-size:cover; background-repeat:no-repeat; transition:.3s all;
 }
 .colartis img{
-    filter:grayscale(100%);
+    filter:grayscale(0%);
 }
 .colartis img:hover{
-    filter:grayscale(0%);
+    filter:grayscale(100%);
 }
 .colartis h3{
     color:rgb(245, 245, 245);
 }
-.baris{
-    display:flex; flex-wrap:wrap; margin:0rem -1.75rem 0rem -1.4rem !important; 
-}
-.kolom{
-    width:22.48%; margin:1.4rem; height:100%; overflow:hidden; position:relative; display:inline-block;
-}
-.kolom:hover img:before, .kolom:focus img:before, .kolom:hover .overlay, .kolom:focus .overlay{
-    display:block; 
-}
-.overlay{
-    display:none; position:absolute; top:0; left:0; bottom:0; right:0; margin:0; padding:0; width:100%; height:100%; background-color:rgba(0, 0, 0, 0.9); 
-}
-.teks{
-    margin-top:36%; font-size:2.2rem; color:rgb(245, 245, 245); text-align:center; font-family:'RobotoBold'; 
-}
-.albumname{
-    font-weight:100; font-size:1.45rem !important; color:rgb(213, 213, 213); font-family:'Roboto'; 
-}
+
+/* artist detail menu */
 .back{
     color:var(--font-color); font-weight:100; font-family:'Roboto'; transition:.2s all; 
 }
@@ -175,9 +187,6 @@ input:checked + .slider:before{
 .name{
     text-align:left; 
 }
-.cover{
-    width:80%;
-}
 .socmed{
     filter:var(--logo-filter); width:3.4rem; height:3.4rem; margin:.1rem; border-radius:50%; transition:.2s all; 
 }
@@ -187,14 +196,40 @@ input:checked + .slider:before{
 .socmed:hover{
     filter:var(--hover-filter); transition:.2s all; 
 }
-.date{
-    text-align:center; margin:-2.1rem 0rem 3.5rem 0rem; font-family:'Roboto'; font-weight:100; 
+hr{
+    height:1px !important; background-color:var(--font-color); margin:-1.05rem 0rem 3.15rem 0rem; 
 }
 ol li, .artistdetail ul li{
     color:var(--font-color) !important; font-size:1.45rem !important; font-family:'Roboto'; margin-left:-1.05rem
 }
 .nominasi{
     font-weight:lighter; color:var(--font-color); 
+}
+.colalbum{
+    margin:.7rem 1.4rem 1.05rem 1.4rem; height:100%; overflow:hidden; position:relative; display:inline-block; padding:0;
+}
+.colalbum img{
+    width:100%; display:block;
+}
+.colalbum:hover .overlay, .colalbum:focus .overlay{
+    opacity:1; transition:.2s all;
+}
+.overlay{
+    position:absolute; top:0; left:0; bottom:0; right:0; margin:0; padding:0; width:100%; height:100%; opacity:0; background-color:rgba(0, 0, 0, 0.9); transition:.2s all;
+}
+.teks{
+    position:absolute; top:50%; right:-50%; left:50%; transform:translate(-50%, -50%); font-size:2.2rem; color:rgb(245, 245, 245); text-align:center; font-family:'RobotoBold';
+}
+.albumname{
+    font-weight:100; font-size:1.45rem !important; color:rgb(213, 213, 213); font-family:'Roboto'; 
+}
+
+/* album detail */
+.date{
+    text-align:center; margin:-2.1rem 0rem 3.5rem 0rem; font-family:'Roboto'; font-weight:100; 
+}
+.cover{
+    width:80%;
 }
 .duration{
     font-weight:100 !important; color:var(--font-color) !important; 
@@ -223,6 +258,17 @@ ol li, .artistdetail ul li{
 .playbtn:hover, .playbtn:focus{
     outline:none !important;color:rgb(200, 200, 200); border:4px solid rgb(200, 200, 200); transition:.2s all;
 }
+
+/* multimedia menu */
+#expandedImg{
+    width:60%; height:375px; margin-top:1.4rem; 
+}
+#imgtext{
+    margin-left:20%; margin-bottom:4.2rem !important; 
+}
+.colmultimed{
+    margin:.7rem 0rem 1.05rem 0rem;
+}
 .tmcov{
     height:9rem;
 }
@@ -232,30 +278,31 @@ ol li, .artistdetail ul li{
 .dsc{
     margin:.35rem 0rem 0rem 0rem;
 }
-.mv:hover, .albumart:hover, .thumb:hover{
-    filter:blur(3px); transition:.2s all; 
+#imgtext b, .dsc b{
+    text-transform:uppercase !important;
 }
-#expandedImg{
-    width:60%; height:375px; margin-top:1.4rem; 
-}
-#imgtext{
-    margin-left:20%; margin-bottom:4.2rem !important; 
+.multimed hr{
+    margin:.35rem 0rem 0rem 0rem;
 }
 #btnpaging{
     outline:none; background-color:transparent; padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--font-color); font-size:1.45rem; font-family:'Roboto'; transition:.2s all; 
 }
 #btnpagingactive{
-    outline:none; background-color:var(--font-color); padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--primary-color); font-size:1.45rem; font-family:'Roboto';
+    outline:none; background-color:var(--font-color); padding:.7rem 1.05rem .35rem 1.05rem; border:none; margin:.35rem .1rem 0rem .1rem !important; color:var(--primary-color); font-size:1.45rem; font-family:'Roboto'; font-weight:bolder;
 }
 #btnpaging:hover{
     background-color:var(--secondary-color); color:var(--font-color); transition:.2s all; 
 }
+
+/* page footer */
 .page-footer{
     margin-top:-2rem; width:100%; background-color:rgb(18,18,18); padding:1.4rem 1.05rem 1.05rem 1.05rem;
 }
 .page-footer h5{
     font-weight:lighter; text-align:right; line-height:2.8rem; padding-left:0rem !important; color:rgb(237,237,237) !important;
 }
+
+/* dropdown menu */
 .dropup{
     width:50%;
 }
@@ -280,43 +327,25 @@ ol li, .artistdetail ul li{
 .dropdown-menu li a:hover, .dropdown-menu li:hover{
     color:rgb(182, 45, 45) !important; text-decoration:underline !important;
 }
-hr{
-    height:1px !important; background-color:var(--font-color); margin:-1.05rem 0rem 3.15rem 0rem; 
-}
-.multimed hr{
-    margin:.35rem 0rem 0rem 0rem;
-}
+
+/* font & typography */
 p{
     color:var(--font-color); font-family:'Roboto'; font-size:1.45rem; letter-spacing:.04rem; 
 }
 h1{
-    text-align:center; color:var(--font-color); font-family:'RobotoBold'; font-weight:bold; margin-bottom:1.75rem; font-size:4rem; letter-spacing:.04rem; 
+    color:var(--font-color); font-family:'RobotoBold'; font-size:4rem; letter-spacing:.04rem; font-weight:bold; text-align:center; margin-bottom:1.75rem; 
 }
 h3{
-    text-align:center; color:var(--font-color); font-family:'Roboto'; font-size:2.4rem; font-weight:bolder; letter-spacing:.04rem; 
+    color:var(--font-color); font-family:'Roboto'; font-size:2.4rem; letter-spacing:.04rem; font-weight:bolder; text-align:center;
 }
 h4{
-    color:var(--font-color); font-family:'Roboto'; font-weight:600; font-size:1.7rem; letter-spacing:.04rem; 
+    color:var(--font-color); font-family:'Roboto'; font-size:1.8rem; letter-spacing:.04rem; font-weight:600;
 }
 h5{
-    color:var(--font-color) !important; font-size:1.45rem !important; padding-left:1.05rem !important; font-family:'Roboto'; font-weight:bold; letter-spacing:.04rem; 
+    color:var(--font-color) !important; font-family:'Roboto'; font-size:1.45rem !important; letter-spacing:.04rem; font-weight:bold; padding-left:1.05rem !important;
 }
 h6{
     font-size:1.45rem !important; letter-spacing:.04rem; 
-}
-@media screen and (max-width:1080px){
-    .kolom{
-        width:22%; 
-    }
-    .dropup{
-        width:100%;
-    }
-    .dropdown{
-        width:100%; padding:.35rem 1.05rem .35rem 1.05rem !important; 
-    }
-    .dropdown-menu{
-        width:100%;
-    }
 }
 @media screen and (max-width:780px){
     #btntop{
@@ -337,26 +366,20 @@ h6{
     .header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
         margin-top:7rem;
     }
+    .container{
+        padding:1.4rem !important; 
+    }
     .post, .logo, .profil, .cov, .cover, .column, .thumbnail, #expandedImg{
         width:100% !important; 
     }
     .aboutkonten p{
         padding:0rem !important; 
     }
-    .container{
-        padding:1.4rem !important; 
-    }
-    .baris{
-        margin:0rem -.7rem 0rem -.7rem !important; 
-    }
-    .gridthumb{
-        width:100% !important;
-    }
-    .kolom{
-        width:45.7%; height:100%; margin:.7rem; 
-    }
     .colartis{
         margin:1.4rem 0rem 1.4rem 0rem !important; 
+    }
+    .artistdetail .socmed{
+        margin:-1.4rem .18rem 2.1rem .18rem !important; float:none !important; 
     }
     .teks{
         display:none; 
@@ -364,14 +387,17 @@ h6{
     .name{
         text-align:center; margin-top:.35rem; 
     }
-    .artistdetail .socmed{
-        margin:-1.4rem .18rem 2.1rem .18rem !important; float:none !important; 
-    }
     .date{
         margin-bottom:1.4rem; 
     }
     .tracklist{
         margin-top:3rem; 
+    }
+    .colalbum{
+        margin:1.05rem 0rem .7rem 0rem; padding:0rem 1.4rem 1.05rem 1.4rem;
+    }
+    .overlay{
+        display:none;
     }
     h5{
         padding-left:.7rem !important; 
@@ -401,6 +427,12 @@ h6{
         text-align:left !important; line-height:2.4rem !important
     }
     .dropup{
-        margin-bottom:1.4rem;
+        width:100%; margin-bottom: 1.4rem;
+    }
+    .dropdown{
+        width:100%; padding:.35rem 1.05rem .35rem 1.05rem !important; 
+    }
+    .dropdown-menu{
+        width:100%;
     }
 }

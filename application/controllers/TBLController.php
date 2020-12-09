@@ -9,34 +9,34 @@
         
         public function index()
         {
-            $data['content'] = 'front/v_home';
+            $data['content'] = 'v_home';
             $data['active'] = 'Home';
             $data['cover'] = $this->M_TBL->getlatestalbum();
             $data['satum'] = $this->M_TBL->getlatestvideo();
             $data['PageTitle'] = 'The Black Label';
-            $this->load->view('front/v_layout', $data);            
+            $this->load->view('v_layout', $data);            
         }
 
         public function about()
         {
-            $data['content'] = 'front/v_about';
+            $data['content'] = 'v_about';
             $data['active'] = 'About';
             $data['PageTitle'] = 'About | The Black Label';
-            $this->load->view('front/v_layout', $data);   
+            $this->load->view('v_layout', $data);   
         }
 
         public function artists()
         {
-            $data['content'] = 'front/v_artists';
+            $data['content'] = 'v_artists';
             $data['active'] = 'Artists';
             $data['artists'] = $this->M_TBL->getartists();
             $data['PageTitle'] = 'Artists | The Black Label';
-            $this->load->view('front/v_layout', $data);   
+            $this->load->view('v_layout', $data);   
         }
 
         public function artistdetail($id)
         {
-            $data['content'] = 'front/v_artistdetail';
+            $data['content'] = 'v_artistdetail';
             $data['active'] = 'Artists';
             $data['detail'] = $this->M_TBL->getartistbyid($id);
             $detail = $data['detail'];
@@ -47,7 +47,7 @@
             $data['tampil_film'] = $this->M_TBL->getfilms($id);
             $data['count'] = $this->M_TBL->countartistalbums($id);
             $data['PageTitle'] = "$detail->name | The Black Label";
-            $this->load->view('front/v_layout', $data);    
+            $this->load->view('v_layout', $data);    
         }
 
         public function loadalbum()
@@ -56,9 +56,9 @@
             $tampil_album = $this->M_TBL->getartistalbums($this->input->post('limit'),$this->input->post('start'),$this->input->post('id'));
             foreach($tampil_album as $album) {
                 $output .= '
-                <div class="kolom">
-                    <img src="'.base_url().'Asset/img/album/'.$album->cover.'" class="lazyload">
+                <div class="col-lg-3 col-6 colalbum">
                     <a href="'.base_url().'Album_Detail/'.$album->id_artist.'/'.$album->album_order.'">
+                        <img src="'.base_url().'Asset/img/album/'.$album->cover.'" class="lazyload">
                         <div class="overlay">
                             <div class="teks"><b class="albumname">'.$album->album_description.'</b><br>'.$album->album_name.'</div>
                         </div>
@@ -71,7 +71,7 @@
 
         public function albumdetail($idal,$ord)
         {
-            $data['content'] = 'front/v_albumdetail';
+            $data['content'] = 'v_albumdetail';
             $data['active'] = 'Artists';
             $data['detail'] = $this->M_TBL->getalbumbyid($idal,$ord);
             $detail = $data['detail'];
@@ -80,12 +80,12 @@
             $data['count'] = $this->M_TBL->countalbumvideo($detail->id_album);
             $data['tampil_video'] = $this->M_TBL->getalbumvideo($detail->id_album);
             $data['PageTitle'] = "$detail->album_name | $detail->name | The Black Label";
-            $this->load->view('front/v_layout', $data);    
+            $this->load->view('v_layout', $data);    
         }
 
         public function multimedia($num)
         {
-            $data['content'] = 'front/v_multimedia';
+            $data['content'] = 'v_multimedia';
             $data['active'] = 'Multimedia';
             $data['satum'] = $this->M_TBL->getlatestvideo();
             $data['page'] = $num ? (int)$num : 1;
@@ -94,7 +94,7 @@
             $data['pages'] = ceil($total/8);  
             $data['tampil_multimedia'] = $this->M_TBL->getvideo($mulai);
             $data['PageTitle'] = 'Multimedia | The Black Label';
-            $this->load->view('front/v_layout', $data);
+            $this->load->view('v_layout', $data);
         }
     }
 ?>
