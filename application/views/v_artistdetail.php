@@ -2,16 +2,30 @@
     <div class="container">
         <!-- Back To Artists list -->
         <h6>
-            <a href="<?=base_url('Artists')?>" class="back"><i class="fas fa-chevron-left fa-xs "></i>Back to List</a>
+            <a href="<?=base_url('Artists')?>" class="back">
+                <button><i class="fas fa-chevron-left fa-xs"></i>BACK TO LIST</button>
+            </a>
         <?php if($detail->id_artist == 1) { ?>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">Next<i class="fas fa-chevron-right fa-xs "></i></a>
-            <a class="arrow" style="opacity: 20%; margin-right: 14px"><i class="fas fa-chevron-left fa-xs "></i>Prev</a>
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
+                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            </a>
+            <a class="arrow" style="opacity:5%; margin-right: 7px">
+                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            </a>
         <?php } elseif($detail->id_artist == $last->id_artist) { ?>
-            <a class="arrow" style="opacity: 20%;">Next<i class="fas fa-chevron-right fa-xs "></i></a>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right: 14px"><i class="fas fa-chevron-left fa-xs "></i>Prev</a>
+            <a class="arrow" style="opacity:5%;">
+                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            </a>
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right: 7px">
+                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            </a>
         <?php } else{ ?>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">Next<i class="fas fa-chevron-right fa-xs "></i></a>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right: 14px"><i class="fas fa-chevron-left fa-xs "></i>Prev</a>
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
+                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            </a>
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right: 7px">
+                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            </a>
         <?php } ?>
         </h6>
         <br><br>
@@ -27,20 +41,25 @@
                         <h1 class="name"><?=$detail->name;?></h1>
                     </div>
                     <div class="col-md-5">
-                        <center>
+                        <center class="iconartist">
                             <!-- Artist Media -->
                             <?php if($detail->soundcloud != null) { ?>
                                 <a href="<?=$detail->soundcloud;?>" target="_blank"><img src="<?=base_url()?>Asset/img/soundcloud.png" alt="Soundcloud" class="socmed lazyload"></a>
-                            <?php } else {} ?>
-                            <?php if($detail->facebook != null) { ?>
+                            <?php } else { ?>
+                                <a href="<?=$detail->soundcloud;?>" target="_blank" style="display:none"><img src="<?=base_url()?>Asset/img/soundcloud.png" alt="Soundcloud" class="socmed lazyload"></a>
+                            <?php } if($detail->facebook != null) { ?>
                                 <a href="<?=$detail->facebook;?>" target="_blank"><img src="<?=base_url()?>Asset/img/fb.png" alt="Facebook" class="socmed lazyload"></a>
-                            <?php } else {} ?>
-                            <?php if($detail->twitter != null) { ?>
+                            <?php } else { ?>
+                                <a href="<?=$detail->facebook;?>" target="_blank" style="display:none"><img src="<?=base_url()?>Asset/img/fb.png" alt="Facebook" class="socmed lazyload"></a>
+                            <?php } if($detail->twitter != null) { ?>
                                 <a href="<?=$detail->twitter;?>" target="_blank"><img src="<?=base_url()?>Asset/img/twitter.png" alt="Twitter" class="socmed lazyload"></a>
-                            <?php } else {} ?>
-                            <?php if($detail->instagram != null) { ?>
+                            <?php } else { ?>
+                                <a href="<?=$detail->twitter;?>" target="_blank" style="display:none"><img src="<?=base_url()?>Asset/img/twitter.png" alt="Twitter" class="socmed lazyload"></a>
+                            <?php } if($detail->instagram != null) { ?>
                                 <a href="<?=$detail->instagram;?>" target="_blank"><img src="<?=base_url()?>Asset/img/ig.png" alt="Instagram" class="socmed lazyload"></a>
-                            <?php } else {} ?>
+                            <?php } else { ?>
+                                <a href="<?=$detail->instagram;?>" target="_blank" style="display:none"><img src="<?=base_url()?>Asset/img/ig.png" alt="Instagram" class="socmed lazyload"></a>
+                            <?php } ?>
                         </center>
                     </div>
                 </div>

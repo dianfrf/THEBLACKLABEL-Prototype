@@ -37,16 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="<?php echo $active == "About" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="<?=base_url('About')?>">About</a>
+                            <a class="nav-link" href="<?=base_url('About')?>">ABOUT</a>
                         </li>
                         <li class="<?php echo $active == "Artists" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="<?=base_url('Artists')?>">Artists</a>
+                            <a class="nav-link" href="<?=base_url('Artists')?>">ARTISTS</a>
                         </li>
                         <li class="<?php echo $active == "Multimedia" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="<?=base_url()?>Multimedia/1">Multimedia</a>
+                            <a class="nav-link" href="<?=base_url()?>Multimedia/1">MULTIMEDIA</a>
                         </li>
                         <li class="<?php echo $active == "Audition" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="https://www.instagram.com/theblacklabel_audition" target="_blank">Audition</a>
+                            <a class="nav-link" href="https://www.instagram.com/theblacklabel_audition" target="_blank">AUDITION</a>
                         </li>
                     </ul>
                     <!-- Navbar Dark Mode Switch -->
@@ -125,7 +125,7 @@
             var mybutton = document.getElementById("btntop");
             window.onscroll = function() {scrollFunction()};
             function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                     mybutton.style.display = "block";
                 } else {
                     mybutton.style.display = "none";

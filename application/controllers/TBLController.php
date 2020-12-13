@@ -36,18 +36,22 @@
 
         public function artistdetail($id)
         {
-            $data['content'] = 'v_artistdetail';
-            $data['active'] = 'Artists';
             $data['detail'] = $this->M_TBL->getartistbyid($id);
             $detail = $data['detail'];
-            $data['last'] = $this->M_TBL->getlastartistid();
-            $data['hitung'] = $this->M_TBL->countawards($id);
-            $data['tampil_trofi'] = $this->M_TBL->getawards($id);
-            $data['hitfilm'] = $this->M_TBL->countfilms($id);
-            $data['tampil_film'] = $this->M_TBL->getfilms($id);
-            $data['count'] = $this->M_TBL->countartistalbums($id);
-            $data['PageTitle'] = "$detail->name | The Black Label";
-            $this->load->view('v_layout', $data);    
+            if($id != $detail->id_artist){
+                redirect('Artists');
+            } else{
+                $data['content'] = 'v_artistdetail';
+                $data['active'] = 'Artists';
+                $data['last'] = $this->M_TBL->getlastartistid();
+                $data['hitung'] = $this->M_TBL->countawards($id);
+                $data['tampil_trofi'] = $this->M_TBL->getawards($id);
+                $data['hitfilm'] = $this->M_TBL->countfilms($id);
+                $data['tampil_film'] = $this->M_TBL->getfilms($id);
+                $data['count'] = $this->M_TBL->countartistalbums($id);
+                $data['PageTitle'] = "$detail->name | The Black Label";
+                $this->load->view('v_layout', $data);    
+            }
         }
 
         public function loadalbum()
@@ -71,16 +75,20 @@
 
         public function albumdetail($idal,$ord)
         {
-            $data['content'] = 'v_albumdetail';
-            $data['active'] = 'Artists';
             $data['detail'] = $this->M_TBL->getalbumbyid($idal,$ord);
             $detail = $data['detail'];
-            $data['last'] = $this->M_TBL->getlastalbumid($idal);
-            $data['tampil_lagu'] = $this->M_TBL->getalbumtrack($detail->id_album);
-            $data['count'] = $this->M_TBL->countalbumvideo($detail->id_album);
-            $data['tampil_video'] = $this->M_TBL->getalbumvideo($detail->id_album);
-            $data['PageTitle'] = "$detail->album_name | $detail->name | The Black Label";
-            $this->load->view('v_layout', $data);    
+            if($idal != $detail->id_artist || $ord != $detail->album_order){
+                redirect('Artists');
+            } else{
+                $data['content'] = 'v_albumdetail';
+                $data['active'] = 'Artists';
+                $data['last'] = $this->M_TBL->getlastalbumid($idal);
+                $data['tampil_lagu'] = $this->M_TBL->getalbumtrack($detail->id_album);
+                $data['count'] = $this->M_TBL->countalbumvideo($detail->id_album);
+                $data['tampil_video'] = $this->M_TBL->getalbumvideo($detail->id_album);
+                $data['PageTitle'] = "$detail->album_name | $detail->name | The Black Label";
+                $this->load->view('v_layout', $data);  
+            }  
         }
 
         public function multimedia($num)

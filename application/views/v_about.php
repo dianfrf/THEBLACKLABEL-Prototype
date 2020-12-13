@@ -19,7 +19,7 @@
         </p><br>
         <!-- THEBLACKLABEL Contact -->
         <p style="text-align: center">Inquiries. <a href="mailto:theblacklabel@theblack-label.com?Subject=Hello%20THEBLACKLABEL" class="email">theblacklabel@theblack-label.com</a></p>
-        <center>
+        <center class="isos">
             <a href="https://www.youtube.com/channel/UCg8ZzloDPTrOiGztK0C9txQ" target="_blank"><img src="<?=base_url()?>Asset/img/youtube.png" alt="Youtube" class="socmed lazyload"></a>
             <a href="https://www.instagram.com/theblacklabel_official" target="_blank"><img src="<?=base_url()?>Asset/img/ig.png" alt="Instagram" class="socmed lazyload"></a>
             <a href="https://twitter.com/THEBLACKLABEL_" target="_blank"><img src="<?=base_url()?>Asset/img/twitter.png" alt="Twitter" class="socmed lazyload"></a>

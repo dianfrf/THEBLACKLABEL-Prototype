@@ -2,16 +2,30 @@
     <div class="container">
         <!-- Back To Artist Profile -->
         <h6>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist;?>" class="back"><i class="fas fa-chevron-left fa-xs "></i>Back to Profile</a>
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist;?>" class="back">
+                <button><i class="fas fa-chevron-left fa-xs "></i>BACK TO PROFILE</button>
+            </a>
         <?php if($detail->album_order == 1 && $detail->album_order == $last->album_order) {} elseif($detail->album_order == 1) { ?>
-            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order + 1;?>" class="arrow">Next<i class="fas fa-chevron-right fa-xs "></i></a>
-            <a class="arrow" style="opacity: 20%; margin-right: 14px"><i class="fas fa-chevron-left fa-xs "></i>Prev</a>
+            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order + 1;?>" class="arrow">
+                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            </a>
+            <a class="arrow" style="opacity:5%; margin-right: 7px">
+                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            </a>
         <?php } elseif($detail->album_order == $last->album_order) { ?>
-            <a class="arrow" style="opacity: 20%;">Next<i class="fas fa-chevron-right fa-xs "></i></a>
-            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order - 1;?>" class="arrow" style="margin-right: 14px"><i class="fas fa-chevron-left fa-xs "></i>Prev</a>
+            <a class="arrow" style="opacity:5%;">
+                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            </a>
+            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order - 1;?>" class="arrow" style="margin-right: 7px">
+                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            </a>
         <?php } else { ?>
-            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order + 1;?>" class="arrow">Next<i class="fas fa-chevron-right fa-xs "></i></a>
-            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order - 1;?>" class="arrow" style="margin-right: 14px"><i class="fas fa-chevron-left fa-xs "></i>Prev</a>
+            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order + 1;?>" class="arrow">
+                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            </a>
+            <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order - 1;?>" class="arrow" style="margin-right: 7px">
+                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            </a>
         <?php } ?>
         </h6>
         <br><br>
@@ -24,7 +38,8 @@
                 <!-- Album Cover -->
                 <center><img src="<?=base_url()?>Asset/img/album/<?=$detail->cover;?>" alt="<?=$detail->album_name?>" class="cover lazyload"></center>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-6 col-lg-6 iconalbum">
+                <hr>
                 <!-- Album Description -->
                 <h4 class="tracklist"><?=$detail->album_description?> TRACKLIST : </h4>
                 <!-- Show All Tracklist -->
@@ -33,15 +48,16 @@
                     <li><h5><?=$lagu->title;?> <b class="duration"><?=$lagu->duration;?></b></h5></li>
                 <?php } ?>
                 </ol>
-                <br>
+                <hr>
+                <br><br>
                 <!-- Album Media -->
                 <h4>LISTEN ON : </h4>
                 <a href="<?=$detail->itunes;?>" target="_blank"><img src="<?=base_url()?>Asset/img/itunes.png" alt="Itunes" class="socmed lazyload" title="Apple Music"></a>
                 <a href="<?=$detail->spotify;?>" target="_blank"><img src="<?=base_url()?>Asset/img/spotify.png" alt="Spotify" class="socmed lazyload" title="Spotify"></a>
                 <a href="<?=$detail->melon;?>" target="_blank"><img src="<?=base_url()?>Asset/img/melon.png" alt="MelOn" class="socmed lazyload" title="MelOn"></a>
                 <a href="<?=$detail->genie;?>" target="_blank"><img src="<?=base_url()?>Asset/img/genie.png" alt="Genie" class="socmed lazyload" title="Genie"></a>
-                <a href="<?=$detail->bugs;?>" target="_blank"><img src="<?=base_url()?>Asset/img/bugs.png" alt="Bugs" class="socmed lazyload" title="Bugs"></a>
                 <a href="<?=$detail->flo;?>" target="_blank"><img src="<?=base_url()?>Asset/img/flo.png" alt="Flo" class="socmed lazyload" title="Flo"></a>
+                <a href="<?=$detail->bugs;?>" target="_blank"><img src="<?=base_url()?>Asset/img/bugs.png" alt="Bugs" class="socmed lazyload" title="Bugs"></a>
                 <a href="<?=$detail->vibe;?>" target="_blank"><img src="<?=base_url()?>Asset/img/vibe.png" alt="Vibe" class="socmed lazyload" title="Vibe"></a>
             </div>
         </div>
