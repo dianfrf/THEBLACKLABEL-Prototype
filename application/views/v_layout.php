@@ -17,23 +17,18 @@
         <script src="<?=base_url()?>Asset/js/modal-video.min.js"></script>
     </head>
     <body oncontextmenu='return false' onselectstart='return false'>
-        <!-- Go To Top -->
         <button id="btntop" title="Go to top"><i class="fas fa-chevron-up fa-lg"></i></button>
 
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <!-- Navbar Logo -->
                 <a href="<?=base_url()?>" class="navbar-brand">
                     <img src="<?=base_url()?>Asset/img/logo-black.png">
                 </a>
-                <!-- Navbar Toggler -->
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar top-bar"></span>
                     <span class="icon-bar middle-bar"></span>
                     <span class="icon-bar bottom-bar"></span>			
                 </button>
-                <!-- Navbar Menu -->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="<?php echo $active == "About" ? "nav-item active" : ""; ?>">
@@ -49,7 +44,6 @@
                             <a class="nav-link" href="https://www.instagram.com/theblacklabel_audition" target="_blank">AUDITION</a>
                         </li>
                     </ul>
-                    <!-- Navbar Dark Mode Switch -->
                     <div class="theme-switch-wrapper">
                         <a>Dark Mode</a>
                         <label class="theme-switch" for="checkbox">
@@ -61,10 +55,8 @@
             </div>
         </nav>
 
-        <!-- Content -->
         <?php $this->load->view($content);?>
         
-        <!-- Footer -->
         <div class="page-footer">
             <div class="container">
                 <div class="row">
@@ -202,6 +194,11 @@
                 });
             });
 
+            //See credit song
+            function Open(id) {
+                $('#rowcredit'+id).slideToggle();
+            }
+
             //Autoplay video
             $(".playbtn").modalVideo();
 
@@ -215,5 +212,4 @@
             }
         </script>
     </body>
-</html>
-        
+</html>     

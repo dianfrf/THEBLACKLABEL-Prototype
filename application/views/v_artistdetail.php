@@ -1,6 +1,5 @@
 <div class="jumbotron artistdetail">   
     <div class="container">
-        <!-- Back To Artists list -->
         <h6>
             <a href="<?=base_url('Artists')?>" class="back">
                 <button><i class="fas fa-chevron-left fa-xs"></i>BACK TO LIST</button>
@@ -9,21 +8,21 @@
             <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
                 <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
             </a>
-            <a class="arrow" style="opacity:5%; margin-right: 7px">
+            <a class="arrow" style="opacity:10%; margin-right:7px">
                 <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
             </a>
         <?php } elseif($detail->id_artist == $last->id_artist) { ?>
-            <a class="arrow" style="opacity:5%;">
+            <a class="arrow" style="opacity:10%;">
                 <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
             </a>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right: 7px">
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right:7px">
                 <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
             </a>
         <?php } else{ ?>
             <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
                 <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
             </a>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right: 7px">
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right:7px">
                 <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
             </a>
         <?php } ?>
@@ -31,18 +30,13 @@
         <br><br>
         <div class="row">
             <div class="col-md-6 col-lg-6">
-                <!-- Artist Photo -->
                 <img src="<?=base_url()?>Asset/img/artists/<?=$detail->picture?>" alt="<?=$detail->name;?>" class="profil lazyload">
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="row">
-                    <div class="col-md-7">
-                        <!-- Artist Name -->
-                        <h1 class="name"><?=$detail->name;?></h1>
-                    </div>
+                    <div class="col-md-7"><h1 class="name"><?=$detail->name;?></h1></div>
                     <div class="col-md-5">
                         <center class="iconartist">
-                            <!-- Artist Media -->
                             <?php if($detail->soundcloud != null) { ?>
                                 <a href="<?=$detail->soundcloud;?>" target="_blank"><img src="<?=base_url()?>Asset/img/soundcloud.png" alt="Soundcloud" class="socmed lazyload"></a>
                             <?php } else { ?>
@@ -64,12 +58,10 @@
                     </div>
                 </div>
                 <hr>
-                <!-- Artist Description -->
                 <p><?=$detail->description;?></p>
                 <br>
             <?php if($hitfilm > 0) { ?>
                 <h4>FILMOGRAPHY :</h4>
-                <!-- Show All Filmography -->
                 <ul>
                 <?php foreach ($tampil_film as $tf) { ?>
                     <li><h5><?=$tf->tahun;?> <b class="nominasi"><?=$tf->nama_film;?></b></h5></li>
@@ -79,12 +71,10 @@
             <?php } else {}
                 if($detail->commercial != null) { ?>
                 <h4>COMMERCIALS :</h4>
-                <!-- Show All Commercials -->
                 <p><?=$detail->commercial?></p>
             <?php } else{}
                 if($hitung > 0) { ?>
                 <h4>AWARDS :</h4>
-                <!-- Show All Awards -->
                 <ul>
                 <?php foreach ($tampil_trofi as $trofi) { ?>
                     <li><h5><?=$trofi->tahun?> <b class="nominasi"><?=$trofi->nominasi?></b></h5></li>
@@ -97,7 +87,6 @@
         <br><br><br>
     <?php if($count > 0) { ?>
         <h3>DISCOGRAPHY</h3>
-        <!-- Show All Artist Albums -->
         <div class="row rowalbum" id="loadalbum"></div>
     <?php } else {} ?>
     </div>
