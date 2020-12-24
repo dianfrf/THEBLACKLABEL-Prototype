@@ -41,7 +41,7 @@
                     </tr>
                 <?php $number = 0; foreach($tampil_lagu as $lagu) { $number++; ?>
                     <tr>
-                        <td><h5 class="number"><?=$number;?>.</h5></td>
+                        <td><h5 class="number"><?php echo $num = sprintf("%02d",$number);?>.</h5></td>
                         <td style="width:100%;">
                             <h5><?=$lagu->title;?> <b class="duration"><?=$lagu->duration;?></b>
                             &nbsp;&nbsp;&nbsp;<?php if($lagu->is_title == 1) { ?><u style="text-decoration:none;color:rgb(182,45,45)">TITLE</u>

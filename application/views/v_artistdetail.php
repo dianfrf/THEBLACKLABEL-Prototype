@@ -64,7 +64,7 @@
                 <h4>FILMOGRAPHY :</h4>
                 <ul>
                 <?php foreach ($tampil_film as $tf) { ?>
-                    <li><h5><?=$tf->tahun;?> <b class="nominasi"><?=$tf->nama_film;?></b></h5></li>
+                    <li><h5><?=$tf->year;?> <b class="nominasi"><?=$tf->film_title;?></b></h5></li>
                 <?php } ?>
                 </ul>
                 <br>
@@ -77,7 +77,7 @@
                 <h4>AWARDS :</h4>
                 <ul>
                 <?php foreach ($tampil_trofi as $trofi) { ?>
-                    <li><h5><?=$trofi->tahun?> <b class="nominasi"><?=$trofi->nominasi?></b></h5></li>
+                    <li><h5><?=$trofi->year?> <b class="nominasi"><?=$trofi->nomination?></b></h5></li>
                 <?php } ?>
                 </ul>
                 <br>

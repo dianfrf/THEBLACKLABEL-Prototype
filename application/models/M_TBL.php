@@ -8,9 +8,9 @@
 
         public function getlatestvideo()
         {
-            return $this->db->join('albums','video.id_album=albums.id_album')
+            return $this->db->join('albums','videos.id_album=albums.id_album')
                             ->join('artists','albums.id_artist=artists.id_artist')
-                            ->order_by('video_release_date','DESC')->limit(1)->get('video')->row();
+                            ->order_by('video_release_date','DESC')->limit(1)->get('videos')->row();
         }
 
         public function getartists()
@@ -30,22 +30,22 @@
 
         public function countawards($id)
         {
-            return $this->db->where('id_artist',$id)->get('penghargaan')->num_rows();
+            return $this->db->where('id_artist',$id)->get('awards')->num_rows();
         }
 
         public function getawards($id)
         {
-            return $this->db->order_by('id_penghargaan','DESC')->where('id_artist',$id)->get('penghargaan')->result();
+            return $this->db->order_by('id_award','DESC')->where('id_artist',$id)->get('awards')->result();
         }
 
         public function countfilms($id)
         {
-            return $this->db->where('id_artist',$id)->get('filmografi')->num_rows();
+            return $this->db->where('id_artist',$id)->get('filmography')->num_rows();
         }
 
         public function getfilms($id)
         {
-            return $this->db->order_by('id_filmografi','DESC')->where('id_artist',$id)->get('filmografi')->result();
+            return $this->db->order_by('id_filmography','DESC')->where('id_artist',$id)->get('filmography')->result();
         }
 
         public function countartistalbums($id)
@@ -76,24 +76,24 @@
 
         public function countalbumvideo($id_album)
         {
-            return $this->db->where('id_album',$id_album)->get('video')->num_rows();
+            return $this->db->where('id_album',$id_album)->get('videos')->num_rows();
         }
 
         public function getalbumvideo($id_album)
         {
-            return $this->db->order_by('video_release_date','ASC')->where('id_album',$id_album)->get('video')->result();
+            return $this->db->order_by('video_release_date','ASC')->where('id_album',$id_album)->get('videos')->result();
         }
 
         public function countvideo()
         {
-            return $this->db->get('video')->num_rows();
+            return $this->db->get('videos')->num_rows();
         }
 
         public function getvideo($mulai)
         {
-            return $this->db->join('albums','video.id_album=albums.id_album')
+            return $this->db->join('albums','videos.id_album=albums.id_album')
                             ->join('artists','albums.id_artist=artists.id_artist')
-                            ->order_by('video_release_date','DESC')->limit(8,$mulai)->get('video')->result();
+                            ->order_by('video_release_date','DESC')->limit(8,$mulai)->get('videos')->result();
         }
     }
 ?>

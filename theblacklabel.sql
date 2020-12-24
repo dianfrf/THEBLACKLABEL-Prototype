@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2020 at 05:48 AM
+-- Generation Time: Dec 24, 2020 at 03:25 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -72,7 +72,6 @@ CREATE TABLE `artists` (
   `facebook` varchar(100) DEFAULT NULL,
   `twitter` varchar(100) DEFAULT NULL,
   `soundcloud` varchar(100) DEFAULT NULL,
-  `singer` tinyint(1) NOT NULL,
   `commercial` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
@@ -80,59 +79,59 @@ CREATE TABLE `artists` (
 -- Dumping data for table `artists`
 --
 
-INSERT INTO `artists` (`id_artist`, `name`, `description`, `picture`, `instagram`, `facebook`, `twitter`, `soundcloud`, `singer`, `commercial`) VALUES
-(1, 'Okasian', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'okasian.png', 'https://www.instagram.com/chrt_okasian/', NULL, 'https://twitter.com/realokasian', 'https://soundcloud.com/kkzznn', 1, ''),
-(2, 'Somi', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'somi.png', 'https://www.instagram.com/somsomi0309/', 'https://www.facebook.com/somsomi.official/', 'https://twitter.com/somi_official_', NULL, 1, ''),
-(3, 'Vince', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'vince.png', 'https://www.instagram.com/vincesince19xx/', NULL, 'https://twitter.com/joejrhee', NULL, 1, ''),
-(4, 'R.Tee', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'rtee.png', 'https://www.instagram.com/rteeofficial/', NULL, 'https://twitter.com/rteemusic', NULL, 1, ''),
-(5, 'Ella Gross', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'ella.jpg', 'https://www.instagram.com/ellagross/', NULL, NULL, NULL, 0, 'Abercrombie & Fitch, Adidas, Airfish, Anta Kids, Barbie, Crayola, Fendi, GAP, Janie and Jack, Lamer, Levi\'s, OshKosh B\'gosh, The North Face, Tommy Hilfiger, Vogue, Zapos, Zara'),
-(6, 'Heo Jae Hyuk', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'jaehyuk.png', 'https://www.instagram.com/augustbrody/', NULL, NULL, NULL, 0, 'Adekuver, Customellow, Uniqlo, Volkswagen Korea');
+INSERT INTO `artists` (`id_artist`, `name`, `description`, `picture`, `instagram`, `facebook`, `twitter`, `soundcloud`, `commercial`) VALUES
+(1, 'Okasian', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'okasian.png', 'https://www.instagram.com/chrt_okasian/', NULL, 'https://twitter.com/realokasian', 'https://soundcloud.com/kkzznn', ''),
+(2, 'Somi', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'somi.png', 'https://www.instagram.com/somsomi0309/', 'https://www.facebook.com/somsomi.official/', 'https://twitter.com/somi_official_', NULL, ''),
+(3, 'Vince', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'vince.png', 'https://www.instagram.com/vincesince19xx/', NULL, 'https://twitter.com/joejrhee', NULL, ''),
+(4, 'R.Tee', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'rtee.png', 'https://www.instagram.com/rteeofficial/', NULL, 'https://twitter.com/rteemusic', NULL, ''),
+(5, 'Ella Gross', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'ella.jpg', 'https://www.instagram.com/ellagross/', NULL, NULL, NULL, 'Abercrombie & Fitch, Adidas, Airfish, Anta Kids, Barbie, Crayola, Fendi, GAP, Janie and Jack, Lamer, Levi\'s, OshKosh B\'gosh, The North Face, Tommy Hilfiger, Vogue, Zapos, Zara'),
+(6, 'Heo Jae Hyuk', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'jaehyuk.png', 'https://www.instagram.com/augustbrody/', NULL, NULL, NULL, 'Adekuver, Customellow, Uniqlo, Volkswagen Korea');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `filmografi`
+-- Table structure for table `awards`
 --
 
-CREATE TABLE `filmografi` (
-  `id_filmografi` int(11) NOT NULL,
+CREATE TABLE `awards` (
+  `id_award` int(11) NOT NULL,
   `id_artist` int(11) NOT NULL,
-  `nama_film` varchar(100) NOT NULL,
-  `tahun` year(4) NOT NULL
+  `nomination` varchar(200) NOT NULL,
+  `year` year(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `awards`
+--
+
+INSERT INTO `awards` (`id_award`, `id_artist`, `nomination`, `year`) VALUES
+(8, 2, 'Korea First Brand Awards [CF Model]', 2017),
+(9, 2, 'Mubeat Awards [Best Female Solo]', 2019);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `filmography`
+--
+
+CREATE TABLE `filmography` (
+  `id_filmography` int(11) NOT NULL,
+  `id_artist` int(11) NOT NULL,
+  `film_title` varchar(100) NOT NULL,
+  `year` year(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `filmografi`
+-- Dumping data for table `filmography`
 --
 
-INSERT INTO `filmografi` (`id_filmografi`, `id_artist`, `nama_film`, `tahun`) VALUES
+INSERT INTO `filmography` (`id_filmography`, `id_artist`, `film_title`, `year`) VALUES
 (1, 5, 'Heathers (TV Series)', 2018),
 (2, 5, 'Teachers (TV Series)', 2019),
 (3, 5, 'Malibu Rescue', 2019),
 (4, 5, 'Malibu Rescue (TV Series)', 2019),
 (5, 5, 'Star Trek: Picard (TV Series)', 2020),
 (6, 5, 'Malibu Rescue: The Next Wave', 2020);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `penghargaan`
---
-
-CREATE TABLE `penghargaan` (
-  `id_penghargaan` int(11) NOT NULL,
-  `id_artist` int(11) NOT NULL,
-  `nominasi` varchar(200) NOT NULL,
-  `tahun` year(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `penghargaan`
---
-
-INSERT INTO `penghargaan` (`id_penghargaan`, `id_artist`, `nominasi`, `tahun`) VALUES
-(8, 2, 'Korea First Brand Awards [CF Model]', 2017),
-(9, 2, 'Mubeat Awards [Best Female Solo]', 2019);
 
 -- --------------------------------------------------------
 
@@ -145,28 +144,32 @@ CREATE TABLE `songs` (
   `id_album` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `duration` varchar(10) NOT NULL,
-  `tracknumber` int(10) NOT NULL
+  `tracknumber` int(10) NOT NULL,
+  `lyricsby` varchar(500) NOT NULL,
+  `composedby` varchar(500) NOT NULL,
+  `arrangedby` varchar(500) NOT NULL,
+  `is_title` tinyint(3) NOT NULL COMMENT '0=No, 1=Title, 2=Subtitle'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `songs`
 --
 
-INSERT INTO `songs` (`id_song`, `id_album`, `title`, `duration`, `tracknumber`) VALUES
-(18, 6, 'Outta My Head', '3\'08\"', 1),
-(19, 6, 'Birthday', '3\'05\"', 2),
-(20, 7, 'Mennal (Feat. Okasian)', '3\'13\"', 1),
-(21, 9, 'Emergency (Feat. Zion.T)', '3\'28\"', 1),
-(23, 10, 'What You Waiting For', '2\'55\"', 1),
-(24, 14, 'What You Waiting For (Feat. Anda)', '2\'54\"', 1);
+INSERT INTO `songs` (`id_song`, `id_album`, `title`, `duration`, `tracknumber`, `lyricsby`, `composedby`, `arrangedby`, `is_title`) VALUES
+(18, 6, 'Outta My Head', '3\'08\"', 1, 'Somi', 'Somi, 24', '24', 0),
+(19, 6, 'Birthday', '3\'05\"', 2, 'Teddy, Brother Su, Bekuh Boom, Danny Chung', 'Teddy, 24, Bekuh Boom, Somi', '24, R.Tee', 1),
+(20, 7, 'Mennal (Feat. Okasian)', '3\'13\"', 1, 'Vince, Okasian', 'Vince, 24, Dominsuk', '24, Vince, Dominsuk', 0),
+(21, 9, 'Emergency (Feat. Zion.T)', '3\'28\"', 1, 'Vince, Zion.T', 'Vince, 24, Zion.T', '24, Vince, Park Junewoo', 0),
+(23, 10, 'What You Waiting For', '2\'55\"', 1, 'Teddy, Somi, Danny Chung', 'Teddy, R.Tee, 24, Somi', 'R.Tee, 24', 0),
+(24, 14, 'What You Waiting For (Feat. Anda)', '2\'54\"', 1, 'Vince, R.Tee, 1105', 'R.Tee, Vince, 1105', 'R.Tee', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `video`
+-- Table structure for table `videos`
 --
 
-CREATE TABLE `video` (
+CREATE TABLE `videos` (
   `id_video` int(11) NOT NULL,
   `id_album` int(11) NOT NULL,
   `video_name` varchar(100) NOT NULL,
@@ -176,10 +179,10 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `video`
+-- Dumping data for table `videos`
 --
 
-INSERT INTO `video` (`id_video`, `id_album`, `video_name`, `video_release_date`, `link`, `thumbnail`) VALUES
+INSERT INTO `videos` (`id_video`, `id_album`, `video_name`, `video_release_date`, `link`, `thumbnail`) VALUES
 (6, 6, 'Birthday', '2019-06-13', 'oDJ4ct59NC4', 'birthday.jpg'),
 (7, 7, 'Mennal (Feat. Okasian)', '2019-10-02', 'vvlNOzConrg', 'mennal.jpg'),
 (8, 9, 'Emergency (Feat. Zion.T)', '2020-02-04', 'tXj_Viuvcrc', 'emergency.jpg'),
@@ -204,18 +207,18 @@ ALTER TABLE `artists`
   ADD PRIMARY KEY (`id_artist`) USING BTREE;
 
 --
--- Indexes for table `filmografi`
+-- Indexes for table `awards`
 --
-ALTER TABLE `filmografi`
-  ADD PRIMARY KEY (`id_filmografi`),
-  ADD KEY `id_artist` (`id_artist`);
+ALTER TABLE `awards`
+  ADD PRIMARY KEY (`id_award`) USING BTREE,
+  ADD KEY `id_artist` (`id_artist`) USING BTREE;
 
 --
--- Indexes for table `penghargaan`
+-- Indexes for table `filmography`
 --
-ALTER TABLE `penghargaan`
-  ADD PRIMARY KEY (`id_penghargaan`) USING BTREE,
-  ADD KEY `id_artist` (`id_artist`) USING BTREE;
+ALTER TABLE `filmography`
+  ADD PRIMARY KEY (`id_filmography`),
+  ADD KEY `id_artist` (`id_artist`);
 
 --
 -- Indexes for table `songs`
@@ -225,9 +228,9 @@ ALTER TABLE `songs`
   ADD KEY `id_album` (`id_album`) USING BTREE;
 
 --
--- Indexes for table `video`
+-- Indexes for table `videos`
 --
-ALTER TABLE `video`
+ALTER TABLE `videos`
   ADD PRIMARY KEY (`id_video`) USING BTREE,
   ADD KEY `id_album` (`id_album`) USING BTREE;
 
@@ -248,16 +251,16 @@ ALTER TABLE `artists`
   MODIFY `id_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `filmografi`
+-- AUTO_INCREMENT for table `awards`
 --
-ALTER TABLE `filmografi`
-  MODIFY `id_filmografi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `awards`
+  MODIFY `id_award` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `penghargaan`
+-- AUTO_INCREMENT for table `filmography`
 --
-ALTER TABLE `penghargaan`
-  MODIFY `id_penghargaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `filmography`
+  MODIFY `id_filmography` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `songs`
@@ -266,9 +269,9 @@ ALTER TABLE `songs`
   MODIFY `id_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `video`
+-- AUTO_INCREMENT for table `videos`
 --
-ALTER TABLE `video`
+ALTER TABLE `videos`
   MODIFY `id_video` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
@@ -282,10 +285,10 @@ ALTER TABLE `albums`
   ADD CONSTRAINT `albums_ibfk_1` FOREIGN KEY (`id_artist`) REFERENCES `artists` (`id_artist`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `penghargaan`
+-- Constraints for table `awards`
 --
-ALTER TABLE `penghargaan`
-  ADD CONSTRAINT `penghargaan_ibfk_1` FOREIGN KEY (`id_artist`) REFERENCES `artists` (`id_artist`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `awards`
+  ADD CONSTRAINT `awards_ibfk_1` FOREIGN KEY (`id_artist`) REFERENCES `artists` (`id_artist`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `songs`
@@ -294,10 +297,10 @@ ALTER TABLE `songs`
   ADD CONSTRAINT `songs_ibfk_1` FOREIGN KEY (`id_album`) REFERENCES `albums` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `video`
+-- Constraints for table `videos`
 --
-ALTER TABLE `video`
-  ADD CONSTRAINT `video_ibfk_1` FOREIGN KEY (`id_album`) REFERENCES `albums` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `videos`
+  ADD CONSTRAINT `videos_ibfk_1` FOREIGN KEY (`id_album`) REFERENCES `albums` (`id_album`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
