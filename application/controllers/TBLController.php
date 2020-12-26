@@ -38,8 +38,8 @@
         {
             $data['detail'] = $this->M_TBL->getartistbyid($id);
             $detail = $data['detail'];
-            if($id != $detail->id_artist){
-                redirect('Artists');
+            if($detail == null){
+                redirect('404');
             } else{
                 $data['content'] = 'v_artistdetail';
                 $data['active'] = 'Artists';
@@ -60,7 +60,7 @@
             $tampil_album = $this->M_TBL->getartistalbums($this->input->post('limit'),$this->input->post('start'),$this->input->post('id'));
             foreach($tampil_album as $album) {
                 $output .= '
-                <div class="col-lg-3 col-6 colalbum">
+                <div class="col-md-3 col-6 colalbum">
                     <a href="'.base_url().'Album_Detail/'.$album->id_artist.'/'.$album->album_order.'">
                         <img src="'.base_url().'Asset/img/album/'.$album->cover.'" class="lazyload">
                         <div class="overlay">
@@ -77,8 +77,8 @@
         {
             $data['detail'] = $this->M_TBL->getalbumbyid($idal,$ord);
             $detail = $data['detail'];
-            if($idal != $detail->id_artist || $ord != $detail->album_order){
-                redirect('Artists');
+            if($detail == null){
+                redirect('404');
             } else{
                 $data['content'] = 'v_albumdetail';
                 $data['active'] = 'Artists';
@@ -99,10 +99,19 @@
             $data['page'] = $num ? (int)$num : 1;
             $mulai = ($data['page']>1) ? ($data['page'] * 8) - 8 : 0;
             $total = $this->M_TBL->countvideo();
-            $data['pages'] = ceil($total/8);  
-            $data['tampil_multimedia'] = $this->M_TBL->getvideo($mulai);
-            $data['PageTitle'] = 'Multimedia | The Black Label';
-            $this->load->view('v_layout', $data);
+            $data['pages'] = ceil($total/8);
+            if($num != $data['pages']){
+                redirect('404');
+            } else{
+                $data['tampil_multimedia'] = $this->M_TBL->getvideo($mulai);
+                $data['PageTitle'] = 'Multimedia | The Black Label';
+                $this->load->view('v_layout', $data);
+            }
+        }
+
+        public function notfound()
+        {
+            $this->load->view('v_notfound'); 
         }
     }
 ?>

@@ -4,7 +4,7 @@
         <br><br><br>
         <center><img src="<?=base_url()?>Asset/img/logo-black.png" class="logo lazyload"></center>
         <p>
-            The Black Label is a full-service entertainment company founded in 2016 by Teddy Park and Kush, as a subsidiary of YG Entertainment, 
+            The Black Label is a full-service entertainment company founded in 2015 by Teddy Park and Kush, as an associate of YG Entertainment, 
             which serves as a hip-hop and R&B record label and artist management.
             The company has become significant not only in hip-hop scene but also in extensive music industry
             with the diversity of captivating music and related content.

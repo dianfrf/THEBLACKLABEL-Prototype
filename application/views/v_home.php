@@ -15,9 +15,9 @@
                 </a>
             </div>
             <div class="col-md-4 bar">
-                <h4>VIDEO</h4>
-                <a href="https://www.youtube.com/watch?v=9f28Pi14g0w&feature=youtu.be" target="_blank">
-                    <img src="<?=base_url()?>Asset/img/thumbnail/1.jpg" class="mv lazyload">
+                <h4>SHOP</h4>
+                <a href="http://www.ygselect.com/shop/artist_setting.html" target="_blank">
+                    <img src="<?=base_url()?>Asset/img/shop.jpg" class="mv lazyload">
                 </a>
                 <h4>AUDITION</h4>
                 <a href="https://www.instagram.com/theblacklabel_audition" target="_blank">
