@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="utf-8">
-        <title>Error 404</title>
+        <title>406 Not Acceptable</title>
         <link rel="icon" type="image/png" href="<?=base_url()?>Asset/img/tbl.jpg">
         <link rel="stylesheet" href="<?=base_url()?>Asset/css/bootstrap.min.css">
     </head>
@@ -40,8 +40,8 @@
     <body>
         <div class="page-header">
             <div class="container">
-                <h1>404</h1><br>
-                <h4>The page you were looking for could not be found.</h4><br>
+                <h1>406</h1><br>
+                <h4>Access to this page is not acceptable by administrator.</h4><br>
                 <center><a href="<?=base_url()?>"><button>Back to Home</button></a></center>
             </div>
         </div>

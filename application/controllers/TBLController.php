@@ -39,7 +39,7 @@
             $data['detail'] = $this->M_TBL->getartistbyid($id);
             $detail = $data['detail'];
             if($detail == null){
-                redirect('404');
+                redirect('406');
             } else{
                 $data['content'] = 'v_artistdetail';
                 $data['active'] = 'Artists';
@@ -78,7 +78,7 @@
             $data['detail'] = $this->M_TBL->getalbumbyid($idal,$ord);
             $detail = $data['detail'];
             if($detail == null){
-                redirect('404');
+                redirect('406');
             } else{
                 $data['content'] = 'v_albumdetail';
                 $data['active'] = 'Artists';
@@ -101,7 +101,7 @@
             $total = $this->M_TBL->countvideo();
             $data['pages'] = ceil($total/8);
             if($num != $data['pages']){
-                redirect('404');
+                redirect('406');
             } else{
                 $data['tampil_multimedia'] = $this->M_TBL->getvideo($mulai);
                 $data['PageTitle'] = 'Multimedia | The Black Label';
@@ -109,9 +109,9 @@
             }
         }
 
-        public function notfound()
+        public function notacceptable()
         {
-            $this->load->view('v_notfound'); 
+            $this->load->view('v_error406'); 
         }
     }
 ?>

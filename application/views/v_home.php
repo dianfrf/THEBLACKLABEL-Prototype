@@ -16,7 +16,7 @@
             </div>
             <div class="col-md-4 bar">
                 <h4>SHOP</h4>
-                <a href="http://www.ygselect.com/shop/artist_setting.html" target="_blank">
+                <a href="https://www.ygselect.com/" target="_blank">
                     <img src="<?=base_url()?>Asset/img/shop.jpg" class="mv lazyload">
                 </a>
                 <h4>AUDITION</h4>

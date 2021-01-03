@@ -71,7 +71,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="https://ygfamily.com" target="_blank">YG Entertainment</a></li>
                                 <li><a href="https://yg-life.com/?lang=ko" target="_blank">YG Life</a></li>
-                                <li><a href="http://www.ygselect.com/shop/artist_setting.html" target="_blank">YG Select</a></li>
+                                <li><a href="https://www.ygselect.com/" target="_blank">YG Select</a></li>
                                 <li><a href="https://ygx.co.kr" target="_blank">YGX Entertainment</a></li>
                                 <li><a href="https://ygfamily.com/artist/Actors.asp?LANGDIV=K&ATYPE=1" target="_blank">YG Stage</a></li>
                                 <li><a href="https://ygkplus.com/" target="_blank">YG KPlus</a></li>
@@ -90,8 +90,8 @@
                 customizeTweetMedia();
             });
             var customizeTweetMedia = function () {
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').hover(function(){$(this).css("background-color", "black");}, function(){$(this).css("background-color", "rgb(30,30,30)");});
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('background-color', 'rgb(30,30,30)');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').hover(function(){$(this).css("background-color", "rgb(20,20,20)");}, function(){$(this).css("background-color", "rgb(30,30,30)");});
+                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('background-color', 'rgb(40,40,40)');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('padding', '21px');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('border-bottom', '1px solid rgb(73,73,73)');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet-media').css('display', 'none');

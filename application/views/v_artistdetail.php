@@ -6,24 +6,24 @@
             </a>
         <?php if($detail->id_artist == 1) { ?>
             <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
-                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+                <button>NEXT<i class="fas fa-chevron-right fa-xs"></i></button>
             </a>
-            <a class="arrow" style="opacity:10%; margin-right:7px">
-                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            <a class="arrow" style="opacity:0%; margin-right:7px">
+                <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
         <?php } elseif($detail->id_artist == $last->id_artist) { ?>
-            <a class="arrow" style="opacity:10%;">
-                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow">
+                <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right:7px">
-                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+            <a class="arrow" style="margin-right:7px; opacity:0%;">
+                <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
         <?php } else{ ?>
             <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
-                <button>NEXT<i class="fas fa-chevron-right fa-xs "></i></button>
+                <button>NEXT<i class="fas fa-chevron-right fa-xs"></i></button>
             </a>
             <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right:7px">
-                <button><i class="fas fa-chevron-left fa-xs "></i>PREV</button>
+                <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
         <?php } ?>
         </h6>

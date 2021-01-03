@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'TBLController';
-$route['404'] = 'TBLController/notfound';
+$route['406'] = 'TBLController/notacceptable';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['About'] = 'TBLController/about';
