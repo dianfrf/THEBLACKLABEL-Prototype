@@ -55,7 +55,7 @@
 
         public function getartistalbums($limit,$start,$id)
         {
-            return $this->db->order_by('id_album','DESC')->limit($limit,$start)->where('id_artist',$id)->get('albums')->result();
+            return $this->db->order_by('release_date','DESC')->limit($limit,$start)->where('id_artist',$id)->get('albums')->result();
         }
 
         public function getalbumbyid($id,$ord)
@@ -81,7 +81,7 @@
 
         public function getalbumvideo($id_album)
         {
-            return $this->db->order_by('video_release_date','ASC')->where('id_album',$id_album)->get('videos')->result();
+            return $this->db->order_by('video_release_date','DESC')->where('id_album',$id_album)->get('videos')->result();
         }
 
         public function countvideo()

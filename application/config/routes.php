@@ -58,3 +58,11 @@ $route['Artists'] = 'TBLController/artists';
 $route['Artist_Detail/(:any)'] = 'TBLController/artistdetail/$1';
 $route['Album_Detail/(:any)/(:any)'] = 'TBLController/albumdetail/$1/$2';
 $route['Multimedia/(:any)'] = 'TBLController/multimedia/$1';
+
+$route['TBL_Admin'] = 'AdminController';
+$route['Artists_Data'] = 'AdminController/artists_data';
+$route['Albums_Data'] = 'AdminController/albums_data';
+$route['Songs_Data'] = 'AdminController/songs_data';
+$route['Videos_Data'] = 'AdminController/videos_data';
+$route['Awards_Data'] = 'AdminController/awards_data';
+$route['Films_Data'] = 'AdminController/films_data';

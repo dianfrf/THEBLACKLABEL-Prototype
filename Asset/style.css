@@ -9,13 +9,13 @@ html, body{
 }
 
 /* scrollbar */
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width:1rem;
 }
-::-webkit-scrollbar-track { 
+::-webkit-scrollbar-track{ 
     background:rgb(170,170,170); 
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
     background:rgb(40,40,40);
 }
 
@@ -321,7 +321,7 @@ hr{
 
 /* multimedia menu */
 #expandedImg{
-    width:60%; height:375px; margin-top:1.4rem; 
+    width:60%; height:37.5rem; margin-top:1.4rem; 
 }
 #imgtext{
     margin-left:20%; margin-bottom:4.2rem !important; 
@@ -408,14 +408,16 @@ h6{
     .container{
         padding:1.4rem !important; 
     }
+
     #btntop{
         right:1.4rem;
     }
+
     .navbar{
-        padding:.4rem 1.1rem .4rem 1.1rem !important; 
+        padding:.4rem 1.1rem !important; 
     }
     .navbar-nav{
-        margin-left:0rem !important; line-height:1.4; margin-top:1.8rem !important; 
+        margin-left:0rem !important; margin-top:1.8rem !important; 
     }
     .navbar-brand img{
         margin-top:-.2rem !important; 
@@ -423,17 +425,28 @@ h6{
     .theme-switch-wrapper{
         margin-top:2.1rem; 
     }
+
     .header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
-        margin-top:7.2rem;
+        margin-top:7.3rem;
     }
+
     .post, .logo, .profil, .cov, .cover, .column, .thumbnail, #expandedImg{
         width:100% !important; 
     }
+
     .aboutkonten p{
         padding:0rem !important; 
     }
+
     .colartis{
         margin:1.4rem 0rem 1.4rem 0rem !important; 
+    }
+
+    .back button, .arrow button{
+        padding:.5rem 1.1rem .5rem 1.1rem;
+    }
+    .arrow{
+        float:right;
     }
     .iconartist{
         margin:-1.4rem 0rem 2.1rem 0rem !important;
@@ -441,14 +454,8 @@ h6{
     .iconartist a{
         float:none; margin: 0rem .1rem 0rem .1rem !important;
     }
-    .back button, .arrow button{
-        padding:.5rem 1.1rem .5rem 1.1rem;
-    }
     .cover{
         margin-bottom:3rem;
-    }
-    .arrow{
-        float:right;
     }
     .teks{
         display:none; 
@@ -456,6 +463,7 @@ h6{
     .name{
         text-align:center; margin-top:.4rem; 
     }
+
     .date{
         margin-bottom:1.4rem; 
     }
@@ -480,8 +488,9 @@ h6{
     .playbtn{
         font-size:2.1rem; padding:.7rem 1.4rem;
     }
+
     #expandedImg{
-        width:100%; height:176px; 
+        height:17.6rem; 
     }
     .tmcov{
         height:10rem !important;
@@ -492,6 +501,7 @@ h6{
     .multimed hr{
         margin:.7rem 0rem 0rem 0rem;
     }
+    
     .page-footer h5{
         text-align:left !important; line-height:2.4rem !important
     }
