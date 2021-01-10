@@ -35,7 +35,7 @@
 
         public function getawards($id)
         {
-            return $this->db->order_by('id_award','DESC')->where('id_artist',$id)->get('awards')->result();
+            return $this->db->order_by('year','DESC')->where('id_artist',$id)->get('awards')->result();
         }
 
         public function countfilms($id)
@@ -45,7 +45,7 @@
 
         public function getfilms($id)
         {
-            return $this->db->order_by('id_filmography','DESC')->where('id_artist',$id)->get('filmography')->result();
+            return $this->db->order_by('year','DESC')->where('id_artist',$id)->get('filmography')->result();
         }
 
         public function countartistalbums($id)

@@ -1,7 +1,6 @@
 <div class="jumbotron aboutkonten">
     <div class="container">
         <center><img src="<?=base_url()?>Asset/img/building.png" class="cov lazyload"></center>
-        <br><br><br>
         <center><img src="<?=base_url()?>Asset/img/logo-black.png" class="logo lazyload"></center>
         <p>
             The Black Label is a full-service entertainment company founded in 2015 by Teddy Park and Kush, as an associate of YG Entertainment, 

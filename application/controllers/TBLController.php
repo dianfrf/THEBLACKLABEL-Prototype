@@ -9,29 +9,29 @@
         
         public function index()
         {
-            $data['content'] = 'v_home';
+            $data['content'] = 'front/v_home';
             $data['active'] = 'Home';
             $data['cover'] = $this->M_TBL->getlatestalbum();
             $data['satum'] = $this->M_TBL->getlatestvideo();
             $data['PageTitle'] = 'The Black Label';
-            $this->load->view('v_layout', $data);            
+            $this->load->view('front/v_layout', $data);            
         }
 
         public function about()
         {
-            $data['content'] = 'v_about';
+            $data['content'] = 'front/v_about';
             $data['active'] = 'About';
             $data['PageTitle'] = 'About | The Black Label';
-            $this->load->view('v_layout', $data);   
+            $this->load->view('front/v_layout', $data);   
         }
 
         public function artists()
         {
-            $data['content'] = 'v_artists';
+            $data['content'] = 'front/v_artists';
             $data['active'] = 'Artists';
             $data['artists'] = $this->M_TBL->getartists();
             $data['PageTitle'] = 'Artists | The Black Label';
-            $this->load->view('v_layout', $data);   
+            $this->load->view('front/v_layout', $data);   
         }
 
         public function artistdetail($id)
@@ -41,7 +41,7 @@
             if($detail == null){
                 redirect('406');
             } else{
-                $data['content'] = 'v_artistdetail';
+                $data['content'] = 'front/v_artistdetail';
                 $data['active'] = 'Artists';
                 $data['last'] = $this->M_TBL->getlastartistid();
                 $data['hitung'] = $this->M_TBL->countawards($id);
@@ -50,7 +50,7 @@
                 $data['tampil_film'] = $this->M_TBL->getfilms($id);
                 $data['count'] = $this->M_TBL->countartistalbums($id);
                 $data['PageTitle'] = "$detail->name | The Black Label";
-                $this->load->view('v_layout', $data);    
+                $this->load->view('front/v_layout', $data);    
             }
         }
 
@@ -80,20 +80,20 @@
             if($detail == null){
                 redirect('406');
             } else{
-                $data['content'] = 'v_albumdetail';
+                $data['content'] = 'front/v_albumdetail';
                 $data['active'] = 'Artists';
                 $data['last'] = $this->M_TBL->getlastalbumid($idal);
                 $data['tampil_lagu'] = $this->M_TBL->getalbumtrack($detail->id_album);
                 $data['count'] = $this->M_TBL->countalbumvideo($detail->id_album);
                 $data['tampil_video'] = $this->M_TBL->getalbumvideo($detail->id_album);
                 $data['PageTitle'] = "$detail->album_name | $detail->name | The Black Label";
-                $this->load->view('v_layout', $data);  
+                $this->load->view('front/v_layout', $data);  
             }  
         }
 
         public function multimedia($num)
         {
-            $data['content'] = 'v_multimedia';
+            $data['content'] = 'front/v_multimedia';
             $data['active'] = 'Multimedia';
             $data['satum'] = $this->M_TBL->getlatestvideo();
             $data['page'] = $num ? (int)$num : 1;
@@ -105,13 +105,13 @@
             } else{
                 $data['tampil_multimedia'] = $this->M_TBL->getvideo($mulai);
                 $data['PageTitle'] = 'Multimedia | The Black Label';
-                $this->load->view('v_layout', $data);
+                $this->load->view('front/v_layout', $data);
             }
         }
 
         public function notacceptable()
         {
-            $this->load->view('v_error406'); 
+            $this->load->view('front/v_error406'); 
         }
     }
 ?>

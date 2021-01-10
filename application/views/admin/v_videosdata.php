@@ -9,6 +9,9 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="d-inline"><?=$PageTitle;?></h4>
+                <button type="button" name="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+                    <i class="fas fa-plus"></i> Add Video
+                </button>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -61,3 +64,57 @@
         </div>
 	</div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Video Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form class="form-horizontal" action="<?=base_url('Video_Add')?>" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Album Name</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class=" icon-bulb"></i></div>
+                        <select class="selectpicker form-control" data-style="form-control btn-default" name="id_album">
+                            <option value="" disabled selected>--Choose--</option>
+                        <?php foreach ($albums as $a): ?>
+                            <option value="<?=$a->id_album?>"><?=$a->album_name?> by <?=$a->name?></option>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Video Title</label>
+                    <input type="text" class="form-control" placeholder="Video Title" name="video_name" autocomplete="off" min="0">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Release Date</label>
+                            <input type="text" class="form-control" placeholder="Ex: 2020-12-12" name="video_release_date" autocomplete="off" min="0">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Video Link</label>
+                            <input type="text" class="form-control" placeholder="Ex: oDJ4ct59NC4" name="link" autocomplete="off" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Thumbnail</label>
+                    <input type="file" class="form-control" name="thumbnail" autocomplete="off" min="0">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-primary" value="Add data">
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

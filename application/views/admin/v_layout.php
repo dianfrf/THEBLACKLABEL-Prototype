@@ -56,27 +56,27 @@
                             </li>
                             <li class="<?= ($active == "Albums") ? 'active' : ''; ?>">
                                 <a class="nav-link" href="<?=base_url('Albums_Data')?>">
-                                    <i class="fas fa-user"></i><span>Albums Data</span>
+                                    <i class="fas fa-play"></i><span>Albums Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Songs") ? 'active' : ''; ?>">
                                 <a class="nav-link" href="<?=base_url('Songs_Data')?>">
-                                    <i class="fas fa-user"></i><span>Songs Data</span>
+                                    <i class="fas fa-music"></i><span>Songs Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Videos") ? 'active' : ''; ?>">
                                 <a class="nav-link" href="<?=base_url('Videos_Data')?>">
-                                    <i class="fas fa-user"></i><span>Videos Data</span>
-                                </a>
-                            </li>
-                            <li class="<?= ($active == "Awards") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Awards_Data')?>">
-                                    <i class="fas fa-user"></i><span>Awards Data</span>
+                                    <i class="fas fa-video"></i><span>Videos Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Films") ? 'active' : ''; ?>">
                                 <a class="nav-link" href="<?=base_url('Films_Data')?>">
-                                    <i class="fas fa-user"></i><span>Filmography Data</span>
+                                    <i class="fas fa-film"></i><span>Filmography Data</span>
+                                </a>
+                            </li>
+                            <li class="<?= ($active == "Awards") ? 'active' : ''; ?>">
+                                <a class="nav-link" href="<?=base_url('Awards_Data')?>">
+                                    <i class="fas fa-award"></i><span>Awards Data</span>
                                 </a>
                             </li>
                         </ul>

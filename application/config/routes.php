@@ -66,3 +66,10 @@ $route['Songs_Data'] = 'AdminController/songs_data';
 $route['Videos_Data'] = 'AdminController/videos_data';
 $route['Awards_Data'] = 'AdminController/awards_data';
 $route['Films_Data'] = 'AdminController/films_data';
+
+$route['Film_Add'] = 'AdminController/film_add';
+$route['Award_Add'] = 'AdminController/award_add';
+$route['Video_Add'] = 'AdminController/video_add';
+$route['Song_Add'] = 'AdminController/song_add';
+$route['Album_Add'] = 'AdminController/album_add';
+$route['Artist_Add'] = 'AdminController/artist_add';

@@ -60,7 +60,16 @@
                 <hr>
                 <p><?=$detail->description;?></p>
                 <br>
-            <?php if($hitfilm > 0) { ?>
+            <?php if($hitung > 0) { ?>
+                <h4>AWARDS :</h4>
+                <ul>
+                <?php foreach ($tampil_trofi as $trofi) { ?>
+                    <li><h5><?=$trofi->year?> <b class="nominasi"><?=$trofi->nomination?></b></h5></li>
+                <?php } ?>
+                </ul>
+                <br>
+            <?php } else{}
+                if($hitfilm > 0) { ?>
                 <h4>FILMOGRAPHY :</h4>
                 <ul>
                 <?php foreach ($tampil_film as $tf) { ?>
@@ -72,15 +81,6 @@
                 if($detail->commercial != null) { ?>
                 <h4>COMMERCIALS :</h4>
                 <p><?=$detail->commercial?></p>
-            <?php } else{}
-                if($hitung > 0) { ?>
-                <h4>AWARDS :</h4>
-                <ul>
-                <?php foreach ($tampil_trofi as $trofi) { ?>
-                    <li><h5><?=$trofi->year?> <b class="nominasi"><?=$trofi->nomination?></b></h5></li>
-                <?php } ?>
-                </ul>
-                <br>
             <?php } else {} ?>
             </div>
         </div>

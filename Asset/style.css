@@ -136,7 +136,7 @@ input:checked + .slider:before{
 
 /* about menu */
 .logo{
-    width:55%; margin-bottom:1.1rem; filter:var(--logo-filter); 
+    width:55%; margin:1.1rem 0rem; filter:var(--logo-filter); 
 }
 .cov{
     margin-top:1.1rem; max-width:100%; 

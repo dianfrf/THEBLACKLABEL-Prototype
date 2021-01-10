@@ -1,5 +1,5 @@
 <div class="jumbotron header">
-    <center><img src="<?=base_url()?>Asset/img/poster/<?=$cover->poster;?>" class="post lazyload"></center>
+    <center><img src="<?=base_url()?>Asset/img/poster/poster1.jpg" class="post lazyload"></center>
 </div>
 <div class="jumbotron home twitter-feed">
     <div class="container">
