@@ -73,3 +73,10 @@ $route['Video_Add'] = 'AdminController/video_add';
 $route['Song_Add'] = 'AdminController/song_add';
 $route['Album_Add'] = 'AdminController/album_add';
 $route['Artist_Add'] = 'AdminController/artist_add';
+
+$route['Award_Delete/(:num)'] = 'AdminController/award_delete/$1';
+$route['Film_Delete/(:num)'] = 'AdminController/film_delete/$1';
+$route['Video_Delete/(:num)'] = 'AdminController/video_delete/$1';
+$route['Song_Delete/(:num)'] = 'AdminController/song_delete/$1';
+$route['Album_Delete/(:num)'] = 'AdminController/album_delete/$1';
+$route['Artist_Delete/(:num)'] = 'AdminController/artist_delete/$1';

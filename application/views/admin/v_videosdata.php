@@ -42,7 +42,7 @@
                                             <i class="fas fa-edit"></i>
                                         </button>
                                     </a>
-                                    <a href="" style="color: white" onclick="return confirm('Apakah yakin?')">
+                                    <a href="<?=base_url()?>Video_Delete/<?=$v->id_video?>" onclick="return confirm('Are you sure you want to delete this?')">
                                         <button type="button" name="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete Data">
                                             <i class="fas fa-trash"></i>
                                         </button>

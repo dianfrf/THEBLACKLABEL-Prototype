@@ -38,7 +38,7 @@
                                             <i class="fas fa-edit"></i>
                                         </button>
                                     </a>
-                                    <a href="<?=base_url()?>TBL_Admin/delete_artistsdata/<?=$a->id_artist?>" style="color: white" onclick="return confirm('Apakah yakin?')">
+                                    <a href="<?=base_url()?>Artist_Delete/<?=$a->id_artist?>" onclick="return confirm('Are you sure you want to delete this?')">
                                         <button type="button" name="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete Data">
                                             <i class="fas fa-trash"></i>
                                         </button>

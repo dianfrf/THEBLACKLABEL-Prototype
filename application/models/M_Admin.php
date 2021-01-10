@@ -183,5 +183,50 @@
                 return FALSE;
             }
         }
+
+        public function do_award_delete($id)
+        {
+            return $this->db->where('id_award', $id)->delete('awards');
+        }
+
+        public function do_film_delete($id)
+        {
+            return $this->db->where('id_filmography', $id)->delete('filmography');
+        }
+
+        public function do_get_video_id($id)
+        {
+            return $this->db->where('id_video', $id)->get('videos')->row();
+        }
+
+        public function do_video_delete($id)
+        {
+            return $this->db->where('id_video', $id)->delete('videos');
+        }
+
+        public function do_song_delete($id)
+        {
+            return $this->db->where('id_song', $id)->delete('songs');
+        }
+
+        public function do_get_album_id($id)
+        {
+            return $this->db->where('id_album', $id)->get('albums')->row();
+        }
+
+        public function do_album_delete($id)
+        {
+            return $this->db->where('id_album', $id)->delete('albums');
+        }
+
+        public function do_get_artist_id($id)
+        {
+            return $this->db->where('id_artist', $id)->get('artists')->row();
+        }
+
+        public function do_artist_delete($id)
+        {
+            return $this->db->where('id_artist', $id)->delete('artists');
+        }
     }
 ?>

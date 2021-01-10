@@ -65,6 +65,25 @@
             }
             redirect('Artists_Data');
         }
+        //Delete Artist
+        public function artist_delete($id='')
+        {
+            $getartid = $this->M_Admin->do_get_artist_id($id);
+            $file = "./Asset/img/artists/$getartid->picture";
+            $delfile = unlink($file);
+            if($delfile == TRUE) {
+                $delete = $this->M_Admin->do_artist_delete($id);
+                if ($delete == TRUE) {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to delete artist data</div>');
+                }
+                else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete artist data</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong when deleting the image</div>');
+            }
+            redirect('Artists_Data');
+        }
 
 //CRUD ALBUMS
         //Read Albums
@@ -120,6 +139,25 @@
             }
             redirect('Albums_Data');
         }
+        //Delete Album
+        public function album_delete($id='')
+        {
+            $getalbid = $this->M_Admin->do_get_album_id($id);
+            $file = "./Asset/img/album/$getalbid->cover";
+            $delfile = unlink($file);
+            if($delfile == TRUE) {
+                $delete = $this->M_Admin->do_album_delete($id);
+                if ($delete == TRUE) {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to delete album data</div>');
+                }
+                else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete album data</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong when deleting the image</div>');
+            }
+            redirect('Albums_Data');
+        }
 
 //CRUD SONGS
         //Read Songs
@@ -167,6 +205,18 @@
             }
             redirect('Songs_Data');
         }
+        //Delete Song
+        public function song_delete($id='')
+        {
+            $delete = $this->M_Admin->do_song_delete($id);
+            if ($delete == TRUE) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to delete award data</div>');
+            }
+            else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete award data</div>');
+            }
+            redirect('Songs_Data');
+        }
 
 //CRUD VIDEOS
         //Read Videos
@@ -190,8 +240,8 @@
             if ($this->form_validation->run() == TRUE) {
                 $config['upload_path'] = './Asset/img/thumbnail/';
                 $config['allowed_types'] = 'gif|jpg|png';
-                $config['max_height'] = '1280';
-                $config['max_width'] = '720';
+                $config['max_height'] = '720';
+                $config['max_width'] = '1280';
                 $config['max_size'] = '1024';
 
                 $this->load->library('upload' , $config);
@@ -213,42 +263,24 @@
             }
             redirect('Videos_Data');
         }
-
-//CRUD AWARDS
-        //Read Awards
-        public function awards_data()
+        //Delete Video
+        public function video_delete($id='')
         {
-            $data['content'] = 'admin/v_awardsdata';
-            $data['active'] = 'Awards';
-            $data['awards'] = $this->M_Admin->get_awardsdata();
-            $data['count'] = $this->M_Admin->count_awardsdata();
-            $data['artists'] = $this->M_Admin->get_artistsdata();
-            $data['PageTitle'] = 'Awards Data';
-            $this->load->view('admin/v_layout', $data);
-        }
-        //Create Award
-        public function award_add()
-        {
-            $this->form_validation->set_rules('id_artist', 'Artist Name', 'trim|required|numeric', array('required' => 'Artist Name must be fill in.'));
-            $this->form_validation->set_rules('nomination', 'Nomination', 'trim|required', array('required' => 'Nomination must be fill in.'));
-            $this->form_validation->set_rules('year', 'Year', 'trim|required|numeric', array('required' => 'Year must be fill in.'));
-            if ($this->form_validation->run() == TRUE) {
-                $id_artist      = $this->input->post('id_artist');
-                $nomination     = $this->input->post('nomination');
-                $year           = $this->input->post('year');
-                if ($this->input->post('add')) {
-                    if ($this->M_Admin->do_award_add($id_artist,$nomination,$year) == TRUE) {
-                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to add award data</div>');
-                    } else {
-                        $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to add award data</div>');
-                    }
-                } else {
-                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong with the connection</div>');
+            $getvidid = $this->M_Admin->do_get_video_id($id);
+            $file = "./Asset/img/thumbnail/$getvidid->thumbnail";
+            $delfile = unlink($file);
+            if($delfile == TRUE) {
+                $delete = $this->M_Admin->do_video_delete($id);
+                if ($delete == TRUE) {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to delete video data</div>');
+                }
+                else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete video data</div>');
                 }
             } else {
-                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong when deleting the image</div>');
             }
-            redirect('Awards_Data');
+            redirect('Videos_Data');
         }
 
 //CRUD FILMS
@@ -287,5 +319,66 @@
             }
             redirect('Films_Data');
         }
-    } 
+        //Delete Film
+        public function film_delete($id='')
+        {
+            $delete = $this->M_Admin->do_film_delete($id);
+            if ($delete == TRUE) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to delete film data</div>');
+            }
+            else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete film data</div>');
+            }
+            redirect('Films_Data');
+        }
+
+//CRUD AWARDS
+        //Read Awards
+        public function awards_data()
+        {
+            $data['content'] = 'admin/v_awardsdata';
+            $data['active'] = 'Awards';
+            $data['awards'] = $this->M_Admin->get_awardsdata();
+            $data['count'] = $this->M_Admin->count_awardsdata();
+            $data['artists'] = $this->M_Admin->get_artistsdata();
+            $data['PageTitle'] = 'Awards Data';
+            $this->load->view('admin/v_layout', $data);
+        }
+        //Create Award
+        public function award_add()
+        {
+            $this->form_validation->set_rules('id_artist', 'Artist Name', 'trim|required|numeric', array('required' => 'Artist Name must be fill in.'));
+            $this->form_validation->set_rules('nomination', 'Nomination', 'trim|required', array('required' => 'Nomination must be fill in.'));
+            $this->form_validation->set_rules('year', 'Year', 'trim|required|numeric', array('required' => 'Year must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_artist      = $this->input->post('id_artist');
+                $nomination     = $this->input->post('nomination');
+                $year           = $this->input->post('year');
+                if ($this->input->post('add')) {
+                    if ($this->M_Admin->do_award_add($id_artist,$nomination,$year) == TRUE) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to add award data</div>');
+                    } else {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to add award data</div>');
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong with the connection</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+            }
+            redirect('Awards_Data');
+        }
+        //Delete Award
+        public function award_delete($id='')
+        {
+            $delete = $this->M_Admin->do_award_delete($id);
+            if ($delete == TRUE) {
+                $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to delete award data</div>');
+            }
+            else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete award data</div>');
+            }
+            redirect('Awards_Data');
+        }
+    }
 ?>
