@@ -84,6 +84,57 @@
             }
             redirect('Artists_Data');
         }
+        //Edit Artist
+        public function get_artist_id($id)
+        {
+            $data = $this->M_Admin->do_get_artist_id($id);
+            echo (json_encode($data));
+        }
+        public function artist_edit()
+        {
+            $this->form_validation->set_rules('name', 'Artist Name', 'trim|required', array('required' => 'Artist Name must be fill in.'));
+            $this->form_validation->set_rules('description', 'Description', 'trim|required', array('required' => 'Description must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_artist      = $this->input->post('id_artist');
+                $name           = $this->input->post('name');
+                $description    = $this->input->post('description');
+                $instagram      = $this->input->post('instagram');
+                $facebook       = $this->input->post('facebook');
+                $twitter        = $this->input->post('twitter');
+                $soundcloud     = $this->input->post('soundcloud');
+                $commercial     = $this->input->post('commercial');
+
+                if ($this->M_Admin->do_artist_edit($id_artist,$name,$description,$instagram,$facebook,$twitter,$soundcloud,$commercial)) {
+                    $config['upload_path'] = './Asset/img/artists/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['max_height'] = '500';
+                    $config['max_width'] = '500';
+                    $config['max_size'] = '1024';
+
+                    $this->load->library('upload' , $config);
+                    if (! $this->upload->do_upload('picture')) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit artist data. But '.$this->upload->display_errors().'</div>');
+                    } else {
+                        $getartid = $this->M_Admin->do_get_artist_id($id_artist);
+                        $file = "./Asset/img/artists/$getartid->picture";
+                        if(unlink($file)) {
+                            if ($this->M_Admin->do_picture_edit($this->upload->data('file_name'),$id_artist)) {
+                                $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit artist data</div>');
+                            } else {
+                                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit artist data</div>');
+                            }
+                        } else {
+                            $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong when deleting the image</div>');
+                        }
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit artist data</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+            }
+            redirect('Artists_Data');
+        }
 
 //CRUD ALBUMS
         //Read Albums
@@ -158,6 +209,65 @@
             }
             redirect('Albums_Data');
         }
+        //Edit Album
+        public function get_album_id($id)
+        {
+            $data = $this->M_Admin->do_get_album_id($id);
+            echo (json_encode($data));
+        }
+        public function album_edit()
+        {
+            $this->form_validation->set_rules('id_artist', 'Artist Name', 'trim|required|numeric', array('required' => 'Artist Name must be fill in.'));
+            $this->form_validation->set_rules('album_name', 'Album Name', 'trim|required', array('required' => 'Album Name must be fill in.'));
+            $this->form_validation->set_rules('release_date', 'Release Date', 'trim|required', array('required' => 'Release Date must be fill in.'));
+            $this->form_validation->set_rules('album_order', 'Album Order', 'trim|required|numeric', array('required' => 'Album Order must be fill in.'));
+            $this->form_validation->set_rules('album_description', 'Album Description', 'trim|required', array('required' => 'Album Description must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_artist          = $this->input->post('id_artist');
+                $album_name         = $this->input->post('album_name');
+                $album_desc         = $this->input->post('album_description');
+                $album_ord          = $this->input->post('album_order');
+                $release_date       = $this->input->post('release_date');
+                $itunes             = $this->input->post('itunes');
+                $spotify            = $this->input->post('spotify');
+                $melon              = $this->input->post('melon');
+                $genie              = $this->input->post('genie');
+                $bugs               = $this->input->post('bugs');
+                $flo                = $this->input->post('flo');
+                $vibe               = $this->input->post('vibe');
+                $id_album           = $this->input->post('id_album');
+
+                if ($this->M_Admin->do_album_edit($id_artist,$album_name,$album_desc,$album_ord,$release_date,$itunes,$spotify,$melon,$genie,$bugs,$flo,$vibe,$id_album)) {
+                    $config['upload_path'] = './Asset/img/album/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['max_height'] = '500';
+                    $config['max_width'] = '500';
+                    $config['max_size'] = '1024';
+
+                    $this->load->library('upload' , $config);
+                    if (! $this->upload->do_upload('cover')) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit album data. But '.$this->upload->display_errors().'</div>');
+                    } else {
+                        $getalbid = $this->M_Admin->do_get_album_id($id_album);
+                        $file = "./Asset/img/album/$getalbid->cover";
+                        if(unlink($file)) {
+                            if ($this->M_Admin->do_cover_edit($this->upload->data('file_name'),$id_album)) {
+                                $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit album data</div>');
+                            } else {
+                                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit album data</div>');
+                            }
+                        } else {
+                            $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong when deleting the image</div>');
+                        }
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit album data</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+            }
+            redirect('Albums_Data');
+        }
 
 //CRUD SONGS
         //Read Songs
@@ -214,6 +324,46 @@
             }
             else {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete award data</div>');
+            }
+            redirect('Songs_Data');
+        }
+        //Edit Song
+        public function get_song_id($id)
+        {
+            $data = $this->M_Admin->do_get_song_id($id);
+            echo (json_encode($data));
+        }
+        public function song_edit()
+        {
+            $this->form_validation->set_rules('id_album', 'Album Name', 'trim|required|numeric', array('required' => 'Album Name must be fill in.'));
+            $this->form_validation->set_rules('title', 'Title', 'trim|required', array('required' => 'Title must be fill in.'));
+            $this->form_validation->set_rules('duration', 'Duration', 'trim|required', array('required' => 'Duration must be fill in.'));
+            $this->form_validation->set_rules('tracknumber', 'Track Number', 'trim|required|numeric', array('required' => 'Track Number must be fill in.'));
+            $this->form_validation->set_rules('is_title', 'Title Track', 'trim|required|numeric', array('required' => 'Title Track must be fill in.'));
+            $this->form_validation->set_rules('lyricsby', 'Songwriter', 'trim|required', array('required' => 'Songwriter must be fill in.'));
+            $this->form_validation->set_rules('composedby', 'Composer', 'trim|required', array('required' => 'Composer Name must be fill in.'));
+            $this->form_validation->set_rules('arrangedby', 'Arranger', 'trim|required', array('required' => 'Arranger must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_album       = $this->input->post('id_album');
+                $title          = $this->input->post('title');
+                $duration       = $this->input->post('duration');
+                $tracknumber    = $this->input->post('tracknumber');
+                $is_title       = $this->input->post('is_title');
+                $lyricsby       = $this->input->post('lyricsby');
+                $composedby     = $this->input->post('composedby');
+                $arrangedby     = $this->input->post('arrangedby');
+                $id_song        = $this->input->post('id_song');
+                if ($this->input->post('edit')) {
+                    if ($this->M_Admin->do_song_edit($id_album,$title,$duration,$tracknumber,$is_title,$lyricsby,$composedby,$arrangedby,$id_song) == TRUE) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit song data</div>');
+                    } else {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit song data</div>');
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong with the connection</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
             }
             redirect('Songs_Data');
         }
@@ -282,6 +432,56 @@
             }
             redirect('Videos_Data');
         }
+        //Edit Video
+        public function get_video_id($id)
+        {
+            $data = $this->M_Admin->do_get_video_id($id);
+            echo (json_encode($data));
+        }
+        public function video_edit()
+        {
+            $this->form_validation->set_rules('id_album', 'Album Name', 'trim|required|numeric', array('required' => 'Album Name must be fill in.'));
+            $this->form_validation->set_rules('video_name', 'Video Title', 'trim|required', array('required' => 'Video Title must be fill in.'));
+            $this->form_validation->set_rules('video_release_date', 'Release Date', 'trim|required', array('required' => 'Release Date must be fill in.'));
+            $this->form_validation->set_rules('link', 'Video Link', 'trim|required', array('required' => 'Video Link must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_album           = $this->input->post('id_album');
+                $video_name         = $this->input->post('video_name');
+                $video_release_date = $this->input->post('video_release_date');
+                $link               = $this->input->post('link');
+                $id_video           = $this->input->post('id_video');
+
+                if ($this->M_Admin->do_video_edit($id_album,$video_name,$video_release_date,$link,$id_video)) {
+                    $config['upload_path'] = './Asset/img/thumbnail/';
+                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['max_height'] = '720';
+                    $config['max_width'] = '1280';
+                    $config['max_size'] = '1024';
+
+                    $this->load->library('upload' , $config);
+                    if (! $this->upload->do_upload('thumbnail')) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit video data. But '.$this->upload->display_errors().'</div>');
+                    } else {
+                        $getvidid = $this->M_Admin->do_get_video_id($id_video);
+                        $file = "./Asset/img/thumbnail/$getvidid->thumbnail";
+                        if(unlink($file)) {
+                            if ($this->M_Admin->do_thumbnail_edit($this->upload->data('file_name'),$id_video)) {
+                                $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit video data</div>');
+                            } else {
+                                $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit video data</div>');
+                            }
+                        } else {
+                            $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong when deleting the image</div>');
+                        }
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit video data</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+            }
+            redirect('Videos_Data');
+        }
 
 //CRUD FILMS
         //Read Films
@@ -331,6 +531,36 @@
             }
             redirect('Films_Data');
         }
+        //Edit Film
+        public function get_film_id($id)
+        {
+            $data = $this->M_Admin->do_get_film_id($id);
+            echo (json_encode($data));
+        }
+        public function film_edit()
+        {
+            $this->form_validation->set_rules('id_artist', 'Artist Name', 'trim|required|numeric', array('required' => 'Artist Name must be fill in.'));
+            $this->form_validation->set_rules('film_title', 'Film Title', 'trim|required', array('required' => 'Film must be fill in.'));
+            $this->form_validation->set_rules('year', 'Year', 'trim|required|numeric', array('required' => 'Year must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_artist      = $this->input->post('id_artist');
+                $film_title     = $this->input->post('film_title');
+                $year           = $this->input->post('year');
+                $id_film        = $this->input->post('id_filmography');
+                if ($this->input->post('edit')) {
+                    if ($this->M_Admin->do_film_edit($id_artist,$film_title,$year,$id_film) == TRUE) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit film data</div>');
+                    } else {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit film data</div>');
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong with the connection</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+            }
+            redirect('Films_Data');
+        }
 
 //CRUD AWARDS
         //Read Awards
@@ -377,6 +607,36 @@
             }
             else {
                 $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to delete award data</div>');
+            }
+            redirect('Awards_Data');
+        }
+        //Edit Award
+        public function get_award_id($id)
+        {
+            $data = $this->M_Admin->do_get_award_id($id);
+            echo (json_encode($data));
+        }
+        public function award_edit()
+        {
+            $this->form_validation->set_rules('id_artist', 'Artist Name', 'trim|required|numeric', array('required' => 'Artist Name must be fill in.'));
+            $this->form_validation->set_rules('nomination', 'Nomination', 'trim|required', array('required' => 'Nomination must be fill in.'));
+            $this->form_validation->set_rules('year', 'Year', 'trim|required|numeric', array('required' => 'Year must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $id_artist      = $this->input->post('id_artist');
+                $nomination     = $this->input->post('nomination');
+                $year           = $this->input->post('year');
+                $id_award       = $this->input->post('id_award');
+                if ($this->input->post('edit')) {
+                    if ($this->M_Admin->do_award_edit($id_artist,$nomination,$year,$id_award) == TRUE) {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-success">Success to edit award data</div>');
+                    } else {
+                        $this->session->set_flashdata('msg', '<div class="alert alert-danger">Failed to edit award data</div>');
+                    }
+                } else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Theres something wrong with the connection</div>');
+                }
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
             }
             redirect('Awards_Data');
         }

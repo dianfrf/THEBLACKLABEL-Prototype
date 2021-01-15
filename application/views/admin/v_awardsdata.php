@@ -35,7 +35,7 @@
                                 <td><?=$a->nomination?></td>
                                 <td><?=$a->name?></td>
                                 <td>
-                                    <a>
+                                    <a onclick="Edit(<?=$a->id_award?>);">
                                         <button type="button" name="button" class="btn btn-success" aria-haspopup="true" aria-expanded="true" data-toggle="tooltip" data-placement="top" title="Edit Data">
                                             <i class="fas fa-edit"></i>
                                         </button>
@@ -62,7 +62,7 @@
         </div>
 	</div>
 </section>
-<!-- Modal -->
+<!-- AddModal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -96,9 +96,66 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="submit" class="btn btn-primary" value="Add data" name="add">
+                <input type="submit" class="btn btn-primary" value="Add Data" name="add">
             </div>
         </form>
         </div>
     </div>
 </div>
+<!-- EditModal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit Award Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form class="form-horizontal" action="<?=base_url('Award_Edit')?>" method="post">
+            <div class="modal-body">
+                <input type="hidden" name="id_award" id="id_award">
+                <div class="form-group">
+                    <label>Artist Name</label>
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class=" icon-bulb"></i></div>
+                        <select class="selectpicker form-control" data-style="form-control btn-default" name="id_artist" id="id_artist">
+                            <option value="" disabled selected>--Choose--</option>
+                        <?php foreach ($artists as $a): ?>
+                            <option value="<?=$a->id_artist?>"><?=$a->name?></option>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Nomination and Award</label>
+                    <input type="text" class="form-control" placeholder="Ex: Golden Disc Awards [Digital Bonsang]" name="nomination" id="nomination" autocomplete="off" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Year of Award</label>
+                    <input type="number" class="form-control" placeholder="Ex: 2020" name="year" id="year" autocomplete="off" min="0">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Edit Data" name="edit">
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+<script>
+    function Edit(id){
+        $('#editModal').modal('show');
+        $.ajax({
+            type  : 'GET',
+            url   : '<?=base_url('AdminController/get_award_id/')?>'+id,
+            dataType : 'json',
+            success : function(data){
+                $('#id_award').val(data.id_award);
+				$('#id_artist').val(data.id_artist).change();
+				$('#nomination').val(data.nomination);
+                $('#year').val(data.year);
+            }
+        });
+    }
+</script>

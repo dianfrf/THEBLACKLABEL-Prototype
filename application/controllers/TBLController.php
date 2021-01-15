@@ -60,7 +60,7 @@
             $tampil_album = $this->M_TBL->getartistalbums($this->input->post('limit'),$this->input->post('start'),$this->input->post('id'));
             foreach($tampil_album as $album) {
                 $output .= '
-                <div class="col-md-3 col-6 colalbum">
+                <div class="col-lg-3 col-md-4 col-6 colalbum">
                     <a href="'.base_url().'Album_Detail/'.$album->id_artist.'/'.$album->album_order.'">
                         <img src="'.base_url().'Asset/img/album/'.$album->cover.'" class="lazyload">
                         <div class="overlay">

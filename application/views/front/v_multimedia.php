@@ -7,7 +7,7 @@
         <h3>MULTIMEDIA LIST</h3>
         <div class="row">
         <?php foreach ($tampil_multimedia as $multimedia) { ?>
-            <div class="col-md-3 colmultimed">
+            <div class="col-lg-3 col-md-4 colmultimed">
                 <div class="tmcov">
                     <img src="<?=base_url()?>Asset/img/thumbnail/<?=$multimedia->thumbnail;?>" alt="https://www.youtube.com/embed/<?=$multimedia->link;?>" class="thumb lazyload" onclick="myFunction(this)" id="<b><?=$multimedia->video_name;?></b><br><?=$multimedia->name;?> | <?=date("Y.m.d", strtotime($multimedia->release_date));?>">
                 </div>

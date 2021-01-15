@@ -80,3 +80,10 @@ $route['Video_Delete/(:num)'] = 'AdminController/video_delete/$1';
 $route['Song_Delete/(:num)'] = 'AdminController/song_delete/$1';
 $route['Album_Delete/(:num)'] = 'AdminController/album_delete/$1';
 $route['Artist_Delete/(:num)'] = 'AdminController/artist_delete/$1';
+
+$route['Award_Edit'] = 'AdminController/award_edit';
+$route['Film_Edit'] = 'AdminController/film_edit';
+$route['Video_Edit'] = 'AdminController/video_edit';
+$route['Song_Edit'] = 'AdminController/song_edit';
+$route['Album_Edit'] = 'AdminController/album_edit';
+$route['Artist_Edit'] = 'AdminController/artist_edit';
