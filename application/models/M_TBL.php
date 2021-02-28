@@ -28,6 +28,16 @@
             return $this->db->order_by('id_artist','DESC')->limit(1)->get('artists')->row();
         }
 
+        public function gotonextartist($id)
+        {
+            return $this->db->query("SELECT * FROM artists WHERE id_artist > $id ORDER BY id_artist LIMIT 1")->row();
+        }
+
+        public function gotoprevartist($id)
+        {
+            return $this->db->query("SELECT * FROM artists WHERE id_artist < $id ORDER BY id_artist DESC LIMIT 1")->row();
+        }
+
         public function countawards($id)
         {
             return $this->db->where('id_artist',$id)->get('awards')->num_rows();

@@ -1,14 +1,13 @@
 <div class="jumbotron aboutkonten">
-    <div class="container">
+    <div class="container-fluid">
         <center><img src="<?=base_url()?>Asset/img/building.png" class="cov lazyload"></center>
         <center><img src="<?=base_url()?>Asset/img/logo-black.png" class="logo lazyload"></center>
         <p>
-            The Black Label is a full-service entertainment company founded in 2015 by Teddy Park and Kush, as an associate of YG Entertainment, 
+            The Black Label is a full-service entertainment company founded in 2015 by Teddy Park and Kush, as an associate company of YG Entertainment, 
             which serves as a hip-hop and R&B record label and artist management.
-            The company has become significant not only in hip-hop scene but also in extensive music industry
+            The company which houses Somi, Vince, and R.Tee has become significant not only in hip-hop scene but also in extensive music industry
             with the diversity of captivating music and related content.
-        </p>
-        <p>
+        <br>
             The Black Label also proved itself as a global brand by the success of
             variety of events not just in domestic market but also in international market. Moreover, the company has continuously expanded its 
             scope of business to models management by signing with a Heo Jae Hyuk and young talented model Ella Gross.

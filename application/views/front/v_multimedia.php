@@ -1,13 +1,15 @@
 <div class="jumbotron multimed">
-    <div class="container">
+    <div class="container-fluid">
         <h1>MULTIMEDIA</h1>
-        <center><iframe id="expandedImg" src="https://www.youtube.com/embed/<?=$satum->link;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe></center>
+        <center><div class="ifbox">
+            <iframe id="expandedImg" src="https://www.youtube.com/embed/<?=$satum->link;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
+        </div></center>
         <p id="imgtext"><b><?=$satum->video_name;?></b><br><?=$satum->name;?> | <?=date("Y.m.d", strtotime($satum->release_date));?></p>
         <br><br><br>
         <h3>MULTIMEDIA LIST</h3>
         <div class="row">
         <?php foreach ($tampil_multimedia as $multimedia) { ?>
-            <div class="col-lg-3 col-md-4 colmultimed">
+            <div class="col-lg-3 col-md-6 colmultimed">
                 <div class="tmcov">
                     <img src="<?=base_url()?>Asset/img/thumbnail/<?=$multimedia->thumbnail;?>" alt="https://www.youtube.com/embed/<?=$multimedia->link;?>" class="thumb lazyload" onclick="myFunction(this)" id="<b><?=$multimedia->video_name;?></b><br><?=$multimedia->name;?> | <?=date("Y.m.d", strtotime($multimedia->release_date));?>">
                 </div>

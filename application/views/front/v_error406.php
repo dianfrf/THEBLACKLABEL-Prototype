@@ -46,8 +46,8 @@
             </div>
         </div>
         <div class="page-footer">
-            <div class="container">
-                <h5>Copyright &copy; 2020 The Black Label. All rights reserved</h5>
+            <div class="container-fluid">
+                <h5>Copyright &copy; 2021 The Black Label. All rights reserved</h5>
             </div>
         </div>
     </body>

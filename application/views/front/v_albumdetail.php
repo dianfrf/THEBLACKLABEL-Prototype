@@ -1,8 +1,8 @@
 <div class="jumbotron albumdetail">
-    <div class="container">
+    <div class="container-fluid">
         <h6>
             <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist;?>" class="back">
-                <button><i class="fas fa-chevron-left fa-xs"></i>BACK TO PROFILE</button>
+                <button><i class="fas fa-chevron-left fa-xs"></i>BACK</button>
             </a>
         <?php if($detail->album_order == 1 && $detail->album_order == $last->album_order) {} elseif($detail->album_order == 1) { ?>
             <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order + 1;?>" class="arrow">
@@ -16,7 +16,7 @@
                 <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
             <a class="arrow" style="margin-right:7px;opacity:0%;">
-                <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
+                <button><i class="fas fa-chevron-left fa-xs"></i>NEXT</button>
             </a>
         <?php } else { ?>
             <a href="<?=base_url()?>Album_Detail/<?=$detail->id_artist;?>/<?=$detail->album_order + 1;?>" class="arrow">
@@ -31,10 +31,10 @@
         <h1><?=$detail->album_name;?></h1>
         <h4 class="date">Release Date : <?=date("Y.m.d", strtotime($detail->release_date));?></h4>
         <div class="row">
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-12 col-lg-6">
                 <img src="<?=base_url()?>Asset/img/album/<?=$detail->cover;?>" alt="<?=$detail->album_name?>" class="cover lazyload">
             </div>
-            <div class="col-md-6 col-lg-6 iconalbum">
+            <div class="col-md-12 col-lg-6 iconalbum">
                 <table>
                     <tr>
                         <th colspan="3"><h4 class="tracklist"><?=$detail->album_description?> TRACKLIST : </h4></th>

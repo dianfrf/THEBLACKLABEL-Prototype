@@ -1,36 +1,38 @@
 <div class="jumbotron artistdetail">   
-    <div class="container">
+    <div class="container-fluid">
         <h6>
             <a href="<?=base_url('Artists')?>" class="back">
-                <button><i class="fas fa-chevron-left fa-xs"></i>BACK TO LIST</button>
+                <button><i class="fas fa-chevron-left fa-xs"></i>BACK</button>
             </a>
         <?php if($detail->id_artist == 1) { ?>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
+            <a href="<?=base_url()?>Artist_Detail/<?=$next->id_artist;?>" class="arrow">
                 <button>NEXT<i class="fas fa-chevron-right fa-xs"></i></button>
             </a>
             <a class="arrow" style="opacity:0%; margin-right:7px">
                 <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
         <?php } elseif($detail->id_artist == $last->id_artist) { ?>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow">
+            <a href="<?=base_url()?>Artist_Detail/<?=$prev->id_artist;?>" class="arrow">
                 <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
             <a class="arrow" style="margin-right:7px; opacity:0%;">
-                <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
+                <button><i class="fas fa-chevron-left fa-xs"></i>NEXT</button>
             </a>
         <?php } else{ ?>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist + 1;?>" class="arrow">
+            <a href="<?=base_url()?>Artist_Detail/<?=$next->id_artist;?>" class="arrow">
                 <button>NEXT<i class="fas fa-chevron-right fa-xs"></i></button>
             </a>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist - 1;?>" class="arrow" style="margin-right:7px">
+            <a href="<?=base_url()?>Artist_Detail/<?=$prev->id_artist;?>" class="arrow" style="margin-right:7px">
                 <button><i class="fas fa-chevron-left fa-xs"></i>PREV</button>
             </a>
         <?php } ?>
         </h6>
         <br><br>
         <div class="row">
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-6 col-lg-6 colprof">
+                <div class="profbox">
                 <img src="<?=base_url()?>Asset/img/artists/<?=$detail->picture?>" alt="<?=$detail->name;?>" class="profil lazyload">
+                </div>
             </div>
             <div class="col-md-6 col-lg-6">
                 <div class="row">

@@ -38,7 +38,7 @@
             $this->form_validation->set_rules('description', 'Description', 'trim|required', array('required' => 'Description must be fill in.'));
             if ($this->form_validation->run() == TRUE) {
                 $config['upload_path'] = './Asset/img/artists/';
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_height'] = '500';
                 $config['max_width'] = '500';
                 $config['max_size'] = '1024';
@@ -106,7 +106,7 @@
 
                 if ($this->M_Admin->do_artist_edit($id_artist,$name,$description,$instagram,$facebook,$twitter,$soundcloud,$commercial)) {
                     $config['upload_path'] = './Asset/img/artists/';
-                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg';
                     $config['max_height'] = '500';
                     $config['max_width'] = '500';
                     $config['max_size'] = '1024';
@@ -158,7 +158,7 @@
             $this->form_validation->set_rules('album_description', 'Album Description', 'trim|required', array('required' => 'Album Description must be fill in.'));
             if ($this->form_validation->run() == TRUE) {
                 $config['upload_path'] = './Asset/img/album/';
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_height'] = '500';
                 $config['max_width'] = '500';
                 $config['max_size'] = '1024';
@@ -239,7 +239,7 @@
 
                 if ($this->M_Admin->do_album_edit($id_artist,$album_name,$album_desc,$album_ord,$release_date,$itunes,$spotify,$melon,$genie,$bugs,$flo,$vibe,$id_album)) {
                     $config['upload_path'] = './Asset/img/album/';
-                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg';
                     $config['max_height'] = '500';
                     $config['max_width'] = '500';
                     $config['max_size'] = '1024';
@@ -389,7 +389,7 @@
             $this->form_validation->set_rules('link', 'Video Link', 'trim|required', array('required' => 'Video Link must be fill in.'));
             if ($this->form_validation->run() == TRUE) {
                 $config['upload_path'] = './Asset/img/thumbnail/';
-                $config['allowed_types'] = 'gif|jpg|png';
+                $config['allowed_types'] = 'gif|jpg|png|jpeg';
                 $config['max_height'] = '720';
                 $config['max_width'] = '1280';
                 $config['max_size'] = '1024';
@@ -453,7 +453,7 @@
 
                 if ($this->M_Admin->do_video_edit($id_album,$video_name,$video_release_date,$link,$id_video)) {
                     $config['upload_path'] = './Asset/img/thumbnail/';
-                    $config['allowed_types'] = 'gif|jpg|png';
+                    $config['allowed_types'] = 'gif|jpg|png|jpeg';
                     $config['max_height'] = '720';
                     $config['max_width'] = '1280';
                     $config['max_size'] = '1024';

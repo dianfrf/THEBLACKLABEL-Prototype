@@ -20,7 +20,7 @@
         <button id="btntop" title="Go to top"><i class="fas fa-chevron-up fa-lg"></i></button>
 
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
+            <div class="container-fluid">
                 <a href="<?=base_url()?>" class="navbar-brand">
                     <img src="<?=base_url()?>Asset/img/logo-black.png">
                 </a>
@@ -45,7 +45,7 @@
                         </li>
                     </ul>
                     <div class="theme-switch-wrapper">
-                        <a>Dark Mode</a>
+                        <a>DARK MODE</a>
                         <label class="theme-switch" for="checkbox">
                             <input type="checkbox" id="checkbox" />
                             <div class="slider round"></div>
@@ -58,9 +58,9 @@
         <?php $this->load->view($content);?>
         
         <div class="page-footer">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-lg-4 col-md-5">
                         <div class="dropup">
                             <div class="dropdown">
                                 <div class="row">
@@ -78,8 +78,8 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <h5>Copyright &copy; 2020 The Black Label. All rights reserved</h5>
+                    <div class="col-lg-8 col-md-7">
+                        <h5>Copyright &copy; 2021 The Black Label. All rights reserved</h5>
                     </div>
                 </div>
             </div>

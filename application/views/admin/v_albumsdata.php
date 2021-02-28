@@ -158,6 +158,10 @@
                 </div>
                 <div class="form-group">
                     <label>Album Cover</label>
+                    <ul>
+                        <li>File size must not exceed 1MB</li>
+                        <li>File resolution must not exceed 500px x 500px</li>
+                    </ul>
                     <input type="file" class="form-control" name="cover" autocomplete="off" min="0">
                 </div>
             </div>
@@ -263,6 +267,10 @@
                 </div>
                 <div class="form-group">
                     <label>Album Cover</label>
+                    <ul>
+                        <li>File size must not exceed 1MB</li>
+                        <li>File resolution must not exceed 500px x 500px</li>
+                    </ul>
                     <input type="file" class="form-control" name="cover" autocomplete="off" min="0">
                 </div>
             </div>

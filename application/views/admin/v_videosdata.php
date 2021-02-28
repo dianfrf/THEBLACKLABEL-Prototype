@@ -108,6 +108,10 @@
                 </div>
                 <div class="form-group">
                     <label>Thumbnail</label>
+                    <ul>
+                        <li>File size must not exceed 1MB</li>
+                        <li>File resolution must not exceed 1280px x 720px</li>
+                    </ul>
                     <input type="file" class="form-control" name="thumbnail" autocomplete="off" min="0">
                 </div>
             </div>
@@ -163,6 +167,10 @@
                 </div>
                 <div class="form-group">
                     <label>Thumbnail</label>
+                    <ul>
+                        <li>File size must not exceed 1MB</li>
+                        <li>File resolution must not exceed 1280px x 720px</li>
+                    </ul>
                     <input type="file" class="form-control" name="thumbnail" autocomplete="off" min="0">
                 </div>
             </div>
