@@ -1,6 +1,10 @@
 <?php     
     defined('BASEPATH') OR exit('No direct script access allowed');
     class M_Admin extends CI_Model {
+        public function do_admin_login($username,$password)
+        {
+            return $this->db->where('username', $username)->where('password', $password)->get('admin');
+        }
 //GET AND COUNT ALL DATA
         public function get_artistsdata()
         {

@@ -1,5 +1,6 @@
 <div class="jumbotron header">
-    <center><img src="<?=base_url()?>Asset/img/poster/poster1.jpg" class="post lazyload"></center>
+    <img src="<?=base_url()?>Asset/img/header.png" class="post lazyload">
+    <img src="<?=base_url()?>Asset/img/header_mb.png" class="postmb lazyload">
 </div>
 <div class="jumbotron home twitter-feed">
     <div class="container-fluid">

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="<?=base_url()?>Asset/css/components.min.css">
     </head>
     <body>
+        <?php if($this->session->userdata('login') == FALSE) {redirect('TBL_Admin');}?>
         <div id="app">
             <div class="main-wrapper main-wrapper-1">
                 <div class="navbar-bg"></div>
@@ -23,10 +24,10 @@
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <img alt="image" src="<?=base_url()?>Asset/img/avatar-1.png" class="rounded-circle mr-1">
-                                <div class="d-sm-none d-lg-inline-block">Hi, Administrator</div>
+                                <div class="d-sm-none d-lg-inline-block">Hi, <?=$this->session->userdata('admin_name')?></div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="<?=base_url('Admin/admin_logout')?>" class="dropdown-item has-icon text-danger">
+                                <a href="<?=base_url('AdminController/admin_logout')?>" class="dropdown-item has-icon text-danger">
                                     <i class="fas fa-sign-out-alt"></i> Logout
                                 </a>
                             </div>
@@ -44,7 +45,7 @@
                         <ul class="sidebar-menu">
                             <li class="menu-header">MAIN</li>
                             <li class="<?= ($active == "Dashboard") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('TBL_Admin')?>">
+                                <a class="nav-link" href="<?=base_url('Dashboard')?>">
                                     <i class="fas fa-home"></i><span>Dashboard</span>
                                 </a>
                             </li>
@@ -89,7 +90,7 @@
                 </div>
                 <footer class="main-footer">
                     <div class="footer-left">
-                        Copyright &copy; 2020 The Black Label<div class="bullet"></div>All Rights Reserved.
+                        Copyright &copy; 2021 The Black Label<div class="bullet"></div>All Rights Reserved.
                     </div>
                 </footer>
             </div>

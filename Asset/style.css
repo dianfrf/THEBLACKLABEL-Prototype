@@ -121,6 +121,12 @@ input:checked + .slider:before{
 .header{
     padding:0 !important; 
 }
+.post, .postmb{
+    width:100% !important;
+}
+.postmb{
+    display:none;
+}
 .home{
     background-color:var(--primary-color); border-radius:0; margin-top:-2rem; 
 }
@@ -371,7 +377,7 @@ hr{
     margin-top:-2rem; width:100%; background-color:rgb(15,15,15); padding:1.4rem 2rem 1.1rem 2rem;
 }
 .page-footer h5{
-    font-weight:lighter; text-align:right; line-height:2.8rem; padding-left:0rem !important; color:rgb(237,237,237) !important;
+    font-weight:lighter; text-align:right; line-height:3.5rem; padding-left:0rem !important; color:rgb(237,237,237) !important;
 }
 
 /* dropdown menu */
@@ -379,7 +385,7 @@ hr{
     width:50%;
 }
 .dropdown{
-    cursor:pointer; width:94%; color:rgb(237,237,237); line-height:2.8rem; font-weight:bolder; font-size:1.45rem !important; font-family:'Roboto'; letter-spacing:.04rem; text-align:left; background-color:rgb(40,40,40); padding:0rem 1.1rem 0rem 1.1rem !important; border:none;
+    cursor:pointer; width:94%; color:rgb(237,237,237); line-height:2.8rem; font-weight:bolder; font-size:1.45rem !important; font-family:'Roboto'; letter-spacing:.04rem; text-align:left; background-color:rgb(40,40,40); padding:.5rem 1.4rem !important; border:none;
 }
 .dropup:hover .dropdown-menu{
     display:block;
@@ -442,7 +448,7 @@ h6{
         margin-top:7.4rem;
     }
 
-    .post, .logo, .profil, .cov, .cover, .column, .thumbnail, #expandedImg{
+    .logo, .profil, .cov, .cover, .column, .thumbnail, #expandedImg, .ifbox, .dropup, .dropdown-menu{
         width:100% !important; 
     }
 
@@ -458,9 +464,6 @@ h6{
         margin-bottom:3rem;
     }
 
-    .ifbox {
-        width:100%;
-    }
     #expandedImg {
         height:100%;
     }
@@ -468,14 +471,8 @@ h6{
         margin:.4rem 0rem 4.2rem 0% !important;
     }
 
-    .dropup{
-        width:100%;
-    }
     .dropdown{
-        width:100%; padding:.4rem 1.1rem !important; 
-    }
-    .dropdown-menu{
-        width:100%;
+        width:100%; padding:.7rem 1.4rem !important; 
     }
 }
 @media screen and (max-width:767px){
@@ -485,6 +482,10 @@ h6{
 
     .header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
         margin-top:7.3rem;
+    }
+
+    .postmb{
+        display:block;
     }
 
     .colartis{
@@ -509,14 +510,14 @@ h6{
     .profbox{
         width:auto; height:95%; margin:3rem 0rem 0rem 1rem;
     }
-    .teks{
+    .teks, .overlay, .post{
         display:none; 
     }
     .name{
         text-align:center; margin-top:.4rem; 
     }
 
-    .date{
+    .date, .dropup{
         margin-bottom:1.4rem; 
     }
     .rowalbum{
@@ -524,9 +525,6 @@ h6{
     }
     .colalbum{
         margin:.7rem 0rem; padding:0rem .7rem;
-    }
-    .overlay{
-        display:none;
     }
     h5{
         padding-left:.7rem !important; 
@@ -550,9 +548,5 @@ h6{
     }
     .page-footer h5{
         text-align:left !important; line-height:2.4rem !important
-    }
-
-    .dropup{
-        margin-bottom: 1.4rem;
     }
 }

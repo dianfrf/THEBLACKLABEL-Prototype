@@ -60,6 +60,8 @@ $route['Album_Detail/(:any)/(:any)'] = 'TBLController/albumdetail/$1/$2';
 $route['Multimedia/(:any)'] = 'TBLController/multimedia/$1';
 
 $route['TBL_Admin'] = 'AdminController';
+$route['Admin_Login'] = 'AdminController/admin_login';
+$route['Dashboard'] = 'AdminController/dashboard';
 $route['Artists_Data'] = 'AdminController/artists_data';
 $route['Albums_Data'] = 'AdminController/albums_data';
 $route['Songs_Data'] = 'AdminController/songs_data';

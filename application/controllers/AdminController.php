@@ -8,6 +8,46 @@
 
         public function index()
         {
+            $this->load->view('admin/auth/v_adminlogin');
+        }
+
+        public function admin_login()
+        {
+            $this->form_validation->set_rules('username', 'Username', 'trim|required', array('required' => 'Username must be fill in.'));
+            $this->form_validation->set_rules('password', 'Password', 'trim|required', array('required' => 'Password must be fill in.'));
+            if ($this->form_validation->run() == TRUE) {
+                $username    = $this->input->post('username');
+                $password    = md5($this->input->post('password'));
+                if ($this->M_Admin->do_admin_login($username,$password)->num_rows() > 0) {
+                    $data = $this->M_Admin->do_admin_login($username,$password)->row();
+                    $dataadmin = array(
+                        'login' => TRUE,
+                        'username' => $data->username,
+                        'admin_name' => $data->admin_name,
+                        'id_admin' => $data->id_admin
+                    );
+                    $this->session->set_userdata($dataadmin);
+                    redirect('Dashboard','refresh');
+                }
+                else {
+                    $this->session->set_flashdata('msg', '<div class="alert alert-danger">Login failed. Please check again your username and password.</div>');
+                    redirect('TBL_Admin');
+                }
+            }
+            else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
+                redirect('TBL_Admin');
+            }
+        }
+
+        public function admin_logout()
+        {
+            $this->session->sess_destroy();
+            redirect('TBL_Admin', 'refresh');
+        }
+
+        public function dashboard()
+        {
             $data['content'] = 'admin/v_dashboard';
             $data['active'] = 'Dashboard';
             $data['totartists'] = $this->M_Admin->count_artistsdata();

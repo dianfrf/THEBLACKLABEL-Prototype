@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2021 at 02:32 PM
+-- Generation Time: Mar 02, 2021 at 09:00 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `theblacklabel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `admin_name` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `admin_name`, `username`, `password`) VALUES
+(1, 'TBL Administrator', 'admin', 'edf66b28af1adeb9bf0baa08275f1488');
 
 -- --------------------------------------------------------
 
@@ -50,15 +70,15 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`id_album`, `id_artist`, `album_name`, `release_date`, `album_description`, `cover`, `itunes`, `spotify`, `melon`, `vibe`, `genie`, `flo`, `bugs`, `album_order`) VALUES
-(6, 2, 'BIRTHDAY', '2019-06-13', '1st DIGITAL SINGLE', 'birthday.png', 'https://music.apple.com/id/album/birthday-single/1467846641?l=id', 'https://open.spotify.com/album/7GfqgsiW63VBNLRvIrhqLx', 'https://www.melon.com/album/detail.htm?albumId=10296482', 'https://vibe.naver.com/album/3068636', 'https://www.genie.co.kr/detail/albumInfo?axnm=81226575', 'https://www.music-flo.com/detail/album/edinaadzo/albumtrack', 'https://music.bugs.co.kr/album/20260104?wl_ref=list_ab_03_ar', 1),
+(6, 2, 'BIRTHDAY', '2019-06-13', '1st DIGITAL SINGLE', 'birthday.png', 'https://music.apple.com/us/album/birthday-single/1539386846', 'https://open.spotify.com/album/7GfqgsiW63VBNLRvIrhqLx', 'https://www.melon.com/album/detail.htm?albumId=10296482', 'https://vibe.naver.com/album/3068636', 'https://www.genie.co.kr/detail/albumInfo?axnm=81226575', 'https://www.music-flo.com/detail/album/edinaadzo/albumtrack', 'https://music.bugs.co.kr/album/20260104?wl_ref=list_ab_03_ar', 1),
 (7, 3, 'MENNAL', '2019-10-02', '1st DIGITAL SINGLE', 'mennal.png', 'https://music.apple.com/id/album/mennal-feat-okasian-single/1481434264?l=id', 'https://open.spotify.com/album/2I5RgHEKPnCAqea3CxI4lL', 'https://www.melon.com/album/detail.htm?albumId=10334638', 'https://vibe.naver.com/album/3205311', 'https://www.genie.co.kr/detail/albumInfo?axnm=81275167', 'https://www.music-flo.com/detail/album/edilelhnh/albumtrack', 'https://music.bugs.co.kr/album/20280242?wl_ref=list_ab_03_ar', 1),
-(9, 3, 'EMERGENCY', '2020-02-04', '2nd DIGITAL SINGLE', 'emergency.png', 'https://music.apple.com/id/album/emergency-feat-zion-t-single/1497241245?l=id', 'https://open.spotify.com/album/4AmZD6pHiQlNvaV0oKmXXn', 'https://www.melon.com/album/detail.htm?albumId=10383629', 'https://vibe.naver.com/album/4436219', 'https://www.genie.co.kr/detail/albumInfo?axnm=81353228', 'https://www.music-flo.com/detail/album/edeineaay/albumtrack', 'https://music.bugs.co.kr/album/20303823?wl_ref=list_ab_03_ar', 2),
-(10, 2, 'WHAT YOU WAITING FOR', '2020-07-22', '2nd DIGITAL SINGLE', 'wuwf.jpg', 'https://music.apple.com/id/album/what-you-waiting-for-single/1523801767?l=id', 'https://open.spotify.com/album/1JN6jZ6tFqVojR27UZc9QB', 'https://www.melon.com/album/detail.htm?albumId=10465041', 'https://vibe.naver.com/album/4696057', 'https://www.genie.co.kr/detail/albumInfo?axnm=81511793', 'https://www.music-flo.com/detail/album/edeozllhn/albumtrack', 'https://music.bugs.co.kr/album/20339385?wl_ref=list_ab_03', 2),
-(14, 4, 'WHAT YOU WAITING FOR', '2019-03-06', '1st DIGITAL SINGLE', 'wywf.png', 'https://music.apple.com/id/album/what-you-waiting-for-single/1454603189?l=id', 'https://open.spotify.com/album/2YuKK7Pr7WPADeTUwaXrn1', 'https://www.melon.com/album/detail.htm?albumId=10257647', 'https://vibe.naver.com/album/2905109', 'https://www.genie.co.kr/detail/albumInfo?axnm=81168569', 'https://www.music-flo.com/detail/album/ndnieydo/albumtrack', 'https://music.bugs.co.kr/album/20234907?wl_ref=list_ab_03_ar', 1),
-(15, 1, 'OO', '2017-02-01', '2nd MINI ALBUM', 'oo.jpg', '', '', '', '', '', '', '', 1),
-(16, 1, 'SNOW', '2017-12-04', '4th DIGITAL SINGLE', 'snow.jpg', '', '', '', '', '', '', '', 2),
-(17, 1, 'ZZZ', '2018-10-15', '3rd MINI ALBUM', 'zzz.jpg', '', '', '', '', '', '', '', 3),
-(18, 1, 'MAY', '2019-11-06', '5th DIGITAL SINGLE', 'may.jpg', '', '', '', '', '', '', '', 4);
+(9, 3, 'EMERGENCY', '2020-02-04', '2nd DIGITAL SINGLE', 'emergency.png', 'https://music.apple.com/us/album/emergency-feat-zion-t-single/1539561200', 'https://open.spotify.com/album/4AmZD6pHiQlNvaV0oKmXXn', 'https://www.melon.com/album/detail.htm?albumId=10383629', 'https://vibe.naver.com/album/4436219', 'https://www.genie.co.kr/detail/albumInfo?axnm=81353228', 'https://www.music-flo.com/detail/album/edeineaay/albumtrack', 'https://music.bugs.co.kr/album/20303823?wl_ref=list_ab_03_ar', 2),
+(10, 2, 'WHAT YOU WAITING FOR', '2020-07-22', '2nd DIGITAL SINGLE', 'wuwf.jpg', 'https://music.apple.com/us/album/what-you-waiting-for-single/1523722876', 'https://open.spotify.com/album/1JN6jZ6tFqVojR27UZc9QB', 'https://www.melon.com/album/detail.htm?albumId=10465041', 'https://vibe.naver.com/album/4696057', 'https://www.genie.co.kr/detail/albumInfo?axnm=81511793', 'https://www.music-flo.com/detail/album/edeozllhn/albumtrack', 'https://music.bugs.co.kr/album/20339385?wl_ref=list_ab_03', 2),
+(14, 4, 'WHAT YOU WAITING FOR', '2019-03-06', '1st DIGITAL SINGLE', 'wywf.png', 'https://music.apple.com/us/album/what-you-waiting-for-single/1539386376', 'https://open.spotify.com/album/2YuKK7Pr7WPADeTUwaXrn1', 'https://www.melon.com/album/detail.htm?albumId=10257647', 'https://vibe.naver.com/album/2905109', 'https://www.genie.co.kr/detail/albumInfo?axnm=81168569', 'https://www.music-flo.com/detail/album/ndnieydo/albumtrack', 'https://music.bugs.co.kr/album/20234907?wl_ref=list_ab_03_ar', 1),
+(15, 1, 'OO', '2017-02-01', '2nd MINI ALBUM', 'oo.jpg', 'https://music.apple.com/us/album/oo/1539386426', 'https://open.spotify.com/album/20WQSlujuTbzd9d5V46mkc', 'https://www.melon.com/album/detail.htm?albumId=10035027', 'https://vibe.naver.com/album/1778329', 'https://www.genie.co.kr/detail/albumInfo?axnm=80918558', 'https://www.music-flo.com/detail/album/nddoyhnh/albumtrack', 'https://music.bugs.co.kr/album/20079828?wl_ref=list_ab_03_ab', 1),
+(16, 1, 'SNOW', '2017-12-04', '4th DIGITAL SINGLE', 'snow.jpg', 'https://music.apple.com/us/album/snow-feat-lee-moon-sae-single/1539386512', 'https://open.spotify.com/album/5PEqgoVQje28EbUTKPbVFn', 'https://www.melon.com/album/detail.htm?albumId=10114798', 'https://vibe.naver.com/album/2287582', 'https://www.genie.co.kr/detail/albumInfo?axnm=81006914', 'https://www.music-flo.com/detail/album/ndaiiony/albumtrack', 'https://music.bugs.co.kr/album/20133729?wl_ref=list_ab_03_ab', 2),
+(17, 1, 'ZZZ', '2018-10-15', '3rd MINI ALBUM', 'zzz.jpg', 'https://music.apple.com/us/album/zzz/1539386706', 'https://open.spotify.com/album/3jXVfwnqhI1wBwC2U416Ya', 'https://www.melon.com/album/detail.htm?albumId=10212202', 'https://vibe.naver.com/album/2561529', 'https://www.genie.co.kr/detail/albumInfo?axnm=81111860', 'https://www.music-flo.com/detail/album/ndnddayd/albumtrack', 'https://music.bugs.co.kr/album/20200190?wl_ref=list_ab_03_ab', 3),
+(18, 1, 'MAY', '2019-11-06', '5th DIGITAL SINGLE', 'may.jpg', 'https://music.apple.com/us/album/may-single/1540535562', 'https://open.spotify.com/album/3NoWa3yoV4h6TvKYB1Ggfi', 'https://www.melon.com/album/detail.htm?albumId=10348389', 'https://vibe.naver.com/album/3401371', 'https://www.genie.co.kr/detail/albumInfo?axnm=81302011', 'https://www.music-flo.com/detail/album/edennohai/albumtrack', 'https://music.bugs.co.kr/album/20286923?wl_ref=list_ab_03_ab', 4);
 
 -- --------------------------------------------------------
 
@@ -174,7 +194,7 @@ INSERT INTO `songs` (`id_song`, `id_album`, `title`, `duration`, `tracknumber`, 
 (24, 14, 'What You Waiting For (Feat. Anda)', '2\'54\"', 1, 'Vince, R.Tee, 1105', 'R.Tee, Vince, 1105', 'R.Tee', 0),
 (25, 15, 'Cinema', '3\'33\"', 1, 'Zion.T', 'Zion.T, Peejay', 'Peejay', 0),
 (26, 15, 'The Song', '3\'36\"', 2, 'Zion.T', 'Zion.T, Kush', 'Kush, Peejay', 1),
-(27, 15, 'Comedian', '1\'53\"', 3, 'Zion.T', 'Zion.T, SC Yun', 'Peejay', 0),
+(27, 15, 'Comedian', '1\'53\"', 3, 'Zion.T', 'Zion.T, Yun Seok Cheol', 'Peejay', 0),
 (28, 15, 'Sorry (Feat. Beenzino)', '3\'06\"', 4, 'Zion.T, Beenzino', 'Peejay, Zion.T, Seo Wonjin', 'Peejay', 0),
 (29, 15, 'The Bad Guys', '3\'34\"', 5, 'Zion.T', 'Zion.T, Peejay', 'Peejay', 0),
 (30, 15, 'Complex (Feat. G-Dragon of BIGBANG)', '3\'27\"', 6, 'Zion.T, G-Dragon, DJ Dopsh', 'Zion.T, Peejay, Slom', 'Peejay, Slom', 0),
@@ -225,6 +245,12 @@ INSERT INTO `videos` (`id_video`, `id_album`, `video_name`, `video_release_date`
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
 -- Indexes for table `albums`
 --
 ALTER TABLE `albums`
@@ -268,6 +294,12 @@ ALTER TABLE `videos`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `albums`
