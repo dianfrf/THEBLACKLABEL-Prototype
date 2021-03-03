@@ -33,7 +33,7 @@
                                 <td><?=$no;?></td>
                                 <td><?=$f->year?></td>
                                 <td><?=$f->film_title?></td>
-                                <td><?=$f->name?></td>
+                                <td><a href="<?=base_url()?>ArtistDetail/<?=$f->id_artist?>"><?=$f->name?></a></td>
                                 <td>
                                     <a onclick="Edit(<?=$f->id_filmography?>);">
                                         <button type="button" name="button" class="btn btn-success" aria-haspopup="true" aria-expanded="true" data-toggle="tooltip" data-placement="top" title="Edit Data">

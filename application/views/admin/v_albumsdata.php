@@ -33,8 +33,8 @@
                             <tr>
                                 <td><?=$no;?></td>
                                 <td><img src="<?=base_url()?>Asset/img/album/<?=$a->cover?>" style="width:50px;border-radius:20%"></td>
-                                <td><?=$a->album_name?></td>
-                                <td><?=$a->name?></td>
+                                <td><a href="<?=base_url()?>AlbumDetail/<?=$a->id_album?>"><?=$a->album_name?></a></td>
+                                <td><a href="<?=base_url()?>ArtistDetail/<?=$a->id_artist?>"><?=$a->name?></a></td>
                                 <td><?=$a->release_date?></td>
                                 <td>
                                     <a onclick="Edit(<?=$a->id_album?>);">

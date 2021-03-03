@@ -20,7 +20,7 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Year</th>
-                                <th scope="col">Nomination</th>
+                                <th scope="col">Award and Nomination</th>
                                 <th scope="col">Artist Name</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -33,7 +33,7 @@
                                 <td><?=$no;?></td>
                                 <td><?=$a->year?></td>
                                 <td><?=$a->nomination?></td>
-                                <td><?=$a->name?></td>
+                                <td><a href="<?=base_url()?>ArtistDetail/<?=$a->id_artist?>"><?=$a->name?></a></td>
                                 <td>
                                     <a onclick="Edit(<?=$a->id_award?>);">
                                         <button type="button" name="button" class="btn btn-success" aria-haspopup="true" aria-expanded="true" data-toggle="tooltip" data-placement="top" title="Edit Data">

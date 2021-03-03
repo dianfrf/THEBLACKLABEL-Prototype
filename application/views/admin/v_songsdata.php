@@ -33,7 +33,7 @@
                                 <td><?=$no;?></td>
                                 <td><?=$s->title?></td>
                                 <td><?=$s->duration?></td>
-                                <td><?=$s->album_name?></td>
+                                <td><a href="<?=base_url()?>AlbumDetail/<?=$s->id_album?>"><?=$s->album_name?></a></td>
                                 <td>
                                     <a onclick="Edit(<?=$s->id_song?>);">
                                         <button type="button" name="button" class="btn btn-success" aria-haspopup="true" aria-expanded="true" data-toggle="tooltip" data-placement="top" title="Edit Data">

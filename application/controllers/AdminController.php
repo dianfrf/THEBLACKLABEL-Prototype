@@ -56,6 +56,13 @@
             $data['totvideos'] = $this->M_Admin->count_videosdata();
             $data['totawards'] = $this->M_Admin->count_awardsdata();
             $data['totfilms'] = $this->M_Admin->count_filmsdata();
+
+            $data['albums'] = $this->M_Admin->get_albumsdatal();
+            $data['artists'] = $this->M_Admin->get_artistsdatal();
+            $data['songs'] = $this->M_Admin->get_songsdatal();
+            $data['videos'] = $this->M_Admin->get_videosdatal();
+            $data['films'] = $this->M_Admin->get_filmsdatal();
+            $data['awards'] = $this->M_Admin->get_awardsdatal();
             $data['PageTitle'] = 'Dashboard';
             $this->load->view('admin/v_layout', $data);  
         }
@@ -679,6 +686,45 @@
                 $this->session->set_flashdata('msg', '<div class="alert alert-warning">'.validation_errors().'</div>');
             }
             redirect('Awards_Data');
+        }
+
+//DETAIL PAGE
+        //Album Detail
+        public function album_detail($id)
+        {
+            $data['detail'] = $this->M_Admin->getalbumbyid($id);
+            $detail = $data['detail'];
+            if($detail == null){
+                redirect('406');
+            } else{
+                $data['content'] = 'admin/v_albumdetail';
+                $data['active'] = 'Albums';
+                $data['tampil_lagu'] = $this->M_Admin->getalbumtrack($detail->id_album);
+                $data['count'] = $this->M_Admin->countalbumvideo($detail->id_album);
+                $data['tampil_video'] = $this->M_Admin->getalbumvideo($detail->id_album);
+                $data['PageTitle'] = "$detail->album_name | $detail->name";
+                $this->load->view('admin/v_layout', $data);
+            }  
+        }
+        //Artist Detail
+        public function artist_detail($id)
+        {
+            $data['detail'] = $this->M_Admin->getartistbyid($id);
+            $detail = $data['detail'];
+            if($detail == null){
+                redirect('406');
+            } else{
+                $data['content'] = 'admin/v_artistdetail';
+                $data['active'] = 'Artists';
+                $data['hitung'] = $this->M_Admin->countawards($id);
+                $data['tampil_trofi'] = $this->M_Admin->getawards($id);
+                $data['hitfilm'] = $this->M_Admin->countfilms($id);
+                $data['tampil_film'] = $this->M_Admin->getfilms($id);
+                $data['count'] = $this->M_Admin->countartistalbums($id);
+                $data['tampil_album'] = $this->M_Admin->getartistalbums($id);
+                $data['PageTitle'] = "$detail->name";
+                $this->load->view('admin/v_layout', $data);    
+            }
         }
     }
 ?>

@@ -34,7 +34,7 @@
                                 <td><?=$no;?></td>
                                 <td><img src="<?=base_url()?>Asset/img/thumbnail/<?=$v->thumbnail?>" style="width:80px;border-radius:10%"></td>
                                 <td><?=$v->video_name?></td>
-                                <td><?=$v->album_name?></td>
+                                <td><a href="<?=base_url()?>AlbumDetail/<?=$v->id_album?>"><?=$v->album_name?></a></td>
                                 <td><?=$v->video_release_date?></td>
                                 <td>
                                     <a onclick="Edit(<?=$v->id_video?>);">

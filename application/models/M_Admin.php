@@ -10,6 +10,10 @@
         {
             return $this->db->order_by('id_artist','ASC')->get('artists')->result();
         }
+        public function get_artistsdatal()
+        {
+            return $this->db->order_by('id_artist','ASC')->limit(3)->get('artists')->result();
+        }
         public function count_artistsdata()
         {
             return $this->db->get('artists')->num_rows();
@@ -18,6 +22,11 @@
         {
             return $this->db->join('artists','albums.id_artist=artists.id_artist')
                             ->order_by('release_date','DESC')->get('albums')->result();
+        }
+        public function get_albumsdatal()
+        {
+            return $this->db->join('artists','albums.id_artist=artists.id_artist')
+                            ->order_by('release_date','DESC')->limit(3)->get('albums')->result();
         }
         public function count_albumsdata()
         {
@@ -28,6 +37,11 @@
             return $this->db->join('albums','songs.id_album=albums.id_album')
                             ->order_by('id_song','DESC')->get('songs')->result();
         }
+        public function get_songsdatal()
+        {
+            return $this->db->join('albums','songs.id_album=albums.id_album')
+                            ->order_by('id_song','DESC')->limit(3)->get('songs')->result();
+        }
         public function count_songsdata()
         {
             return $this->db->get('songs')->num_rows();
@@ -36,6 +50,11 @@
         {
             return $this->db->join('albums','videos.id_album=albums.id_album')
                             ->order_by('video_release_date','DESC')->get('videos')->result();
+        }
+        public function get_videosdatal()
+        {
+            return $this->db->join('albums','videos.id_album=albums.id_album')
+                            ->order_by('video_release_date','DESC')->limit(3)->get('videos')->result();
         }
         public function count_videosdata()
         {
@@ -46,6 +65,11 @@
             return $this->db->join('artists','filmography.id_artist=artists.id_artist')
                             ->order_by('year','DESC')->get('filmography')->result();
         }
+        public function get_filmsdatal()
+        {
+            return $this->db->join('artists','filmography.id_artist=artists.id_artist')
+                            ->order_by('year','DESC')->limit(3)->get('filmography')->result();
+        }
         public function count_filmsdata()
         {
             return $this->db->get('filmography')->num_rows();
@@ -54,6 +78,11 @@
         {
             return $this->db->join('artists','awards.id_artist=artists.id_artist')
                             ->order_by('year','DESC')->get('awards')->result();
+        }
+        public function get_awardsdatal()
+        {
+            return $this->db->join('artists','awards.id_artist=artists.id_artist')
+                            ->order_by('year','DESC')->limit(3)->get('awards')->result();
         }
         public function count_awardsdata()
         {
@@ -324,6 +353,53 @@
                 'picture'              => $filename
             );
             return $this->db->where('id_artist', $id_artist)->update('artists', $object);
+        }
+
+//DETAIL PAGE
+        public function getalbumbyid($id)
+        {
+            return $this->db->join('artists','albums.id_artist=artists.id_artist')
+                            ->where('id_album',$id)->get('albums')->row();
+        }
+        public function getalbumtrack($id_album)
+        {
+            return $this->db->order_by('tracknumber','ASC')->where('id_album',$id_album)->get('songs')->result();
+        }
+        public function countalbumvideo($id_album)
+        {
+            return $this->db->where('id_album',$id_album)->get('videos')->num_rows();
+        }
+        public function getalbumvideo($id_album)
+        {
+            return $this->db->order_by('video_release_date','DESC')->where('id_album',$id_album)->get('videos')->result();
+        }
+        public function getartistbyid($id)
+        {
+            return $this->db->where('id_artist',$id)->get('artists')->row();
+        }
+        public function countawards($id)
+        {
+            return $this->db->where('id_artist',$id)->get('awards')->num_rows();
+        }
+        public function getawards($id)
+        {
+            return $this->db->order_by('year','DESC')->where('id_artist',$id)->get('awards')->result();
+        }
+        public function countfilms($id)
+        {
+            return $this->db->where('id_artist',$id)->get('filmography')->num_rows();
+        }
+        public function getfilms($id)
+        {
+            return $this->db->order_by('year','DESC')->where('id_artist',$id)->get('filmography')->result();
+        }
+        public function countartistalbums($id)
+        {
+            return $this->db->where('id_artist',$id)->get('albums')->num_rows();
+        }
+        public function getartistalbums($id)
+        {
+            return $this->db->order_by('release_date','DESC')->where('id_artist',$id)->get('albums')->result();
         }
     }
 ?>

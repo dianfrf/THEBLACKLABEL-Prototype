@@ -89,3 +89,6 @@ $route['Video_Edit'] = 'AdminController/video_edit';
 $route['Song_Edit'] = 'AdminController/song_edit';
 $route['Album_Edit'] = 'AdminController/album_edit';
 $route['Artist_Edit'] = 'AdminController/artist_edit';
+
+$route['AlbumDetail/(:num)'] = 'AdminController/album_detail/$1';
+$route['ArtistDetail/(:num)'] = 'AdminController/artist_detail/$1';

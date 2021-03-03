@@ -31,7 +31,7 @@
                             <tr>
                                 <td><?=$no;?></td>
                                 <td><img src="<?=base_url()?>Asset/img/artists/<?=$a->picture?>" style="width:50px;border-radius:50%"></td>
-                                <td><?=$a->name?></td>
+                                <td><a href="<?=base_url()?>ArtistDetail/<?=$a->id_artist?>"><?=$a->name?></a></td>
                                 <td>
                                     <a onclick="Edit(<?=$a->id_artist?>);">
                                         <button type="button" name="button" class="btn btn-success" aria-haspopup="true" aria-expanded="true" data-toggle="tooltip" data-placement="top" title="Edit Data">
