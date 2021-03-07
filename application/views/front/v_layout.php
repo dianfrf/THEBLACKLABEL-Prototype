@@ -95,12 +95,12 @@
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('padding', '21px');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('border-bottom', '1px solid rgb(73,73,73)');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet-media').css('display', 'none');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-name').css('color', 'rgb(245,245,245)'); 
+                $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-name').css('color', 'rgb(237,237,237)'); 
                 $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-screenName').css('display', 'none');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('margin-top', '21px');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('font-family', 'Roboto');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('font-size', '14px');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('color', 'rgb(245,245,245)');
+                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('color', 'rgb(237,237,237)');
                 $('.twitter-feed').find('.twitter-timeline').contents().find('ul.timeline-tweet-actions').css('display', 'none');
 
                 $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-TweetList').bind('DOMSubtreeModified propertychange', function () {
