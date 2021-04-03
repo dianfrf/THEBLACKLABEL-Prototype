@@ -4,7 +4,7 @@
             <a href="<?=base_url('Artists')?>" class="back">
                 <button><i class="fas fa-chevron-left fa-xs"></i>BACK</button>
             </a>
-        <?php if($detail->id_artist == 1) { ?>
+        <?php if($detail->id_artist == $first->id_artist) { ?>
             <a href="<?=base_url()?>Artist_Detail/<?=$next->id_artist;?>" class="arrow">
                 <button>NEXT<i class="fas fa-chevron-right fa-xs"></i></button>
             </a>

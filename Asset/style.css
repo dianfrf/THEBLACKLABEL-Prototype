@@ -253,8 +253,17 @@ hr{
 .overlay{
     position:absolute; top:0; left:0; bottom:0; right:0; margin:1.4rem; padding:0; min-width:90%; min-height:90%; opacity:0; background-color:rgba(0, 0, 0, 0.9); transition:.1s all;
 }
+.overlaymb{
+    display:none !important;
+}
+.artname{
+    position:absolute; top:10%; right:-50%; left:50%; transform:translate(-50%, -50%); font-weight:100; font-size:2.2rem !important; color:rgb(213, 213, 213); font-family:'Roboto'; text-align:center;
+}
 .teks{
     position:absolute; top:50%; right:-50%; left:50%; transform:translate(-50%, -50%); font-size:2.2rem; color:rgb(245, 245, 245); text-align:center; font-family:'RobotoBold';
+}
+.albdesc{
+    position:absolute; top:90%; right:-50%; left:50%; transform:translate(-50%, -50%); font-size:1.45rem; color:rgb(245, 245, 245); text-align:center; font-family:'Roboto';
 }
 .albumname{
     font-weight:100; font-size:1.45rem !important; color:rgb(213, 213, 213); font-family:'Roboto'; 
@@ -424,7 +433,7 @@ h6{
 }
 @media screen and (max-width:1023px){
     .container-fluid{
-        padding:1.4rem !important; 
+        padding:1rem !important; 
     }
 
     #btntop{
@@ -445,7 +454,7 @@ h6{
     }
 
     .header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
-        margin-top:7.4rem;
+        margin-top:6.6rem;
     }
 
     .logo, .profil, .cov, .cover, .column, .thumbnail, #expandedImg, .ifbox, .dropup, .dropdown-menu{
@@ -481,7 +490,7 @@ h6{
     }
 
     .header, .aboutkonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
-        margin-top:7.3rem;
+        margin-top:6.5rem;
     }
 
     .postmb{
@@ -516,12 +525,21 @@ h6{
     .name{
         text-align:center; margin-top:.4rem; 
     }
+    .overlaymb{
+        display:block !important; margin-top:.3rem;
+    }
+    .teksmb{
+        font-size:2.2rem; color:rgb(245, 245, 245); font-family:'RobotoBold';
+    }
+    .albdescmb{
+        font-size:1.45rem; color:rgb(245, 245, 245); font-family:'Roboto';
+    }
 
     .date, .dropup{
         margin-bottom:1.4rem; 
     }
     .rowalbum{
-        padding:0rem .8rem;
+        padding:0rem .8rem; margin-top:.7rem;
     }
     .colalbum{
         margin:.7rem 0rem; padding:0rem .7rem;

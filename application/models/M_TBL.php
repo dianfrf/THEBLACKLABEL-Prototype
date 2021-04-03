@@ -23,6 +23,11 @@
             return $this->db->where('id_artist',$id)->get('artists')->row();
         }
 
+        public function getfirstartistid()
+        {
+            return $this->db->order_by('id_artist','ASC')->limit(1)->get('artists')->row();
+        }
+
         public function getlastartistid()
         {
             return $this->db->order_by('id_artist','DESC')->limit(1)->get('artists')->row();
@@ -104,6 +109,12 @@
             return $this->db->join('albums','videos.id_album=albums.id_album')
                             ->join('artists','albums.id_artist=artists.id_artist')
                             ->order_by('video_release_date','DESC')->limit(8,$mulai)->get('videos')->result();
+        }
+
+        public function getalbums($limit,$start)
+        {
+            return $this->db->join('artists','albums.id_artist=artists.id_artist')
+                            ->order_by('release_date','DESC')->limit($limit,$start)->get('albums')->result();
         }
     }
 ?>

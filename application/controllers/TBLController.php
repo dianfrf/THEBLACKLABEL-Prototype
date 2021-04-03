@@ -43,6 +43,7 @@
             } else{
                 $data['content'] = 'front/v_artistdetail';
                 $data['active'] = 'Artists';
+                $data['first'] = $this->M_TBL->getfirstartistid();
                 $data['last'] = $this->M_TBL->getlastartistid();
                 $data['next'] = $this->M_TBL->gotonextartist($id);
                 $data['prev'] = $this->M_TBL->gotoprevartist($id);
@@ -83,7 +84,7 @@
                 redirect('406');
             } else{
                 $data['content'] = 'front/v_albumdetail';
-                $data['active'] = 'Artists';
+                $data['active'] = 'Releases';
                 $data['last'] = $this->M_TBL->getlastalbumid($idal);
                 $data['tampil_lagu'] = $this->M_TBL->getalbumtrack($detail->id_album);
                 $data['count'] = $this->M_TBL->countalbumvideo($detail->id_album);
@@ -91,6 +92,42 @@
                 $data['PageTitle'] = "$detail->album_name | $detail->name | The Black Label";
                 $this->load->view('front/v_layout', $data);  
             }  
+        }
+
+        public function releases()
+        {
+            $data['content'] = 'front/v_releases';
+            $data['active'] = 'Releases';
+            $data['PageTitle'] = 'Releases | The Black Label';
+            $this->load->view('front/v_layout', $data);  
+        }
+
+        public function loadreleases()
+        {
+            $output = '';
+            $tampil_release = $this->M_TBL->getalbums($this->input->post('limit'),$this->input->post('start'));
+            foreach($tampil_release as $a) {
+                $cetak = substr($a->album_name,0,16);
+                if($a->album_name == $cetak){$albname = $cetak;}
+                else{$albname = "$cetak...";};
+                $output .= '
+                <div class="col-lg-3 col-md-6 col-6 colalbum">
+                    <a href="'.base_url().'Album_Detail/'.$a->id_artist.'/'.$a->album_order.'" style="text-decoration:none">
+                        <img src="'.base_url().'Asset/img/album/'.$a->cover.'" class="lazyload">
+                        <div class="overlay">
+                            <div class="artname">'.$a->name.'</div>
+                            <div class="teks"><b class="albumname">'.$a->album_description.'</b><br>'.$a->album_name.'</div>
+                            <div class="albdesc">'. date("Y.m.d", strtotime($a->release_date)).'</div>
+                        </div>
+                        <p class="overlaymb">
+                            <b>'.$albname.'</b><br>
+                            '.$a->album_description.'<br>'.$a->name.' | '. date("Y.m.d", strtotime($a->release_date)).'
+                        </p>
+                    </a>
+                </div>
+                ';
+            }
+            echo $output;
         }
 
         public function multimedia($num)

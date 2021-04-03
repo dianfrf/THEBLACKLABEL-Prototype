@@ -1,7 +1,7 @@
 <div class="jumbotron albumdetail">
     <div class="container-fluid">
         <h6>
-            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist;?>" class="back">
+            <a href="<?=base_url()?>Artist_Detail/<?=$detail->id_artist?>" class="back">
                 <button><i class="fas fa-chevron-left fa-xs"></i>BACK</button>
             </a>
         <?php if($detail->album_order == 1 && $detail->album_order == $last->album_order) {} elseif($detail->album_order == 1) { ?>

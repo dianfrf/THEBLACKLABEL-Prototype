@@ -37,6 +37,9 @@
                         <li class="<?php echo $active == "Artists" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="<?=base_url('Artists')?>">ARTISTS</a>
                         </li>
+                        <li class="<?php echo $active == "Releases" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="<?=base_url('Releases')?>">RELEASES</a>
+                        </li>
                         <li class="<?php echo $active == "Multimedia" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="<?=base_url()?>Multimedia/1">MULTIMEDIA</a>
                         </li>
@@ -129,8 +132,7 @@
             function switchTheme(e) {
                 if (e.target.checked) {
                     document.documentElement.setAttribute('data-theme', 'dark');
-                }
-                else {
+                } else {
                     document.documentElement.setAttribute('data-theme', 'light');
                 }    
             }
@@ -139,8 +141,7 @@
                 if (e.target.checked) {
                     document.documentElement.setAttribute('data-theme', 'dark');
                     localStorage.setItem('theme', 'dark'); //add this
-                }
-                else {
+                } else {
                     document.documentElement.setAttribute('data-theme', 'light');
                     localStorage.setItem('theme', 'light'); //add this
                 }    
@@ -172,8 +173,7 @@
                             $('#loadalbum').append(data);
                             if(data == '') {
                                 action = 'active';
-                            }
-                            else {
+                            } else {
                                 action = 'inactive';
                             }
                         }
@@ -189,6 +189,42 @@
                         start = start + limit;
                         setTimeout(function() {
                             load_album_data(limit, start, id);
+                        }, 1000);
+                    }
+                });
+            });
+
+            //Load more releases
+            $(document).ready(function() {
+                var limit = 8;
+                var start = 0;
+                var action = 'inactive';
+                function load_release_data(limit, start) {
+                    $.ajax({
+                        url: "<?=base_url('TBLController/loadreleases')?>",
+                        method: "POST",
+                        data: {limit:limit, start:start},
+                        cache: false,
+                        success:function(data) {
+                            $('#loadreleases').append(data);
+                            if(data == '') {
+                                action = 'active';
+                            } else {
+                                action = 'inactive';
+                            }
+                        }
+                    });
+                }
+                if(action == 'inactive') {
+                    action = 'active';
+                    load_release_data(limit, start);
+                }
+                $(window).scroll(function() {
+                    if($(window).scrollTop() + $(window).height() > $("#loadreleases").height() && action == 'inactive') {
+                        action = 'active';
+                        start = start + limit;
+                        setTimeout(function() {
+                            load_release_data(limit, start);
                         }, 1000);
                     }
                 });
