@@ -78,7 +78,7 @@
             <?php $i = 0;foreach($tampil_video as $row) {$actives = '';if($i == 0) {$actives = 'active';}?>
                 <div class="carousel-item <?=$actives;?>">
                     <div class="conthumb">
-                        <center><img src="<?=base_url()?>Asset/img/thumbnail/<?=$row->thumbnail;?>" alt="<?=$row->video_name;?>" class="thumbnail lazyload"></center>
+                        <center><img src="http://img.youtube.com/vi/<?=$row->link?>/0.jpg" alt="<?=$row->video_name;?>" class="thumbnail lazyload"></center>
                         <button class="playbtn" data-video-id="<?=$row->link;?>"><i class="fas fa-play"></i></button>
                     </div>
                     <p style="text-align: center">'<?=$row->video_name;?>' M/V</p>
@@ -92,7 +92,7 @@
         <h3>MUSIC VIDEO</h3>
     <?php foreach ($tampil_video as $video) { ?>
         <div class="conthumb">
-            <center><img src="<?=base_url()?>Asset/img/thumbnail/<?=$video->thumbnail;?>" alt="<?=$video->video_name?>" class="thumbnail lazyload"></center>
+            <center><img src="http://img.youtube.com/vi/<?=$video->link?>/0.jpg" alt="<?=$video->video_name?>" class="thumbnail lazyload"></center>
             <button class="playbtn" data-video-id="<?=$video->link;?>"><i class="fas fa-play"></i></button>
         </div>
         <p style="text-align: center">'<?=$video->video_name;?>' M/V</p>

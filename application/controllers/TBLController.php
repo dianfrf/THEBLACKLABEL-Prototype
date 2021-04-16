@@ -13,6 +13,7 @@
             $data['active'] = 'Home';
             $data['cover'] = $this->M_TBL->getlatestalbum();
             $data['satum'] = $this->M_TBL->getlatestvideo();
+            $data['notice'] = $this->M_TBL->getlatestnotice();
             $data['PageTitle'] = 'The Black Label';
             $this->load->view('front/v_layout', $data);            
         }
@@ -23,6 +24,38 @@
             $data['active'] = 'About';
             $data['PageTitle'] = 'About | The Black Label';
             $this->load->view('front/v_layout', $data);   
+        }
+
+        public function notice($num)
+        {
+            $data['content'] = 'front/v_notice';
+            $data['active'] = 'Notice';
+            $data['lastntc'] = $this->M_TBL->getlastnotice();
+            $data['page'] = $num ? (int)$num : 1;
+            $mulai = ($data['page']>1) ? ($data['page'] * 4) - 4 : 0;
+            $total = $this->M_TBL->countnotice();
+            $data['pages'] = ceil($total/4);
+            $data['notice'] = $this->M_TBL->getnotices($mulai);
+            $data['PageTitle'] = 'Notice | The Black Label';
+            $this->load->view('front/v_layout', $data);   
+        }
+
+        public function noticedetail($id)
+        {
+            $data['detail'] = $this->M_TBL->getnoticebyid($id);
+            $detail = $data['detail'];
+            if($detail == null){
+                redirect('406');
+            } else{
+                $data['content'] = 'front/v_noticedetail';
+                $data['active'] = 'Notice';
+                $data['first'] = $this->M_TBL->getfirstnotice();
+                $data['last'] = $this->M_TBL->getlastnotice();
+                $data['next'] = $this->M_TBL->gotonextnotice($id);
+                $data['prev'] = $this->M_TBL->gotoprevnotice($id);
+                $data['PageTitle'] = 'Notice | The Black Label';
+                $this->load->view('front/v_layout', $data);      
+            }
         }
 
         public function artists()
@@ -121,7 +154,8 @@
                         </div>
                         <p class="overlaymb">
                             <b>'.$albname.'</b><br>
-                            '.$a->album_description.'<br>'.$a->name.' | '. date("Y.m.d", strtotime($a->release_date)).'
+                            '.$a->album_description.'<br>'
+                            .$a->name.' | '. date("Y.m.d", strtotime($a->release_date)).'
                         </p>
                     </a>
                 </div>

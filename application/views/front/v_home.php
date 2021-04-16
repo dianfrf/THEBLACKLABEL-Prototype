@@ -12,7 +12,9 @@
                 </a>
                 <h4>MUSIC VIDEO</h4>
                 <a href="<?=base_url()?>Multimedia/1">
-                    <img src="<?=base_url()?>Asset/img/thumbnail/<?=$satum->thumbnail;?>" class="mv lazyload">
+                    <div class="notbox">
+                        <img src="http://img.youtube.com/vi/<?=$satum->link?>/0.jpg" class="thumb lazyload">
+                    </div>
                 </a>
             </div>
             <div class="col-lg-4 col-md-6 bar">
@@ -27,7 +29,26 @@
             </div>
             <div class="col-lg-4 col-md-12 bar">
                 <h4>NOTICE</h4>
-                <a class="twitter-timeline" href="https://twitter.com/THEBLACKLABEL_" data-chrome="noheader nofooter noborders noscrollbar" data-tweet-limit="2" dnt="true"></a>
+                <div class="ntccard">
+                <?php foreach($notice as $n) { ?>
+                    <div class="row">
+                        <div class="col-3 col-md-3 col-lg-3">
+                        <?php if($n->link != null) { ?>
+                            <div class="notbox">
+                                <img src="http://img.youtube.com/vi/<?=$n->link?>/0.jpg" class="ntcthumb lazyload">
+                            </div>
+                        <?php } else{ ?>
+                            <img src="<?=base_url()?>Asset/img/notice/<?=$n->notice_img?>" class="ntcimg lazyload">
+                        <?php } ?>
+                        </div>
+                        <div class="col-9 col-md-9 col-lg-9">
+                            <a href="<?=base_url()?>Notice_Detail/<?=$n->id_notice?>"><h5><?=$n->title?></h5></a>    
+                            <p><?=date("Y.m.d", strtotime($n->date));?></p>
+                        </div>
+                    </div>
+                    <hr>
+                <?php } ?>
+                </div>
             </div>
         </div>
     </div>

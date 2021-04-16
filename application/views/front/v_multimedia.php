@@ -11,7 +11,7 @@
         <?php foreach ($tampil_multimedia as $multimedia) { ?>
             <div class="col-lg-3 col-md-6 colmultimed">
                 <div class="tmcov">
-                    <img src="<?=base_url()?>Asset/img/thumbnail/<?=$multimedia->thumbnail;?>" alt="https://www.youtube.com/embed/<?=$multimedia->link;?>" class="thumb lazyload" onclick="myFunction(this)" id="<b><?=$multimedia->video_name;?></b><br><?=$multimedia->name;?> | <?=date("Y.m.d", strtotime($multimedia->release_date));?>">
+                    <img src="http://img.youtube.com/vi/<?=$multimedia->link?>/0.jpg" alt="https://www.youtube.com/embed/<?=$multimedia->link;?>" class="thumb lazyload" onclick="myFunction(this)" id="<b><?=$multimedia->video_name;?></b><br><?=$multimedia->name;?> | <?=date("Y.m.d", strtotime($multimedia->release_date));?>">
                 </div>
                 <p class="dsc">
                     <b><?php $cetak = substr($multimedia->video_name,0,30);If($multimedia->video_name == $cetak) {echo $cetak;}else {echo "$cetak...";}?></b>

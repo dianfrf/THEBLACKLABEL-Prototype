@@ -114,7 +114,7 @@
                     <label>Picture</label>
                     <ul>
                         <li>File size must not exceed 1MB</li>
-                        <li>File resolution must not exceed 500px x 500px</li>
+                        <li>File resolution must not exceed 500 x 500</li>
                     </ul>
                     <input type="file" class="form-control" name="picture" autocomplete="off" min="0">
                 </div>
@@ -181,7 +181,7 @@
                     <label>Picture</label>
                     <ul>
                         <li>File size must not exceed 1MB</li>
-                        <li>File resolution must not exceed 500px x 500px</li>
+                        <li>File resolution must not exceed 500 x 500</li>
                     </ul>
                     <input type="file" class="form-control" name="picture" autocomplete="off" min="0">
                 </div>

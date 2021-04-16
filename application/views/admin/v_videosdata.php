@@ -110,7 +110,7 @@
                     <label>Thumbnail</label>
                     <ul>
                         <li>File size must not exceed 1MB</li>
-                        <li>File resolution must not exceed 1280px x 720px</li>
+                        <li>File resolution must not exceed 1280 x 720</li>
                     </ul>
                     <input type="file" class="form-control" name="thumbnail" autocomplete="off" min="0">
                 </div>
@@ -169,7 +169,7 @@
                     <label>Thumbnail</label>
                     <ul>
                         <li>File size must not exceed 1MB</li>
-                        <li>File resolution must not exceed 1280px x 720px</li>
+                        <li>File resolution must not exceed 1280 x 720</li>
                     </ul>
                     <input type="file" class="form-control" name="thumbnail" autocomplete="off" min="0">
                 </div>

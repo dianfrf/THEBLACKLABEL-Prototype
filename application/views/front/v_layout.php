@@ -12,7 +12,6 @@
         <script src="<?=base_url()?>Asset/js/jquery-3.2.1.min.js"></script>
         <script src="<?=base_url()?>Asset/js/bootstrap.min.js"></script>
         <script src="<?=base_url()?>Asset/js/lazysizes.min.js"></script>
-        <script src="<?=base_url()?>Asset/js/widgets.js"></script>
         <script src="<?=base_url()?>Asset/js/jquery-modal-video.min.js"></script>
         <script src="<?=base_url()?>Asset/js/modal-video.min.js"></script>
     </head>
@@ -33,6 +32,9 @@
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="<?php echo $active == "About" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="<?=base_url('About')?>">ABOUT</a>
+                        </li>
+                        <li class="<?php echo $active == "Notice" ? "nav-item active" : ""; ?>">
+                            <a class="nav-link" href="<?=base_url()?>Notice/1">NOTICE</a>
                         </li>
                         <li class="<?php echo $active == "Artists" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="<?=base_url('Artists')?>">ARTISTS</a>
@@ -87,30 +89,7 @@
                 </div>
             </div>
         </div>
-        <script>
-            //Twitter Custom CSS
-            $('.twitter-feed').delegate('#twitter-widget-0', 'DOMSubtreeModified propertychange', function () {
-                customizeTweetMedia();
-            });
-            var customizeTweetMedia = function () {
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').hover(function(){$(this).css("background-color", "rgb(20,20,20)");}, function(){$(this).css("background-color", "rgb(30,30,30)");});
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('background-color', 'rgb(40,40,40)');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('padding', '21px');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet').css('border-bottom', '1px solid rgb(73,73,73)');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-Tweet-media').css('display', 'none');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-name').css('color', 'rgb(237,237,237)'); 
-                $('.twitter-feed').find('.twitter-timeline').contents().find('span.TweetAuthor-screenName').css('display', 'none');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('margin-top', '21px');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('font-family', 'Roboto');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('font-size', '14px');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('p.timeline-tweet-text').css('color', 'rgb(237,237,237)');
-                $('.twitter-feed').find('.twitter-timeline').contents().find('ul.timeline-tweet-actions').css('display', 'none');
-
-                $('.twitter-feed').find('.twitter-timeline').contents().find('.timeline-TweetList').bind('DOMSubtreeModified propertychange', function () {
-                    customizeTweetMedia(this);
-                });
-            }
-            
+        <script>            
             //Go to top
             $(document).ready(function() {
                 $('#btntop').click(function() {

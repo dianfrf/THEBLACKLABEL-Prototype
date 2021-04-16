@@ -13,6 +13,46 @@
                             ->order_by('video_release_date','DESC')->limit(1)->get('videos')->row();
         }
 
+        public function getlatestnotice()
+        {
+            return $this->db->order_by('id_notice', 'DESC')->limit(6)->get('notice')->result();
+        }
+
+        public function gotonextnotice($id)
+        {
+            return $this->db->query("SELECT * FROM notice WHERE id_notice > $id ORDER BY id_notice LIMIT 1")->row();
+        }
+
+        public function gotoprevnotice($id)
+        {
+            return $this->db->query("SELECT * FROM notice WHERE id_notice < $id ORDER BY id_notice DESC LIMIT 1")->row();
+        }
+
+        public function getfirstnotice()
+        {
+            return $this->db->order_by('id_notice','ASC')->limit(1)->get('notice')->row();
+        }
+
+        public function getlastnotice()
+        {
+            return $this->db->order_by('id_notice', 'DESC')->limit(1)->get('notice')->row();
+        }
+
+        public function countnotice()
+        {
+            return $this->db->get('notice')->num_rows();
+        }
+
+        public function getnotices($mulai)
+        {
+            return $this->db->order_by('id_notice', 'DESC')->limit(4,$mulai)->get('notice')->result();
+        }
+
+        public function getnoticebyid($id)
+        {
+            return $this->db->where('id_notice', $id)->get('notice')->row();
+        }
+
         public function getartists()
         {
             return $this->db->order_by('id_artist','ASC')->get('artists')->result();

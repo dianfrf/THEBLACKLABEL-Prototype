@@ -54,6 +54,8 @@ $route['406'] = 'TBLController/notacceptable';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['About'] = 'TBLController/about';
+$route['Notice/(:any)'] = 'TBLController/notice/$1';
+$route['Notice_Detail/(:any)'] = 'TBLController/noticedetail/$1';
 $route['Artists'] = 'TBLController/artists';
 $route['Artist_Detail/(:any)'] = 'TBLController/artistdetail/$1';
 $route['Album_Detail/(:any)/(:any)'] = 'TBLController/albumdetail/$1/$2';

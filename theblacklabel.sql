@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 07, 2021 at 01:45 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Host: localhost:3306
+-- Generation Time: Apr 15, 2021 at 05:02 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `theblacklabel`
+-- Database: `id15623823_theblacklabel`
 --
 
 -- --------------------------------------------------------
@@ -166,6 +166,50 @@ INSERT INTO `filmography` (`id_filmography`, `id_artist`, `film_title`, `year`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notice`
+--
+
+CREATE TABLE `notice` (
+  `id_notice` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `notice_img` varchar(100) NOT NULL,
+  `notice_desc` text NOT NULL,
+  `link` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notice`
+--
+
+INSERT INTO `notice` (`id_notice`, `title`, `date`, `notice_img`, `notice_desc`, `link`) VALUES
+(1, 'SOMI COMEBACK TEASER POSTER', '2020-07-14', 'ntc10.jpg', '', ''),
+(2, 'SOMI \'WHAT YOU WAITING FOR\' TITLE POSTER', '2020-07-15', 'ntc11.jpg', '', ''),
+(3, 'SOMI \'WHAT YOU WAITING FOR\' CREDIT POSTER', '2020-07-16', 'ntc12.jpg', '', ''),
+(4, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER 1', '2020-07-17', '', '', 'AeVeEK05MZM'),
+(5, 'SOMI \'WHAT YOU WAITING FOR\' TEASER POSTER', '2020-07-18', 'ntc13.jpg', '', ''),
+(6, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER 2', '2020-07-20', '', '', '6BEo7sQHv3U'),
+(7, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER 3', '2020-07-21', '', '', 'pNWveSm695Y'),
+(8, 'SOMI \'WHAT YOU WAITING FOR\' D-DAY POSTER', '2020-07-22', 'ntc15.jpg', '', ''),
+(9, 'SOMI \'WHAT YOU WAITING FOR\' M/V', '2020-07-22', '', '', 'lBYyAQ99ZFI'),
+(10, 'SOMI \'WHAT YOU WAITING FOR\' M/V MAKING FILM', '2020-07-29', '', '', 'C9dHcIv8S50'),
+(11, '\'I AM SOMI\' SPECIAL EPISODE [TEASER]', '2020-09-10', '', 'SOMI\'S\'WHAT YOU WAITING FOR\' COMEBACK STORIES!\r\n<br><br>\r\nThe stories behind Somi\'s ‘WHAT YOU WAITING FOR’ comeback!\r\n<br><br>\r\nSaturday 10pm(KST) / Saturday 10pm(KST) on THEBLACKLABEL YouTube', '2ZeOTBECer8'),
+(12, '\'I AM SOMI\' SPECIAL EPISODE : MY COMEBACK STORY', '2020-09-12', '', '', 'y8Tc2OGO10w'),
+(13, 'FIRE EXIT RECORDS PRESENTS: LØREN', '2020-11-08', 'ntc1.jpg', '', ''),
+(14, 'LØREN DEBUT COMING SOON POSTER', '2020-11-09', 'ntc2.jpg', '', ''),
+(15, 'LØREN DEBUT POSTER', '2020-11-10', 'ntc3.jpg', '', ''),
+(16, 'LØREN \'EMPTY TRASH\' TITLE POSTER', '2020-11-11', 'ntc4.jpg', '', ''),
+(17, 'LØREN \'EMPTY TRASH\' M/V TEASER', '2020-11-12', '', '', '3rRb7OsxU9w'),
+(18, 'LØREN \'EMPTY TRASH\' CREDIT POSTER', '2020-11-13', 'ntc5.jpg', '', ''),
+(19, 'LØREN \'EMPTY TRASH\' M/V', '2020-11-13', '', '', '9f28Pi14g0w'),
+(20, 'LØREN \'EMPTY TRASH\' M/V MAKING FILM', '2020-12-07', '', '', 'wg6QB0x1qm0'),
+(21, 'CHRISTMAS SPECIAL LIVE EVENT \'SOM ALONE\'', '2020-12-15', 'ntc6.jpg', 'Date : 2020.12.23 (WED) PM 8 (KST)<br>\r\nStream on SOMI’s official TikTok @somi_official_<br><br>\r\nLink :<br>\r\nhttps://vt.tiktok.com/ZStYuGg2/', ''),
+(22, 'HAPPY BIRTHDAY SOMI', '2021-03-08', 'ntc8.jpg', '', ''),
+(23, 'HAPPY BIRTHDAY ZION.T', '2021-04-12', 'ntc9.jpg', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `songs`
 --
 
@@ -278,6 +322,12 @@ ALTER TABLE `filmography`
   ADD KEY `id_artist` (`id_artist`);
 
 --
+-- Indexes for table `notice`
+--
+ALTER TABLE `notice`
+  ADD PRIMARY KEY (`id_notice`);
+
+--
 -- Indexes for table `songs`
 --
 ALTER TABLE `songs`
@@ -324,6 +374,12 @@ ALTER TABLE `awards`
 --
 ALTER TABLE `filmography`
   MODIFY `id_filmography` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `notice`
+--
+ALTER TABLE `notice`
+  MODIFY `id_notice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `songs`
