@@ -8,12 +8,9 @@
         <link rel="stylesheet" href="<?=base_url()?>Asset/fonts/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="<?=base_url()?>Asset/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=base_url()?>Asset/style.css">
-        <link rel="stylesheet" href="<?=base_url()?>Asset/css/modal-video.min.css">
         <script src="<?=base_url()?>Asset/js/jquery-3.2.1.min.js"></script>
         <script src="<?=base_url()?>Asset/js/bootstrap.min.js"></script>
         <script src="<?=base_url()?>Asset/js/lazysizes.min.js"></script>
-        <script src="<?=base_url()?>Asset/js/jquery-modal-video.min.js"></script>
-        <script src="<?=base_url()?>Asset/js/modal-video.min.js"></script>
     </head>
     <body oncontextmenu='return false' onselectstart='return false'>
         <button id="btntop" title="Go to top"><i class="fas fa-chevron-up fa-lg"></i></button>
@@ -132,98 +129,6 @@
                 if (currentTheme === 'dark') {
                     toggleSwitch.checked = true;
                 }
-            }
-
-            //Load more album
-            $(document).ready(function() {
-                var url = window.location.href;
-                var idx = url.indexOf("Artist_Detail");
-                var id = url.substring(idx).split("/")[1];
-                var limit = 4;
-                var start = 0;
-                var action = 'inactive';
-                function load_album_data(limit, start, id) {
-                    $.ajax({
-                        url: "<?=base_url('TBLController/loadalbum')?>",
-                        method: "POST",
-                        data: {limit:limit, start:start, id:id},
-                        cache: false,
-                        success:function(data) {
-                            $('#loadalbum').append(data);
-                            if(data == '') {
-                                action = 'active';
-                            } else {
-                                action = 'inactive';
-                            }
-                        }
-                    });
-                }
-                if(action == 'inactive') {
-                    action = 'active';
-                    load_album_data(limit, start, id);
-                }
-                $(window).scroll(function() {
-                    if($(window).scrollTop() + $(window).height() > $("#loadalbum").height() && action == 'inactive') {
-                        action = 'active';
-                        start = start + limit;
-                        setTimeout(function() {
-                            load_album_data(limit, start, id);
-                        }, 1000);
-                    }
-                });
-            });
-
-            //Load more releases
-            $(document).ready(function() {
-                var limit = 8;
-                var start = 0;
-                var action = 'inactive';
-                function load_release_data(limit, start) {
-                    $.ajax({
-                        url: "<?=base_url('TBLController/loadreleases')?>",
-                        method: "POST",
-                        data: {limit:limit, start:start},
-                        cache: false,
-                        success:function(data) {
-                            $('#loadreleases').append(data);
-                            if(data == '') {
-                                action = 'active';
-                            } else {
-                                action = 'inactive';
-                            }
-                        }
-                    });
-                }
-                if(action == 'inactive') {
-                    action = 'active';
-                    load_release_data(limit, start);
-                }
-                $(window).scroll(function() {
-                    if($(window).scrollTop() + $(window).height() > $("#loadreleases").height() && action == 'inactive') {
-                        action = 'active';
-                        start = start + limit;
-                        setTimeout(function() {
-                            load_release_data(limit, start);
-                        }, 1000);
-                    }
-                });
-            });
-
-            //See credit song
-            function Open(id) {
-                $('#rowcredit'+id).slideToggle();
-            }
-
-            //Autoplay video
-            $(".playbtn").modalVideo();
-
-            //Change video
-            function myFunction(imgs) {
-                var expandImg = document.getElementById("expandedImg");
-                var imgText = document.getElementById("imgtext");
-                expandImg.src = imgs.alt;
-                imgText.innerHTML = imgs.id;
-                $("html, body").animate({scrollTop: 0}, 300);
             }
         </script>
     </body>

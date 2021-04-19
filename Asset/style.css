@@ -45,7 +45,7 @@ html, body{
 .navbar li a{
     color:rgb(237,237,237) !important; font:800 1.74rem/2.61rem 'Roboto'; letter-spacing:.04rem; margin-right:2.8rem !important; transition:.1s all; 
 }
-li a:hover, .navbar .active a, .email:hover, .colnotice a:hover h4, .colntc a:hover h4, .ntccard h5:hover{
+li a:hover, .navbar .active a, .email:hover, .colnotice a:hover h4, .colntc a:hover h4, .ntccard h5:hover, .dropdown-menu li a:hover{
     color:rgb(202,55,55) !important; transition:.1s all; cursor:pointer;
 }
 .navbar-toggler{
@@ -134,7 +134,7 @@ input:checked + .slider:before{
     margin-bottom:.7rem; 
 }
 .bar h4{
-    margin-top:2.1rem; 
+    margin-top:2.1rem;
 }
 .bar .notbox{
     height:21.2rem;
@@ -155,10 +155,13 @@ input:checked + .slider:before{
     cursor:default
 }
 .ntccard h5{
-    font-weight:100 !important; font-family:'RobotoBold' !important;
+    font-weight:normal !important; font-family:'Roboto' !important; transition:.1s all;
+}
+.ntccard p{
+    opacity:70%;
 }
 .ntccard h5, .ntccard p{
-    color:rgb(237,237,237) !important;
+    color:rgb(237,237,237) !important; margin-left:-1.4rem;
 }
 .ntccard hr{
     height:.1rem !important; background-color:rgb(75,75,75); margin:1.1rem 0rem;
@@ -201,29 +204,32 @@ input:checked + .slider:before{
 
 /* notice menu */
 .noticekonten h4{
-    font-weight:800 !important; margin-left:-1.4rem;
+    font-weight:800 !important; margin-top:.7rem; transition:.1s all;
 }
 .noticekonten h5, .ntccard h5, .ntccard p{
-    padding-left:0 !important; font-weight:normal !important; margin-left:-1.4rem;
+    padding-left:0 !important; font-weight:normal !important;
 }
 .colntc{
     margin-bottom:2rem;
+}
+.colnotice, .ifbox{
+    margin-top:1.4rem;
 }
 .colnotice a, .colntc a, .ntccard a{
     text-decoration:none !important; transition:.1s all;
 }
 .notbox{
-    height:10rem;
+    height:11.5rem;
 }
-.ntcbox {
+.ntcbox, .ifbox {
     position:relative; overflow:hidden; width:100%; padding-top:56.25%;
 }
-.ntcvideo {
+.ntcvideo, #expandedImg {
     position:absolute; top:0; left:0; bottom:0; right:0; width:100%; height:100%;
 }
 
 /* artist menu */
-.colartis, .colnotice{
+.colartis{
     margin: 1.4rem 0rem 1.8rem;
 }
 .colartis .card{
@@ -374,28 +380,10 @@ hr{
 .carousel-control-prev .fa-chevron-left:hover, .carousel-control-next .fa-chevron-right:hover{
     color:var(--font-color); font-size:3rem; transition:.1s all; 
 }
-.conthumb {
-    position:relative;
-}
-.thumbnail{
-    width:60%; margin:.7rem 0rem .4rem; transition:none !important; transition:.1s all; 
-}
-.playbtn{
-    position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:rgba(0,0,0,0.4); color:rgb(245,245,245); font-size:3.5rem; padding:1.1rem 2.1rem; border-radius:50%; cursor:pointer; border:.2rem solid rgb(245,245,245); transition:.1s all;
-}
-.playbtn:hover, .playbtn:focus{
-    outline:none !important;background-color:rgba(0,0,0,0.6);transition:.1s all;
-}
 
 /* multimedia menu */
-.ifbox {
-    position:relative; overflow:hidden; width:60%; padding-top:56.25%; margin-top:3.2rem;
-}
-#expandedImg {
-    position:absolute; top:0; left:0; bottom:0; right:0; width:100%; height:60%;
-}
 #imgtext{
-    margin:-26rem 0rem 4.2rem 20% !important;
+    margin:.7rem 0rem 4.2rem 17.2% !important;
 }
 .colmultimed{
     margin:.7rem 0rem 1.1rem;
@@ -406,20 +394,17 @@ hr{
 .thumb, .ntcthumb{
     width:100%; height:100%; cursor:pointer; transition:none !important; object-fit:cover !important;
 }
-.dsc{
-    margin:.4rem 0rem 0rem;
-}
-#imgtext b, .dsc b{
+#imgtext b, .dsc b, .noticekonten h4, .ntccard h5, .noticetitle{
     text-transform:uppercase !important;
 }
-.multimed hr, .noticekonten hr{
-    margin:.4rem 0rem 0rem;
+.dsc, .multimed hr, .noticekonten hr{
+    margin:.7rem 0rem 0rem;
 }
 #btnpaging{
-    outline:none; background-color:transparent; padding:.7rem 1.1rem .4rem; border:none; margin:.4rem .1rem 0rem !important; color:var(--font-color); font:bolder 1.45rem 'Roboto'; transition:.1s all; 
+    outline:none; background-color:transparent; padding:.7rem 1.1rem; border:none; margin:.7rem .1rem 0rem !important; color:var(--font-color); font:bolder 1.45rem 'Roboto'; transition:.1s all; 
 }
 #btnpagingactive{
-    outline:none; background-color:var(--font-color); padding:.7rem 1.1rem .4rem; border:none; margin:.4rem .1rem 0rem !important; color:var(--primary-color); font:bolder 1.45rem 'Roboto';
+    outline:none; background-color:var(--font-color); padding:.7rem 1.1rem; border:none; margin:.7rem .1rem 0rem !important; color:var(--primary-color); font:bolder 1.45rem 'Roboto';
 }
 #btnpaging:hover{
     background-color:var(--secondary-color); color:var(--font-color); transition:.1s all; 
@@ -452,9 +437,6 @@ hr{
 .dropdown-menu li a{
     text-decoration:none !important; color:rgb(237,237,237) !important; font:bold 1.45rem/2.8rem 'Roboto' !important; letter-spacing:.04rem;
 }
-.dropdown-menu li a:hover{
-    color:rgb(202,55,55) !important; text-decoration:underline !important;
-}
 
 /* font & typography */
 p{
@@ -467,7 +449,7 @@ h3{
     color:var(--font-color); font:bolder 2.5rem 'Roboto'; letter-spacing:.04rem; text-align:center;
 }
 h4{
-    color:var(--font-color); font:600 1.74rem 'Roboto'; letter-spacing:.04rem;
+    color:var(--font-color); font:900 1.74rem 'Roboto'; letter-spacing:.04rem;
 }
 h5{
     color:var(--font-color) !important; font:bold 1.45rem/2.1rem 'Roboto' !important; letter-spacing:.04rem; padding-left:1.1rem !important;
@@ -500,9 +482,6 @@ h6{
     .header, .aboutkonten, .noticekonten, .artiskonten, .artistdetail, .albumdetail, .multimed{
         margin-top:6.6rem;
     }
-    .noticekonten{
-        height:auto;
-    }
 
     .noticetitle{
         text-align:left;
@@ -527,9 +506,6 @@ h6{
         margin-bottom:3rem;
     }
 
-    #expandedImg, .ntcvideo {
-        height:100%;
-    }
     #imgtext{
         margin:.4rem 0rem 4.2rem 0% !important;
     }
@@ -552,6 +528,10 @@ h6{
     }
     .ntccard .notbox{
         height:4rem !important;
+    }
+
+    .logo{
+        width:70% !important;
     }
 
     .noticekonten h4{
@@ -613,9 +593,6 @@ h6{
     }
     .carousel-control-prev .fa-chevron-left, .carousel-control-next .fa-chevron-right{
         color:white;
-    }
-    .playbtn{
-        font-size:2.1rem; padding:.7rem 1.4rem;
     }
 
     .multimed hr, .noticekonten hr{

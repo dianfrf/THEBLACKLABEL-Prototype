@@ -2,7 +2,7 @@
     <img src="<?=base_url()?>Asset/img/header.png" class="post lazyload">
     <img src="<?=base_url()?>Asset/img/header_mb.png" class="postmb lazyload">
 </div>
-<div class="jumbotron home twitter-feed">
+<div class="jumbotron home">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-md-6 bar">
@@ -18,16 +18,6 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-6 bar">
-                <h4>MERCH</h4>
-                <a href="https://www.ygselect.com/" target="_blank">
-                    <img src="<?=base_url()?>Asset/img/shop.jpg" class="mv lazyload">
-                </a>
-                <h4>AUDITION</h4>
-                <a href="https://www.instagram.com/theblacklabel_audition" target="_blank">
-                    <img src="<?=base_url()?>Asset/img/audition.png" class="albumart lazyload">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-12 bar">
                 <h4>NOTICE</h4>
                 <div class="ntccard">
                 <?php foreach($notice as $n) { ?>
@@ -49,6 +39,16 @@
                     <hr>
                 <?php } ?>
                 </div>
+            </div>
+            <div class="col-lg-4 col-md-6 bar">
+                <h4>MERCH</h4>
+                <a href="https://www.ygselect.com/" target="_blank">
+                    <img src="<?=base_url()?>Asset/img/shop.jpg" class="mv lazyload">
+                </a>
+                <h4>AUDITION</h4>
+                <a href="https://www.instagram.com/theblacklabel_audition" target="_blank">
+                    <img src="<?=base_url()?>Asset/img/audition.png" class="albumart lazyload">
+                </a>
             </div>
         </div>
     </div>

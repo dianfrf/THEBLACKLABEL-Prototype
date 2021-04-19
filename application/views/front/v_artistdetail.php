@@ -93,3 +93,43 @@
     <?php } else {} ?>
     </div>
 </div>
+<script>
+    //Load more album
+    $(document).ready(function() {
+        var url = window.location.href;
+        var idx = url.indexOf("Artist_Detail");
+        var id = url.substring(idx).split("/")[1];
+        var limit = 4;
+        var start = 0;
+        var action = 'inactive';
+        function load_album_data(limit, start, id) {
+            $.ajax({
+                url: "<?=base_url('TBLController/loadalbum')?>",
+                method: "POST",
+                data: {limit:limit, start:start, id:id},
+                cache: false,
+                success:function(data) {
+                    $('#loadalbum').append(data);
+                    if(data == '') {
+                        action = 'active';
+                    } else {
+                        action = 'inactive';
+                    }
+                }
+            });
+        }
+        if(action == 'inactive') {
+            action = 'active';
+            load_album_data(limit, start, id);
+        }
+        $(window).scroll(function() {
+            if($(window).scrollTop() + $(window).height() > $("#loadalbum").height() && action == 'inactive') {
+                action = 'active';
+                start = start + limit;
+                setTimeout(function() {
+                    load_album_data(limit, start, id);
+                }, 1000);
+            }
+        });
+    });
+</script>

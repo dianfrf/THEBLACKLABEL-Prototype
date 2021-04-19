@@ -32,9 +32,9 @@
             $data['active'] = 'Notice';
             $data['lastntc'] = $this->M_TBL->getlastnotice();
             $data['page'] = $num ? (int)$num : 1;
-            $mulai = ($data['page']>1) ? ($data['page'] * 4) - 4 : 0;
+            $mulai = ($data['page']>1) ? ($data['page'] * 6) - 6 : 0;
             $total = $this->M_TBL->countnotice();
-            $data['pages'] = ceil($total/4);
+            $data['pages'] = ceil($total/6);
             $data['notice'] = $this->M_TBL->getnotices($mulai);
             $data['PageTitle'] = 'Notice | The Black Label';
             $this->load->view('front/v_layout', $data);   

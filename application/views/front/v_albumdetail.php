@@ -77,11 +77,16 @@
             <div class="carousel-inner">
             <?php $i = 0;foreach($tampil_video as $row) {$actives = '';if($i == 0) {$actives = 'active';}?>
                 <div class="carousel-item <?=$actives;?>">
-                    <div class="conthumb">
-                        <center><img src="http://img.youtube.com/vi/<?=$row->link?>/0.jpg" alt="<?=$row->video_name;?>" class="thumbnail lazyload"></center>
-                        <button class="playbtn" data-video-id="<?=$row->link;?>"><i class="fas fa-play"></i></button>
+                    <div class="row">
+                        <div class="col-lg-2"></div>
+                            <div class="col-md-12 col-lg-8">
+                                <div class="ntcbox" style="margin-top:.7rem">
+                                    <iframe src="https://www.youtube.com/embed/<?=$row->link;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ntcvideo lazyload"></iframe>
+                                </div>
+                            </div>
+                        <div class="col-lg-2"></div>
                     </div>
-                    <p style="text-align: center">'<?=$row->video_name;?>' M/V</p>
+                    <p style="text-align: center;margin-top:.7rem">'<?=$row->video_name;?>' M/V</p>
                 </div>
             <?php $i++; } ?>
             </div>
@@ -91,11 +96,22 @@
     <?php } else if($count > 0 && $count == 1) { ?>
         <h3>MUSIC VIDEO</h3>
     <?php foreach ($tampil_video as $video) { ?>
-        <div class="conthumb">
-            <center><img src="http://img.youtube.com/vi/<?=$video->link?>/0.jpg" alt="<?=$video->video_name?>" class="thumbnail lazyload"></center>
-            <button class="playbtn" data-video-id="<?=$video->link;?>"><i class="fas fa-play"></i></button>
+        <div class="row">
+            <div class="col-lg-2"></div>
+                <div class="col-md-12 col-lg-8">
+                    <div class="ntcbox" style="margin-top:.7rem">
+                        <iframe src="https://www.youtube.com/embed/<?=$video->link;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ntcvideo lazyload"></iframe>
+                    </div>
+                </div>
+            <div class="col-lg-2"></div>
         </div>
-        <p style="text-align: center">'<?=$video->video_name;?>' M/V</p>
+        <p style="text-align: center;margin-top:.7rem">'<?=$video->video_name;?>' M/V</p>
     <?php } } else {} ?>
     </div>
 </div>
+<script>
+    //See credit song
+    function Open(id) {
+        $('#rowcredit'+id).slideToggle();
+    }
+</script>

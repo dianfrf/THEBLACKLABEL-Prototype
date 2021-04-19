@@ -12,9 +12,7 @@ Cara menggunakan website:
 5. Atau copy folder ke XAMPP/htdocs, buka browser dan kunjungi localhost/theblacklabel
 
 Plugin Javascript yang digunakan:
-1. Plugin Twitter widget: Asset/js/widgets.js
-2. Plugin lazy load image: Asset/js/lazysizes.min.js
-3. Plugin modal video: Asset/js/modal-video.min.js dan Asset/js/jquery-modal-video.min.js
+1. Plugin lazy load image: Asset/js/lazysizes.min.js
 
 System Requirement:
 1. https://codeigniter.com/userguide3/general/requirements.html

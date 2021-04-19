@@ -45,7 +45,7 @@
 
         public function getnotices($mulai)
         {
-            return $this->db->order_by('id_notice', 'DESC')->limit(4,$mulai)->get('notice')->result();
+            return $this->db->order_by('id_notice', 'DESC')->limit(6,$mulai)->get('notice')->result();
         }
 
         public function getnoticebyid($id)
