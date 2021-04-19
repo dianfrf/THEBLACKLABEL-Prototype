@@ -400,13 +400,16 @@ hr{
 .dsc, .multimed hr, .noticekonten hr{
     margin:.7rem 0rem 0rem;
 }
-#btnpaging{
-    outline:none; background-color:transparent; padding:.7rem 1.1rem; border:none; margin:.7rem .1rem 0rem !important; color:var(--font-color); font:bolder 1.45rem 'Roboto'; transition:.1s all; 
+.btnpaging{
+    outline:none !important; background-color:transparent; padding:.7rem 1.1rem; border:none; margin:.4rem .2rem 0rem !important; transition:.1s all; 
 }
-#btnpagingactive{
-    outline:none; background-color:var(--font-color); padding:.7rem 1.1rem; border:none; margin:.7rem .1rem 0rem !important; color:var(--primary-color); font:bolder 1.45rem 'Roboto';
+.btnpaging a{
+    color:var(--font-color); font:bolder 1.45rem 'Roboto' !important; text-decoration:none !important;
 }
-#btnpaging:hover{
+.btnpagingactive{
+    outline:none !important; background-color:var(--font-color); padding:.7rem 1.1rem; border:none; margin:.4rem .2rem 0rem !important; color:var(--primary-color); font:bolder 1.45rem 'Roboto';
+}
+.btnpaging:hover, .btnpaging:focus{
     background-color:var(--secondary-color); color:var(--font-color); transition:.1s all; 
 }
 

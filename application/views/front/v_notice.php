@@ -42,10 +42,6 @@
             </div>
         </div>
         <hr>
-        <center>
-        <?php for ($i=1; $i<=$pages; $i++){ ?>
-            <a href="<?=base_url()?>Notice/<?=$i?>"><button id="<?=$i == $page ? "btnpagingactive" : "btnpaging"?>"><?=$i?></button></a>
-        <?php } ?> 
-        </center>
+        <?=$this->pagination->create_links();?>
     </div>
 </div>

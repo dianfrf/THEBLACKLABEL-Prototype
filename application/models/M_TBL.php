@@ -43,9 +43,9 @@
             return $this->db->get('notice')->num_rows();
         }
 
-        public function getnotices($mulai)
+        public function getnotices($limit,$mulai)
         {
-            return $this->db->order_by('id_notice', 'DESC')->limit(6,$mulai)->get('notice')->result();
+            return $this->db->order_by('id_notice', 'DESC')->limit($limit,$mulai)->get('notice')->result();
         }
 
         public function getnoticebyid($id)
@@ -144,11 +144,11 @@
             return $this->db->get('videos')->num_rows();
         }
 
-        public function getvideo($mulai)
+        public function getvideo($offset,$mulai)
         {
             return $this->db->join('albums','videos.id_album=albums.id_album')
                             ->join('artists','albums.id_artist=artists.id_artist')
-                            ->order_by('video_release_date','DESC')->limit(8,$mulai)->get('videos')->result();
+                            ->order_by('video_release_date','DESC')->limit($offset,$mulai)->get('videos')->result();
         }
 
         public function getalbums($limit,$start)

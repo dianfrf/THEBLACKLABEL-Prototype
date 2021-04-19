@@ -31,7 +31,7 @@
                             <a class="nav-link" href="<?=base_url('About')?>">ABOUT</a>
                         </li>
                         <li class="<?php echo $active == "Notice" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="<?=base_url()?>Notice/1">NOTICE</a>
+                            <a class="nav-link" href="<?=base_url()?>Notice/0">NOTICE</a>
                         </li>
                         <li class="<?php echo $active == "Artists" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="<?=base_url('Artists')?>">ARTISTS</a>
@@ -40,7 +40,7 @@
                             <a class="nav-link" href="<?=base_url('Releases')?>">RELEASES</a>
                         </li>
                         <li class="<?php echo $active == "Multimedia" ? "nav-item active" : ""; ?>">
-                            <a class="nav-link" href="<?=base_url()?>Multimedia/1">MULTIMEDIA</a>
+                            <a class="nav-link" href="<?=base_url()?>Multimedia/0">MULTIMEDIA</a>
                         </li>
                         <li class="<?php echo $active == "Audition" ? "nav-item active" : ""; ?>">
                             <a class="nav-link" href="https://www.instagram.com/theblacklabel_audition" target="_blank">AUDITION</a>
