@@ -11,7 +11,7 @@
                     <img src="<?=base_url()?>Asset/img/album/<?=$cover->cover;?>" class="albumart lazyload">
                 </a>
                 <h4>MUSIC VIDEO</h4>
-                <a href="<?=base_url()?>Multimedia/1">
+                <a href="<?=base_url()?>Multimedia/0">
                     <div class="notbox">
                         <img src="http://img.youtube.com/vi/<?=$satum->link?>/0.jpg" class="thumb lazyload">
                     </div>

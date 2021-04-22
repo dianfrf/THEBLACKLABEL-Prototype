@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2021 at 06:44 AM
+-- Generation Time: Apr 22, 2021 at 10:09 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -183,53 +183,60 @@ CREATE TABLE `notice` (
 --
 
 INSERT INTO `notice` (`id_notice`, `title`, `date`, `notice_img`, `notice_desc`, `link`) VALUES
-(1, 'Vince Comeback Teaser', '2020-01-21', 'ntc16.jpg', '', ''),
-(2, 'Vince Comeback Release Poster', '2020-01-23', 'ntc17.jpg', '', ''),
-(3, 'Vince \'Emergency (Feat. Zion.T)\' Title Poster', '2020-01-28', 'ntc18.jpg', '', ''),
-(4, 'Vince \'Emergency (Feat. Zion.T)\' Credit Poster', '2020-01-30', 'ntc19.jpg', '', ''),
-(5, 'Vince \'Emergency (Feat. Zion.T)\' M/V Teaser', '2020-01-31', '', '', 'VIxKY0icpVk'),
-(6, 'Vince \'Emergency (Feat. Zion.T)\' D-1 Poster', '2020-02-03', 'ntc20.jpg', '', ''),
-(7, 'Vince \'Emergency (Feat. Zion.T)\' M/V', '2020-02-04', '', '', 'tXj_Viuvcrc'),
-(8, 'Vince \'Emergency (Feat. Zion.T)\' M/V Behind The Scenes', '2020-02-11', '', '', 'lvkjptXALKI'),
-(9, 'Somi [I Am Somi] Teaser', '2020-03-23', '', 'SOMI’S REALITY SERIES ‘I AM SOMI’ TEASER\r\n<br><br>\r\nTune in 2020.03.28 10PM (KST) on THEBLACKLABEL YouTube Channel\r\n<br><br>\r\nPLEASE SUBSCRIBE, LIKE, AND TURN ON NOTIFICATIONS', 'xQITjyspylA'),
-(10, 'Somi [I Am Somi] Special Clip.01', '2020-03-26', '', '', 'Atew5Nrp8Lk'),
-(11, 'Somi [I Am Somi] Ep.01', '2020-03-28', '', '', 'yrGyOJv6Yo8'),
-(12, 'Somi [I Am somi] Ep.02', '2020-04-04', '', '', 'a8N3oD65zDE'),
-(13, 'Somi [I Am Somi] Special Clip.02', '2020-04-09', '', '', 'jGAqC_lu9sA'),
-(14, 'Somi [I Am Somi] Ep.03', '2020-04-11', '', '', 'iqnE39IxaYo'),
-(15, 'Somi [I Am Somi] Special Clip.03', '2020-04-16', '', '', 'B9EL-_K1rr4'),
-(16, 'Somi [I Am Somi] Ep.04', '2020-04-18', '', '', 'qBFm-0MQayw'),
-(17, 'Somi [I Am Somi] Special Clip.04', '2020-04-23', '', '', 'R5w7Cs_OGI4'),
-(18, 'Somi [I Am Somi] Ep.05', '2020-04-25', '', '', 'fL8tBgOFQCg'),
-(19, 'Somi [I Am Somi] Special Clip.05', '2020-04-30', '', '', '20968fWhDUA'),
-(20, 'Somi [I Am Somi] Ep.06', '2020-05-02', '', '', '2KOY2xx9N08'),
-(21, 'Zion.T x Vince Facebook & Instagram Live', '2020-05-05', 'ntc21.jpg', '', ''),
-(22, 'Somi [I Am Somi] Epilogue', '2020-05-09', '', '', 'okOKiME2W4A'),
-(23, 'Somi\'s Debut 1st Anniversary Message', '2020-06-12', '', '', '5EbegY4fSC0'),
-(24, 'Somi\'s 1 Year Anniversary', '2020-06-13', 'ntc22.jpg', 'In commemoration of the 1st anniversary of Jeon Somi\'s debut, V LIVE will be held at 7 o\'clock this evening.\r\n<br>\r\nSee you later at Vlive\r\n<br><br>\r\n2020.06.13 7PM (KST)\r\n<br>\r\nhttps://vlive.tv/video/197284', ''),
-(25, 'SOMI COMEBACK TEASER', '2020-07-14', 'ntc10.jpg', '', ''),
-(26, 'SOMI \'WHAT YOU WAITING FOR\' TITLE POSTER', '2020-07-15', 'ntc11.jpg', '', ''),
-(27, 'SOMI \'WHAT YOU WAITING FOR\' CREDIT POSTER', '2020-07-16', 'ntc12.jpg', '', ''),
-(28, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER #1', '2020-07-17', '', '', 'AeVeEK05MZM'),
-(29, 'SOMI \'WHAT YOU WAITING FOR\' TEASER POSTER', '2020-07-18', 'ntc13.jpg', '', ''),
-(30, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER #2', '2020-07-20', '', '', '6BEo7sQHv3U'),
-(31, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER #3', '2020-07-21', '', '', 'pNWveSm695Y'),
-(32, 'SOMI \'WHAT YOU WAITING FOR\' D-DAY POSTER', '2020-07-22', 'ntc15.jpg', '', ''),
-(33, 'SOMI \'WHAT YOU WAITING FOR\' M/V', '2020-07-22', '', '', 'lBYyAQ99ZFI'),
-(34, 'SOMI \'WHAT YOU WAITING FOR\' M/V MAKING FILM', '2020-07-29', '', '', 'C9dHcIv8S50'),
-(35, 'SOMI [I AM SOMI] SPECIAL EPISODE TEASER', '2020-09-10', '', 'SOMI\'S\'WHAT YOU WAITING FOR\' COMEBACK STORIES!\r\n<br><br>\r\nThe stories behind Somi\'s ‘WHAT YOU WAITING FOR’ comeback!\r\n<br><br>\r\nSaturday 10pm(KST) / Saturday 10pm(KST) on THEBLACKLABEL YouTube', '2ZeOTBECer8'),
-(36, 'SOMI [I AM SOMI] SPECIAL EPISODE', '2020-09-12', '', '', 'y8Tc2OGO10w'),
-(37, 'FIRE EXIT RECORDS PRESENTS : LØREN', '2020-11-08', 'ntc1.jpg', '', ''),
-(38, 'LØREN DEBUT TEASER', '2020-11-09', 'ntc2.jpg', '', ''),
-(39, 'LØREN DEBUT RELEASE POSTER', '2020-11-10', 'ntc3.jpg', '', ''),
-(40, 'LØREN \'EMPTY TRASH\' TITLE POSTER', '2020-11-11', 'ntc4.jpg', '', ''),
-(41, 'LØREN \'EMPTY TRASH\' M/V TEASER', '2020-11-12', '', '', '3rRb7OsxU9w'),
-(42, 'LØREN \'EMPTY TRASH\' CREDIT POSTER', '2020-11-13', 'ntc5.jpg', '', ''),
-(43, 'LØREN \'EMPTY TRASH\' M/V', '2020-11-13', '', '', '9f28Pi14g0w'),
-(44, 'LØREN \'EMPTY TRASH\' M/V MAKING FILM', '2020-12-07', '', '', 'wg6QB0x1qm0'),
-(45, 'SOMI CHRISTMAS SPECIAL LIVE EVENT [SOM ALONE]', '2020-12-15', 'ntc6.jpg', 'Date : 2020.12.23 (WED) PM 8 (KST)<br>\r\nStream on SOMI’s official TikTok @somi_official_<br><br>\r\nLink :<br>\r\nhttps://vt.tiktok.com/ZStYuGg2/', ''),
-(46, 'Happy Birthday Somi', '2021-03-08', 'ntc8.jpg', '', ''),
-(47, 'Happy Birthday Zion.T', '2021-04-12', 'ntc9.jpg', '', '');
+(1, 'Zion.T Comeback Teaser', '2019-10-28', 'ntc23.jpg', '', ''),
+(2, 'Zion.T \'May\' Credit Poster', '2019-10-31', 'ntc24.jpg', '', ''),
+(3, 'Zion.T \'May\' M/V Teaser #1', '2019-11-01', '', '', 'F8__T6Gi29Y'),
+(4, 'Zion.T \'May\' M/V Teaser #2', '2019-11-04', '', '', 't9IR8YHevaw'),
+(5, 'Zion.T \'May\' M/V', '2019-11-06', '', '', 'I-hw1AkqFro'),
+(6, 'Zion.T #TwitterBlueroom Live Q&A', '2019-11-11', 'ntc25.jpg', '', ''),
+(9, 'Merry Christmas From Somi', '2019-12-24', '', '', 'B92LPUpjPt0'),
+(10, 'Vince Comeback Teaser', '2020-01-21', 'ntc16.jpg', '', ''),
+(11, 'Vince Comeback Release Poster', '2020-01-23', 'ntc17.jpg', '', ''),
+(12, 'Vince \'Emergency (Feat. Zion.T)\' Title Poster', '2020-01-28', 'ntc18.jpg', '', ''),
+(13, 'Vince \'Emergency (Feat. Zion.T)\' Credit Poster', '2020-01-30', 'ntc19.jpg', '', ''),
+(14, 'Vince \'Emergency (Feat. Zion.T)\' M/V Teaser', '2020-01-31', '', '', 'VIxKY0icpVk'),
+(15, 'Vince \'Emergency (Feat. Zion.T)\' D-1 Poster', '2020-02-03', 'ntc20.jpg', '', ''),
+(16, 'Vince \'Emergency (Feat. Zion.T)\' M/V', '2020-02-04', '', '', 'tXj_Viuvcrc'),
+(17, 'Vince \'Emergency (Feat. Zion.T)\' M/V Behind The Scenes', '2020-02-11', '', '', 'lvkjptXALKI'),
+(18, 'Somi [I Am Somi] Teaser', '2020-03-23', '', 'SOMI’S REALITY SERIES ‘I AM SOMI’ TEASER\r\n<br><br>\r\nTune in 2020.03.28 10PM (KST) on THEBLACKLABEL YouTube Channel\r\n<br><br>\r\nPLEASE SUBSCRIBE, LIKE, AND TURN ON NOTIFICATIONS', 'xQITjyspylA'),
+(19, 'Somi [I Am Somi] Special Clip.01', '2020-03-26', '', '', 'Atew5Nrp8Lk'),
+(20, 'Somi [I Am Somi] Ep.01', '2020-03-28', '', '', 'yrGyOJv6Yo8'),
+(21, 'Somi [I Am somi] Ep.02', '2020-04-04', '', '', 'a8N3oD65zDE'),
+(22, 'Somi [I Am Somi] Special Clip.02', '2020-04-09', '', '', 'jGAqC_lu9sA'),
+(23, 'Somi [I Am Somi] Ep.03', '2020-04-11', '', '', 'iqnE39IxaYo'),
+(24, 'Somi [I Am Somi] Special Clip.03', '2020-04-16', '', '', 'B9EL-_K1rr4'),
+(25, 'Somi [I Am Somi] Ep.04', '2020-04-18', '', '', 'qBFm-0MQayw'),
+(26, 'Somi [I Am Somi] Special Clip.04', '2020-04-23', '', '', 'R5w7Cs_OGI4'),
+(27, 'Somi [I Am Somi] Ep.05', '2020-04-25', '', '', 'fL8tBgOFQCg'),
+(28, 'Somi [I Am Somi] Special Clip.05', '2020-04-30', '', '', '20968fWhDUA'),
+(29, 'Somi [I Am Somi] Ep.06', '2020-05-02', '', '', '2KOY2xx9N08'),
+(30, 'Zion.T x Vince Facebook & Instagram Live', '2020-05-05', 'ntc21.jpg', '', ''),
+(31, 'Somi [I Am Somi] Epilogue', '2020-05-09', '', '', 'okOKiME2W4A'),
+(32, 'Somi\'s Debut 1st Anniversary Message', '2020-06-12', '', '', '5EbegY4fSC0'),
+(33, 'Somi\'s 1 Year Anniversary', '2020-06-13', 'ntc22.jpg', 'In commemoration of the 1st anniversary of Jeon Somi\'s debut, V LIVE will be held at 7 o\'clock this evening.\r\n<br>\r\nSee you later at Vlive\r\n<br><br>\r\n2020.06.13 7PM (KST)\r\n<br>\r\nhttps://vlive.tv/video/197284', ''),
+(34, 'SOMI COMEBACK TEASER', '2020-07-14', 'ntc10.jpg', '', ''),
+(35, 'SOMI \'WHAT YOU WAITING FOR\' TITLE POSTER', '2020-07-15', 'ntc11.jpg', '', ''),
+(36, 'SOMI \'WHAT YOU WAITING FOR\' CREDIT POSTER', '2020-07-16', 'ntc12.jpg', '', ''),
+(37, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER #1', '2020-07-17', '', '', 'AeVeEK05MZM'),
+(38, 'SOMI \'WHAT YOU WAITING FOR\' TEASER POSTER', '2020-07-18', 'ntc13.jpg', '', ''),
+(39, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER #2', '2020-07-20', '', '', '6BEo7sQHv3U'),
+(40, 'SOMI \'WHAT YOU WAITING FOR\' M/V TEASER #3', '2020-07-21', '', '', 'pNWveSm695Y'),
+(41, 'SOMI \'WHAT YOU WAITING FOR\' D-DAY POSTER', '2020-07-22', 'ntc15.jpg', '', ''),
+(42, 'SOMI \'WHAT YOU WAITING FOR\' M/V', '2020-07-22', '', '', 'lBYyAQ99ZFI'),
+(43, 'SOMI \'WHAT YOU WAITING FOR\' M/V MAKING FILM', '2020-07-29', '', '', 'C9dHcIv8S50'),
+(44, 'SOMI [I AM SOMI] SPECIAL EPISODE TEASER', '2020-09-10', '', 'SOMI\'S\'WHAT YOU WAITING FOR\' COMEBACK STORIES!\r\n<br><br>\r\nThe stories behind Somi\'s ‘WHAT YOU WAITING FOR’ comeback!\r\n<br><br>\r\nSaturday 10pm(KST) / Saturday 10pm(KST) on THEBLACKLABEL YouTube', '2ZeOTBECer8'),
+(45, 'SOMI [I AM SOMI] SPECIAL EPISODE', '2020-09-12', '', '', 'y8Tc2OGO10w'),
+(46, 'FIRE EXIT RECORDS PRESENTS : LØREN', '2020-11-08', 'ntc1.jpg', '', ''),
+(47, 'LØREN DEBUT TEASER', '2020-11-09', 'ntc2.jpg', '', ''),
+(48, 'LØREN DEBUT RELEASE POSTER', '2020-11-10', 'ntc3.jpg', '', ''),
+(49, 'LØREN \'EMPTY TRASH\' TITLE POSTER', '2020-11-11', 'ntc4.jpg', '', ''),
+(50, 'LØREN \'EMPTY TRASH\' M/V TEASER', '2020-11-12', '', '', '3rRb7OsxU9w'),
+(51, 'LØREN \'EMPTY TRASH\' CREDIT POSTER', '2020-11-13', 'ntc5.jpg', '', ''),
+(52, 'LØREN \'EMPTY TRASH\' M/V', '2020-11-13', '', '', '9f28Pi14g0w'),
+(53, 'LØREN \'EMPTY TRASH\' M/V MAKING FILM', '2020-12-07', '', '', 'wg6QB0x1qm0'),
+(54, 'SOMI CHRISTMAS SPECIAL LIVE EVENT [SOM ALONE]', '2020-12-15', 'ntc6.jpg', 'Date : 2020.12.23 (WED) PM 8 (KST)<br>\r\nStream on SOMI’s official TikTok @somi_official_<br><br>\r\nLink :<br>\r\nhttps://vt.tiktok.com/ZStYuGg2/', ''),
+(55, 'Happy Birthday Somi', '2021-03-08', 'ntc8.jpg', '', ''),
+(56, 'Happy Birthday Zion.T', '2021-04-12', 'ntc9.jpg', '', '');
 
 -- --------------------------------------------------------
 
@@ -403,7 +410,7 @@ ALTER TABLE `filmography`
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `id_notice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_notice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `songs`

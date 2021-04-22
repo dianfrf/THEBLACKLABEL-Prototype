@@ -5,6 +5,7 @@
         {
             parent::__construct();
             $this->load->model('M_TBL');
+            $this->load->library('pagination');
         }
         
         public function index()
@@ -28,34 +29,26 @@
 
         public function notice($num)
         {
-            $data['content'] = 'front/v_notice';
-            $data['active'] = 'Notice';
-            $data['lastntc'] = $this->M_TBL->getlastnotice();
-            $this->load->library('pagination');
-            $config['base_url'] = 'http://localhost/theblacklabel/Notice/';
-            $config['first_url'] = 'http://localhost/theblacklabel/Notice/0';
+            $config['base_url'] = base_url().'Notice/';
+            $config['first_url'] = base_url().'Notice/0';
             $config['total_rows'] = $this->M_TBL->countnotice();
             $config['per_page'] = 6;
             $config['num_links'] = 2;
             $data['start'] = $this->uri->segment(2);
-
             $config['full_tag_open'] = '<center>';
             $config['full_tag_close'] = '</center>';
-
             $config['first_link'] = '<i class="fas fa-angle-double-left"></i>';
             $config['first_tag_open'] = '<button class="btnpaging">';
             $config['first_tag_close'] = '</button>';
             $config['last_link'] = '<i class="fas fa-angle-double-right"></i>';
             $config['last_tag_open'] = '<button class="btnpaging">';
             $config['last_tag_close'] = '</button>';
-
             $config['next_link'] = '<i class="fas fa-chevron-right"></i>';
             $config['next_tag_open'] = '<button class="btnpaging">';
             $config['next_tag_close'] = '</button>';
             $config['prev_link'] = '<i class="fas fa-chevron-left"></i>';
             $config['prev_tag_open'] = '<button class="btnpaging">';
             $config['prev_tag_close'] = '</button>';
-
             $config['cur_tag_open'] = '<a href=""><button class="btnpagingactive">';
             $config['cur_tag_close'] = '</button></a>';
             $config['num_tag_open'] = '<button class="btnpaging">';
@@ -63,15 +56,21 @@
 
             $this->pagination->initialize($config);
             $data['notice'] = $this->M_TBL->getnotices($config['per_page'],$data['start']);
-            $data['PageTitle'] = 'Notice | The Black Label';
-            $this->load->view('front/v_layout', $data);   
+            if($data['notice'] == null){
+                redirect('406');
+            } else{
+                $data['content'] = 'front/v_notice';
+                $data['active'] = 'Notice';
+                $data['lastntc'] = $this->M_TBL->getlastnotice();
+                $data['PageTitle'] = 'Notice | The Black Label';
+                $this->load->view('front/v_layout', $data);   
+            }
         }
 
         public function noticedetail($id)
         {
             $data['detail'] = $this->M_TBL->getnoticebyid($id);
-            $detail = $data['detail'];
-            if($detail == null){
+            if($data['detail'] == null){
                 redirect('406');
             } else{
                 $data['content'] = 'front/v_noticedetail';
@@ -97,10 +96,10 @@
         public function artistdetail($id)
         {
             $data['detail'] = $this->M_TBL->getartistbyid($id);
-            $detail = $data['detail'];
-            if($detail == null){
+            if($data['detail'] == null){
                 redirect('406');
             } else{
+                $detail = $data['detail'];
                 $data['content'] = 'front/v_artistdetail';
                 $data['active'] = 'Artists';
                 $data['first'] = $this->M_TBL->getfirstartistid();
@@ -113,8 +112,8 @@
                 $data['tampil_film'] = $this->M_TBL->getfilms($id);
                 $data['count'] = $this->M_TBL->countartistalbums($id);
                 $data['PageTitle'] = "$detail->name | The Black Label";
-                $this->load->view('front/v_layout', $data);    
-            }
+                $this->load->view('front/v_layout', $data); 
+            }   
         }
 
         public function loadalbum()
@@ -139,10 +138,10 @@
         public function albumdetail($idal,$ord)
         {
             $data['detail'] = $this->M_TBL->getalbumbyid($idal,$ord);
-            $detail = $data['detail'];
-            if($detail == null){
+            if($data['detail'] == null){
                 redirect('406');
             } else{
+                $detail = $data['detail'];
                 $data['content'] = 'front/v_albumdetail';
                 $data['active'] = 'Releases';
                 $data['last'] = $this->M_TBL->getlastalbumid($idal);
@@ -193,43 +192,41 @@
 
         public function multimedia($num)
         {
-            $data['content'] = 'front/v_multimedia';
-            $data['active'] = 'Multimedia';
-            $data['satum'] = $this->M_TBL->getlatestvideo();
-            $this->load->library('pagination');
-            $config['base_url'] = 'http://localhost/theblacklabel/Multimedia/';
-            $config['first_url'] = 'http://localhost/theblacklabel/Multimedia/0';
+            $config['base_url'] = base_url().'Multimedia/';
+            $config['first_url'] = base_url().'Multimedia/0';
             $config['total_rows'] = $this->M_TBL->countvideo();
             $config['per_page'] = 8;
             $config['num_links'] = 2;
             $data['start'] = $this->uri->segment(2);
-
             $config['full_tag_open'] = '<center>';
             $config['full_tag_close'] = '</center>';
-
             $config['first_link'] = '<i class="fas fa-angle-double-left"></i>';
             $config['first_tag_open'] = '<button class="btnpaging">';
             $config['first_tag_close'] = '</button>';
             $config['last_link'] = '<i class="fas fa-angle-double-right"></i>';
             $config['last_tag_open'] = '<button class="btnpaging">';
             $config['last_tag_close'] = '</button>';
-
             $config['next_link'] = '<i class="fas fa-chevron-right"></i>';
             $config['next_tag_open'] = '<button class="btnpaging">';
             $config['next_tag_close'] = '</button>';
             $config['prev_link'] = '<i class="fas fa-chevron-left"></i>';
             $config['prev_tag_open'] = '<button class="btnpaging">';
             $config['prev_tag_close'] = '</button>';
-
             $config['cur_tag_open'] = '<a href=""><button class="btnpagingactive">';
             $config['cur_tag_close'] = '</button></a>';
             $config['num_tag_open'] = '<button class="btnpaging">';
             $config['num_tag_close'] = '</button>';
-
             $this->pagination->initialize($config);
             $data['tampil_multimedia'] = $this->M_TBL->getvideo($config['per_page'], $data['start']);
-            $data['PageTitle'] = 'Multimedia | The Black Label';
-            $this->load->view('front/v_layout', $data);
+            if($data['tampil_multimedia'] == null){
+                redirect('406');
+            } else{
+                $data['content'] = 'front/v_multimedia';
+                $data['active'] = 'Multimedia';
+                $data['satum'] = $this->M_TBL->getlatestvideo();
+                $data['PageTitle'] = 'Multimedia | The Black Label';
+                $this->load->view('front/v_layout', $data);
+            }
         }
 
         public function notacceptable()

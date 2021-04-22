@@ -18,23 +18,16 @@
             font-family:RobotoBold; src:url('fonts/Roboto-Bold.ttf'); 
         }
         h1{
-            font-size:15rem; font-family:'RobotoBold'; letter-spacing:.04rem; font-weight:bold; text-align:center; color:rgb(237,237,237); margin-top:10%; 
+            font:bold 15rem 'RobotoBold'; letter-spacing:.04rem; text-align:center; color:rgb(237,237,237); margin-top:10%; 
         }
         h4{
-            font-size:2.1rem; font-family:'Roboto'; letter-spacing:.04rem; font-weight:bold; text-align:center; color:rgb(237,237,237);
+            font:bold 2.1rem 'Roboto'; letter-spacing:.04rem; text-align:center; color:rgb(237,237,237);
         }
         a{
             text-decoration:none;
         }
-        button{
-            border:.2rem solid rgb(182,45,45); outline:none !important; padding:1.05rem 1.75rem; font-size:1.45rem; font-family:'Roboto'; letter-spacing:.04rem; 
-            font-weight:400; color:white; background-color:rgb(182,45,45); transition:.2s all;
-        }
-        button:hover, button:focus{
-            background-color:rgb(152,15,15); border-color:rgb(152,15,15); transition:.2s all;
-        }
         h5{
-            font-size:1.45rem; font-family:'Roboto'; letter-spacing:.04rem; font-weight:400; color:rgb(237,237,237); text-align:center; margin-top:15%;
+            font:400 1.45rem 'Roboto'; letter-spacing:.04rem; color:rgb(237,237,237); text-align:center; margin-top:15%;
         }
     </style>
     <body>

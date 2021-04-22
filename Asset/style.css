@@ -121,7 +121,7 @@ input:checked + .slider:before{
 .header{
     padding:0 !important; 
 }
-.post, .postmb, .ntcimg{
+.post, .postmb, .ntcimg, .albumart, .mv{
     width:100% !important;
 }
 .postmb{
@@ -138,12 +138,6 @@ input:checked + .slider:before{
 }
 .bar .notbox{
     height:21.2rem;
-}
-.albumart, .mv{
-    width:100%; transition:.1s all; 
-}
-.mv:hover, .albumart:hover, .thumb:hover{
-    filter:blur(3px); transition:.1s all; 
 }
 .ntccard{
     background-color:rgb(40,40,40); padding:1.1rem 1.1rem 0rem;
