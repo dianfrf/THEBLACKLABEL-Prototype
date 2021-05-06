@@ -27,7 +27,7 @@
             $this->load->view('front/v_layout', $data);   
         }
 
-        public function notice($num)
+        public function notice()
         {
             $config['base_url'] = base_url().'Notice/';
             $config['first_url'] = base_url().'Notice/0';
@@ -190,7 +190,7 @@
             echo $output;
         }
 
-        public function multimedia($num)
+        public function multimedia()
         {
             $config['base_url'] = base_url().'Multimedia/';
             $config['first_url'] = base_url().'Multimedia/0';

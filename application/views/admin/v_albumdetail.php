@@ -112,7 +112,7 @@
                         ?>
                             <tr>
                                 <td><?=$no;?></td>
-                                <td><img src="<?=base_url()?>Asset/img/thumbnail/<?=$v->thumbnail?>" style="width:80px;border-radius:10%"></td>
+                                <td><img src="http://img.youtube.com/vi/<?=$v->link?>/0.jpg" style="width:80px;height:40px;border-radius:10%"></td>
                                 <td><?=$v->video_name?></td>
                                 <td><?=$v->video_release_date?></td>
                                 <td><a href="https://www.youtube.com/watch?v=<?=$v->link?>" target="_blank">https://www.youtube.com/watch?v=<?=$v->link?></a></td>

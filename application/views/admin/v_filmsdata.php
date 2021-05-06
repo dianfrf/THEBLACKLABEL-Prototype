@@ -26,11 +26,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php if ($count > 0) { $no=0;
-                            foreach ($films as $f) { $no++;
+                        <?php if ($count > 0) {
+                            foreach ($films as $f) {
                         ?>
                             <tr>
-                                <td><?=$no;?></td>
+                                <td><?=$start++;?></td>
                                 <td><?=$f->year?></td>
                                 <td><?=$f->film_title?></td>
                                 <td><a href="<?=base_url()?>ArtistDetail/<?=$f->id_artist?>"><?=$f->name?></a></td>
@@ -58,6 +58,7 @@
                         </tbody>
                     </table>
                 </div>
+                <?=$this->pagination->create_links();?>
             </div>
         </div>
 	</div>

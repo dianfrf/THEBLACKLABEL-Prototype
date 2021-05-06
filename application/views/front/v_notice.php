@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h1>NOTICE</h1>
         <div class="row">
-            <div class="col-lg-5 col-md-5 colnotice noticenew">
+            <div class="col-lg-5 col-md-12 colnotice noticenew">
             <?php if($lastntc->link != null) { ?>
                 <div class="ntcbox">
                     <iframe src="https://www.youtube.com/embed/<?=$lastntc->link;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="ntcvideo lazyload"></iframe>
@@ -17,7 +17,7 @@
                     <h5 style="margin-left:0rem"><?=date("Y.m.d", strtotime($lastntc->date));?></h5>
                 </a>
             </div>
-            <div class="col-lg-7 col-md-7 colnotice">
+            <div class="col-lg-7 col-md-12 colnotice">
                 <div class="row rowntc">
                 <?php foreach($notice as $n) { ?>
                     <div class="col-lg-4 col-md-6 colntc">

@@ -1,7 +1,7 @@
 <div class="jumbotron noticekonten">
     <div class="container-fluid">
         <h6>
-            <a href="<?=base_url()?>Notice/1" class="back">
+            <a href="<?=base_url()?>Notice/0" class="back">
                 <button><i class="fas fa-chevron-left fa-xs"></i>BACK</button>
             </a>
         <?php if($detail->id_notice == $first->id_notice) { ?>

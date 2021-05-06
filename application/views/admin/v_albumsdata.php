@@ -27,11 +27,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php if ($count > 0) { $no=0;
-                            foreach ($albums as $a) { $no++;
+                        <?php if ($count > 0) {
+                            foreach ($albums as $a) {
                         ?>
                             <tr>
-                                <td><?=$no;?></td>
+                                <td><?=$start++;?></td>
                                 <td><img src="<?=base_url()?>Asset/img/album/<?=$a->cover?>" style="width:50px;border-radius:20%"></td>
                                 <td><a href="<?=base_url()?>AlbumDetail/<?=$a->id_album?>"><?=$a->album_name?></a></td>
                                 <td><a href="<?=base_url()?>ArtistDetail/<?=$a->id_artist?>"><?=$a->name?></a></td>
@@ -60,6 +60,7 @@
                         </tbody>
                     </table>
                 </div>
+                <?=$this->pagination->create_links();?>
             </div>
         </div>
 	</div>

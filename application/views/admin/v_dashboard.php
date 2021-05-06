@@ -105,7 +105,7 @@
 					</tbody>
 				</table>
 			</div>
-			<a href="<?=base_url('Albums_Data')?>"><button class="btn btn-success">More</button></a>
+			<a href="<?=base_url('Albums_Data/0')?>"><button class="btn btn-success">More</button></a>
 		</div>
 	</div>
 	<div class="card">
@@ -142,7 +142,7 @@
 					</tbody>
 				</table>
 			</div>
-			<a href="<?=base_url('Artists_Data')?>"><button class="btn btn-success">More</button></a>
+			<a href="<?=base_url('Artists_Data/0')?>"><button class="btn btn-success">More</button></a>
 		</div>
 	</div>
 	<div class="row">
@@ -183,7 +183,7 @@
 							</tbody>
 						</table>
 					</div>
-					<a href="<?=base_url('Songs_Data')?>"><button class="btn btn-success">More</button></a>
+					<a href="<?=base_url('Songs_Data/0')?>"><button class="btn btn-success">More</button></a>
 				</div>
 			</div>
 		</div>
@@ -209,7 +209,7 @@
 							?>
 								<tr>
 									<td><?=$no;?></td>
-									<td><img src="<?=base_url()?>Asset/img/thumbnail/<?=$v->thumbnail?>" style="width:80px;border-radius:10%"></td>
+									<td><img src="http://img.youtube.com/vi/<?=$v->link?>/0.jpg" style="width:80px;height:40px;border-radius:10%"></td>
 									<td><?=$v->video_name?></td>
 									<td><?=$v->video_release_date?></td>
 								</tr>
@@ -224,7 +224,7 @@
 							</tbody>
 						</table>
 					</div>
-					<a href="<?=base_url('Videos_Data')?>"><button class="btn btn-success">More</button></a>
+					<a href="<?=base_url('Videos_Data/0')?>"><button class="btn btn-success">More</button></a>
 				</div>
 			</div>
 		</div>
@@ -267,7 +267,7 @@
 							</tbody>
 						</table>
 					</div>
-					<a href="<?=base_url('Films_Data')?>"><button class="btn btn-success">More</button></a>
+					<a href="<?=base_url('Films_Data/0')?>"><button class="btn btn-success">More</button></a>
 				</div>
 			</div>
 		</div>
@@ -308,7 +308,7 @@
 							</tbody>
 						</table>
 					</div>
-					<a href="<?=base_url('Awards_Data')?>"><button class="btn btn-success">More</button></a>
+					<a href="<?=base_url('Awards_Data/0')?>"><button class="btn btn-success">More</button></a>
 				</div>
 			</div>
 		</div>

@@ -26,11 +26,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php if ($count > 0) { $no=0;
-                            foreach ($songs as $s) { $no++;
+                        <?php if ($count > 0) {
+                            foreach ($songs as $s) {
                         ?>
                             <tr>
-                                <td><?=$no;?></td>
+                                <td><?=$start++;?></td>
                                 <td><?=$s->title?></td>
                                 <td><?=$s->duration?></td>
                                 <td><a href="<?=base_url()?>AlbumDetail/<?=$s->id_album?>"><?=$s->album_name?></a></td>
@@ -58,6 +58,7 @@
                         </tbody>
                     </table>
                 </div>
+                <?=$this->pagination->create_links();?>
             </div>
         </div>
 	</div>

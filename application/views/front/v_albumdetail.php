@@ -40,7 +40,7 @@
                         <th colspan="3"><h4 class="tracklist"><?=$detail->album_description?> TRACKLIST : </h4></th>
                     </tr>
                 <?php $number = 0; foreach($tampil_lagu as $lagu) { $number++; ?>
-                    <tr>
+                    <tr id="accordion">
                         <td><h5 class="number"><?php echo $num = sprintf("%02d",$number);?>.</h5></td>
                         <td style="width:100%;">
                             <h5><?=$lagu->title;?> <b class="duration"><?=$lagu->duration;?></b>
@@ -48,9 +48,9 @@
                             <?php } elseif($lagu->is_title == 2) { ?><u style="text-decoration:none;color:rgb(45,47,182)">SUB-TITLE</u>
                             <?php } else{} ?></h5>
                         </td>
-                        <td><span class="fas fa-caret-down" onclick="Open(<?=$number?>)"></span></td>
+                        <td><span class="fas fa-caret-down" data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$lagu->id_song?>"></span></td>
                     </tr>
-                    <tr id="rowcredit<?=$number?>" style="display:none" class="rowcredit">
+                    <tr id="collapse<?=$lagu->id_song?>" class="collapse in rowcredit">
                         <td style="border:none"></td>
                         <td colspan="2" style="width:100%;border:none;">
                             <h5>Lyrics by <b class="duration"><?=$lagu->lyricsby;?></b>
@@ -109,9 +109,3 @@
     <?php } } else {} ?>
     </div>
 </div>
-<script>
-    //See credit song
-    function Open(id) {
-        $('#rowcredit'+id).slideToggle();
-    }
-</script>

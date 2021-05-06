@@ -47,7 +47,7 @@
                 </a>
                 <h4>AUDITION</h4>
                 <a href="https://www.instagram.com/theblacklabel_audition" target="_blank">
-                    <img src="<?=base_url()?>Asset/img/audition.png" class="albumart lazyload">
+                    <img src="<?=base_url()?>Asset/img/audition.jpg" class="albumart lazyload">
                 </a>
             </div>
         </div>

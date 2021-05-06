@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="<?=base_url()?>Asset/css/style.min.css">
         <link rel="stylesheet" href="<?=base_url()?>Asset/css/components.min.css">
     </head>
+    <style>
+        .pgn a {color:white !important;text-decoration:none !important}
+    </style>
     <body>
         <?php if($this->session->userdata('login') == FALSE) {redirect('TBL_Admin');}?>
         <div id="app">
@@ -51,33 +54,38 @@
                             </li>
                             <li class="menu-header">Master Data</li>
                             <li class="<?= ($active == "Artists") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Artists_Data')?>">
+                                <a class="nav-link" href="<?=base_url('Artists_Data/0')?>">
                                     <i class="fas fa-user"></i><span>Artists Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Albums") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Albums_Data')?>">
+                                <a class="nav-link" href="<?=base_url('Albums_Data/0')?>">
                                     <i class="fas fa-play"></i><span>Albums Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Songs") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Songs_Data')?>">
+                                <a class="nav-link" href="<?=base_url('Songs_Data/0')?>">
                                     <i class="fas fa-music"></i><span>Songs Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Videos") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Videos_Data')?>">
+                                <a class="nav-link" href="<?=base_url('Videos_Data/0')?>">
                                     <i class="fas fa-video"></i><span>Videos Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Films") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Films_Data')?>">
+                                <a class="nav-link" href="<?=base_url('Films_Data/0')?>">
                                     <i class="fas fa-film"></i><span>Filmography Data</span>
                                 </a>
                             </li>
                             <li class="<?= ($active == "Awards") ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?=base_url('Awards_Data')?>">
+                                <a class="nav-link" href="<?=base_url('Awards_Data/0')?>">
                                     <i class="fas fa-award"></i><span>Awards Data</span>
+                                </a>
+                            </li>
+                            <li class="<?= ($active == "Notices") ? 'active' : ''; ?>">
+                                <a class="nav-link" href="<?=base_url('Notices_Data/0')?>">
+                                    <i class="far fa-newspaper"></i><span>Notices Data</span>
                                 </a>
                             </li>
                         </ul>

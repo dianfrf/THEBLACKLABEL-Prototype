@@ -26,11 +26,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php if ($count > 0) { $no=0;
-                            foreach ($awards as $a) { $no++;
+                        <?php if ($count > 0) {
+                            foreach ($awards as $a) {
                         ?>
                             <tr>
-                                <td><?=$no;?></td>
+                                <td><?=$start++;?></td>
                                 <td><?=$a->year?></td>
                                 <td><?=$a->nomination?></td>
                                 <td><a href="<?=base_url()?>ArtistDetail/<?=$a->id_artist?>"><?=$a->name?></a></td>
@@ -58,6 +58,7 @@
                         </tbody>
                     </table>
                 </div>
+                <?=$this->pagination->create_links();?>
             </div>
         </div>
 	</div>

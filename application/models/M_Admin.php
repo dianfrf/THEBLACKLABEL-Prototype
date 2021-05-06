@@ -10,6 +10,10 @@
         {
             return $this->db->order_by('id_artist','ASC')->get('artists')->result();
         }
+        public function get_artistsdatalim($limit,$mulai)
+        {
+            return $this->db->order_by('id_artist','ASC')->limit($limit,$mulai)->get('artists')->result();
+        }
         public function get_artistsdatal()
         {
             return $this->db->order_by('id_artist','ASC')->limit(3)->get('artists')->result();
@@ -23,6 +27,11 @@
             return $this->db->join('artists','albums.id_artist=artists.id_artist')
                             ->order_by('release_date','DESC')->get('albums')->result();
         }
+        public function get_albumsdatalim($limit,$mulai)
+        {
+            return $this->db->join('artists','albums.id_artist=artists.id_artist')
+                            ->order_by('release_date','DESC')->limit($limit,$mulai)->get('albums')->result();
+        }
         public function get_albumsdatal()
         {
             return $this->db->join('artists','albums.id_artist=artists.id_artist')
@@ -32,10 +41,10 @@
         {
             return $this->db->get('albums')->num_rows();
         }
-        public function get_songsdata()
+        public function get_songsdata($limit,$mulai)
         {
             return $this->db->join('albums','songs.id_album=albums.id_album')
-                            ->order_by('id_song','DESC')->get('songs')->result();
+                            ->order_by('id_song','DESC')->limit($limit,$mulai)->get('songs')->result();
         }
         public function get_songsdatal()
         {
@@ -46,10 +55,10 @@
         {
             return $this->db->get('songs')->num_rows();
         }
-        public function get_videosdata()
+        public function get_videosdata($limit,$mulai)
         {
             return $this->db->join('albums','videos.id_album=albums.id_album')
-                            ->order_by('video_release_date','DESC')->get('videos')->result();
+                            ->order_by('video_release_date','DESC')->limit($limit,$mulai)->get('videos')->result();
         }
         public function get_videosdatal()
         {
@@ -60,10 +69,10 @@
         {
             return $this->db->get('videos')->num_rows();
         }
-        public function get_filmsdata()
+        public function get_filmsdata($limit,$mulai)
         {
             return $this->db->join('artists','filmography.id_artist=artists.id_artist')
-                            ->order_by('year','DESC')->get('filmography')->result();
+                            ->order_by('year','DESC')->limit($limit,$mulai)->get('filmography')->result();
         }
         public function get_filmsdatal()
         {
@@ -74,10 +83,10 @@
         {
             return $this->db->get('filmography')->num_rows();
         }
-        public function get_awardsdata()
+        public function get_awardsdata($limit,$mulai)
         {
             return $this->db->join('artists','awards.id_artist=artists.id_artist')
-                            ->order_by('year','DESC')->get('awards')->result();
+                            ->order_by('year','DESC')->limit($limit,$mulai)->get('awards')->result();
         }
         public function get_awardsdatal()
         {
@@ -88,9 +97,54 @@
         {
             return $this->db->get('awards')->num_rows();
         }
+        public function get_noticesdata($limit,$mulai)
+        {
+            return $this->db->order_by('id_notice','DESC')->limit($limit,$mulai)->get('notice')->result();
+        }
+        public function get_noticesdatal()
+        {
+            return $this->db->order_by('id_notice','DESC')->limit(3)->get('notice')->result();
+        }
+        public function count_noticesdata()
+        {
+            return $this->db->get('notice')->num_rows();
+        }
 
 
 //CREATE DATA
+        public function do_notice_add1($title,$date,$notice_desc,$link)
+        {
+            $object = array (
+                'title      '           => $title,
+                'date'                  => $date,
+                'notice_desc'           => $notice_desc,
+                'link'                  => $link
+            );
+            $this->db->insert('notice', $object);
+            if ($this->db->affected_rows()>0) {
+                return TRUE;
+            }
+            else {
+                return FALSE;
+            }
+        }
+        public function do_notice_add2($filename,$title,$date,$notice_desc,$link)
+        {
+            $object = array (
+                'title      '           => $title,
+                'date'                  => $date,
+                'notice_desc'           => $notice_desc,
+                'link'                  => $link,
+                'notice_img'            => $filename
+            );
+            $this->db->insert('notice', $object);
+            if ($this->db->affected_rows()>0) {
+                return TRUE;
+            }
+            else {
+                return FALSE;
+            }
+        }
         public function do_award_add($id_artist,$nomination,$year)
         {
             $object = array (
@@ -121,14 +175,13 @@
                 return FALSE;
             }
         }
-        public function do_video_add($filename,$id_album,$video_name,$video_release_date,$link)
+        public function do_video_add($id_album,$video_name,$video_release_date,$link)
         {
             $object = array (
                 'id_album'              => $id_album,
                 'video_name'            => $video_name,
                 'video_release_date'    => $video_release_date,
-                'link'                  => $link,
-                'thumbnail'             => $filename
+                'link'                  => $link
             );
             $this->db->insert('videos', $object);
             if ($this->db->affected_rows()>0) {
@@ -206,6 +259,10 @@
 
 
 //DELETE DATA
+        public function do_notice_delete($id)
+        {
+            return $this->db->where('id_notice', $id)->delete('notice');
+        }
         public function do_award_delete($id)
         {
             return $this->db->where('id_award', $id)->delete('awards');
@@ -233,6 +290,10 @@
 
 
 //GET DATA BY ID
+        public function do_get_notice_id($id)
+        {
+            return $this->db->where('id_notice', $id)->get('notice')->row();
+        }
         public function do_get_award_id($id)
         {
             return $this->db->where('id_award', $id)->get('awards')->row();
@@ -260,6 +321,23 @@
 
 
 //EDIT DATA
+        public function do_notice_edit($title,$date,$notice_desc,$link,$id_notice)
+        {
+            $object = array (
+                'title      '           => $title,
+                'date'                  => $date,
+                'notice_desc'           => $notice_desc,
+                'link'                  => $link
+            );
+            return $this->db->where('id_notice', $id_notice)->update('notice', $object);
+        }
+        public function do_image_edit($filename,$id_notice)
+        {
+            $object = array (
+                'notice_img'              => $filename
+            );
+            return $this->db->where('id_notice', $id_notice)->update('notice', $object);
+        }
         public function do_award_edit($id_artist,$nomination,$year,$id_award)
         {
             $object = array (

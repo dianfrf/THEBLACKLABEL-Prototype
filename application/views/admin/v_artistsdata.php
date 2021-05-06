@@ -56,6 +56,7 @@
                         </tbody>
                     </table>
                 </div>
+                <?=$this->pagination->create_links();?>
             </div>
         </div>
 	</div>
