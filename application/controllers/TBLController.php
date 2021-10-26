@@ -56,9 +56,9 @@
 
             $this->pagination->initialize($config);
             $data['notice'] = $this->M_TBL->getnotices($config['per_page'],$data['start']);
-            if($data['notice'] == null){
+            if($data['notice'] == null) {
                 redirect('406');
-            } else{
+            } else {
                 $data['content'] = 'front/v_notice';
                 $data['active'] = 'Notice';
                 $data['lastntc'] = $this->M_TBL->getlastnotice();
@@ -70,9 +70,9 @@
         public function noticedetail($id)
         {
             $data['detail'] = $this->M_TBL->getnoticebyid($id);
-            if($data['detail'] == null){
+            if($data['detail'] == null) {
                 redirect('406');
-            } else{
+            } else {
                 $data['content'] = 'front/v_noticedetail';
                 $data['active'] = 'Notice';
                 $data['first'] = $this->M_TBL->getfirstnotice();
@@ -96,9 +96,9 @@
         public function artistdetail($id)
         {
             $data['detail'] = $this->M_TBL->getartistbyid($id);
-            if($data['detail'] == null){
+            if($data['detail'] == null) {
                 redirect('406');
-            } else{
+            } else {
                 $detail = $data['detail'];
                 $data['content'] = 'front/v_artistdetail';
                 $data['active'] = 'Artists';
@@ -138,9 +138,9 @@
         public function albumdetail($idal,$ord)
         {
             $data['detail'] = $this->M_TBL->getalbumbyid($idal,$ord);
-            if($data['detail'] == null){
+            if($data['detail'] == null) {
                 redirect('406');
-            } else{
+            } else {
                 $detail = $data['detail'];
                 $data['content'] = 'front/v_albumdetail';
                 $data['active'] = 'Releases';
@@ -200,27 +200,42 @@
             $data['start'] = $this->uri->segment(2);
             $config['full_tag_open'] = '<center>';
             $config['full_tag_close'] = '</center>';
-            $config['first_link'] = '<i class="fas fa-angle-double-left"></i>';
-            $config['first_tag_open'] = '<button class="btnpaging">';
-            $config['first_tag_close'] = '</button>';
-            $config['last_link'] = '<i class="fas fa-angle-double-right"></i>';
-            $config['last_tag_open'] = '<button class="btnpaging">';
-            $config['last_tag_close'] = '</button>';
-            $config['next_link'] = '<i class="fas fa-chevron-right"></i>';
-            $config['next_tag_open'] = '<button class="btnpaging">';
-            $config['next_tag_close'] = '</button>';
-            $config['prev_link'] = '<i class="fas fa-chevron-left"></i>';
-            $config['prev_tag_open'] = '<button class="btnpaging">';
-            $config['prev_tag_close'] = '</button>';
+            if($config['total_rows'] <= 40) {
+                $config['first_link'] = '';
+                $config['first_tag_open'] = '';
+                $config['first_tag_close'] = '';
+                $config['last_link'] = '';
+                $config['last_tag_open'] = '';
+                $config['last_tag_close'] = '';
+                $config['next_link'] = '';
+                $config['next_tag_open'] = '';
+                $config['next_tag_close'] = '';
+                $config['prev_link'] = '';
+                $config['prev_tag_open'] = '';
+                $config['prev_tag_close'] = '';
+            } else {
+                $config['first_link'] = '<i class="fas fa-angle-double-left"></i>';
+                $config['first_tag_open'] = '<button class="btnpaging">';
+                $config['first_tag_close'] = '</button>';
+                $config['last_link'] = '<i class="fas fa-angle-double-right"></i>';
+                $config['last_tag_open'] = '<button class="btnpaging">';
+                $config['last_tag_close'] = '</button>';
+                $config['next_link'] = '<i class="fas fa-chevron-right"></i>';
+                $config['next_tag_open'] = '<button class="btnpaging">';
+                $config['next_tag_close'] = '</button>';
+                $config['prev_link'] = '<i class="fas fa-chevron-left"></i>';
+                $config['prev_tag_open'] = '<button class="btnpaging">';
+                $config['prev_tag_close'] = '</button>';
+            }
             $config['cur_tag_open'] = '<a href=""><button class="btnpagingactive">';
             $config['cur_tag_close'] = '</button></a>';
             $config['num_tag_open'] = '<button class="btnpaging">';
             $config['num_tag_close'] = '</button>';
             $this->pagination->initialize($config);
             $data['tampil_multimedia'] = $this->M_TBL->getvideo($config['per_page'], $data['start']);
-            if($data['tampil_multimedia'] == null){
+            if($data['tampil_multimedia'] == null) {
                 redirect('406');
-            } else{
+            } else {
                 $data['content'] = 'front/v_multimedia';
                 $data['active'] = 'Multimedia';
                 $data['satum'] = $this->M_TBL->getlatestvideo();

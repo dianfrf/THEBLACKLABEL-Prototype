@@ -5,7 +5,7 @@
         <p>
             The Black Label is a full-service entertainment company founded in 2015 by Teddy Park and Kush, as an associate company of YG Entertainment, 
             which serves as a hip-hop and R&B record label and artist management.
-            The company which houses Zion.T, Somi, Vince, and R.Tee has become significant not only in hip-hop scene but also in extensive music industry
+            The company which houses Zion.T, Bryan Chase, Somi, Vince, and R.Tee has become significant not only in hip-hop scene but also in extensive music industry
             with the diversity of captivating music and related content.
         <br>
             The Black Label also proved itself as a global brand by the success of

@@ -90,6 +90,7 @@
     <?php if($count > 0) { ?>
         <h3>DISCOGRAPHY</h3>
         <div class="row rowalbum" id="loadalbum"></div>
+        <div id="pesan"></div>
     <?php } else {} ?>
     </div>
 </div>
@@ -112,8 +113,10 @@
                     $('#loadalbum').append(data);
                     if(data == '') {
                         action = 'active';
+                        $("#pesan").html('<center><div class="loader" style="display:none !important"></div></center>');
                     } else {
                         action = 'inactive';
+                        $("#pesan").html('<center><div class="loader"></div></center>');
                     }
                 }
             });

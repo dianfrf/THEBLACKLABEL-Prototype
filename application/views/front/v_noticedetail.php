@@ -40,7 +40,7 @@
             <?php } else { ?>
                 <img src="<?=base_url()?>Asset/img/notice/<?=$detail->notice_img?>" class="ntcimg lazyload">
             <?php } ?>
-                <p style="margin-top:2rem"><?=$detail->notice_desc?></p>
+                <?=$detail->notice_desc?>
             </div>
             <div class="col-lg-2"></div>
         </div>

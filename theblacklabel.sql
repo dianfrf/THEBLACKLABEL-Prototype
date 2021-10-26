@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2021 at 10:09 AM
+-- Generation Time: Jul 30, 2021 at 12:55 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -108,7 +108,8 @@ INSERT INTO `artists` (`id_artist`, `name`, `description`, `picture`, `instagram
 (3, 'Vince', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'joerhee.jpg', 'https://www.instagram.com/vincesince19xx/', '', 'https://twitter.com/joejrhee', '', ''),
 (4, 'R.Tee', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'r_tee.png', 'https://www.instagram.com/rteeofficial/', '', 'https://twitter.com/rteemusic', '', ''),
 (5, 'Ella Gross', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'ellagross.jpeg', 'https://www.instagram.com/ellagross/', '', '', '', 'Abercrombie & Fitch, Adidas, Airfish, Anta Kids, Barbie, Crayola, Fendi, GAP, Janie and Jack, Lamer, Levi\'s, OshKosh B\'gosh, The North Face, Tommy Hilfiger, Vogue, Zapos, Zara'),
-(6, 'Heo Jae Hyuk', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'hjaehyuk.jpg', 'https://www.instagram.com/augustbrody/', '', '', '', 'Adekuver, Customellow, Uniqlo, Volkswagen Korea');
+(6, 'Heo Jae Hyuk', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis,                      tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem.                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore,                      adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'hjaehyuk.jpg', 'https://www.instagram.com/augustbrody/', '', '', '', 'Adekuver, Customellow, Uniqlo, Volkswagen Korea'),
+(7, 'Bryan Chase', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati magnam eaque incidunt exercitationem debitis, tempore ducimus culpa sint voluptatum earum doloremque, recusandae dolores nihil error voluptatem consequuntur velit! Voluptate, dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio esse facere tempore, adipisci tempora sapiente deleniti aut repellendus consequuntur quo, id quibusdam hic officia tenetur pariatur optio aliquam accusantium. Distinctio.', 'bryanchase.png', 'https://www.instagram.com/hhhoyun/', '', '', 'https://soundcloud.com/bryan_chase/', '');
 
 -- --------------------------------------------------------
 
@@ -236,7 +237,33 @@ INSERT INTO `notice` (`id_notice`, `title`, `date`, `notice_img`, `notice_desc`,
 (53, 'LØREN \'EMPTY TRASH\' M/V MAKING FILM', '2020-12-07', '', '', 'wg6QB0x1qm0'),
 (54, 'SOMI CHRISTMAS SPECIAL LIVE EVENT [SOM ALONE]', '2020-12-15', 'ntc6.jpg', 'Date : 2020.12.23 (WED) PM 8 (KST)<br>\r\nStream on SOMI’s official TikTok @somi_official_<br><br>\r\nLink :<br>\r\nhttps://vt.tiktok.com/ZStYuGg2/', ''),
 (55, 'Happy Birthday Somi', '2021-03-08', 'ntc8.jpg', '', ''),
-(56, 'Happy Birthday Zion.T', '2021-04-12', 'ntc9.jpg', '', '');
+(56, 'Happy Birthday Zion.T', '2021-04-12', 'ntc9.jpg', '', ''),
+(57, 'Zion.T Debut 10th Anniversary', '2021-04-29', 'ziontanniv.jpg', 'Congratulations on the 10th anniversary of ZionT\'s debut!', ''),
+(58, 'Happy Birthday Vince', '2021-04-29', 'vincehbd.jpg', '', ''),
+(60, 'Somi Debut 2nd Anniversary', '2021-06-13', 'E3utuQfVcAAUnRp.jpg', 'It\'s already been 2 years since Somi and the Sommungchis met! Today is the happiest and most precious day ever! Go on a date with Somi on Instagram Live at 7pm<br><br>\r\nSOMI 2ND ANNIVERSARY SPECIAL INSTA LIVE! TUNE IN AT 7PM!<br><br>\r\n2021.06.13 7PM (KST)<br>\r\nhttps://bit.ly/3vj1Cr6', ''),
+(61, 'LØREN Comeback Teaser #1', '2021-07-19', '1.jpg', '', ''),
+(62, 'LØREN Comeback Teaser #2', '2021-07-21', '2.jpg', '', ''),
+(63, 'Somi Comeback Teaser', '2021-07-23', 'sm1.jpg', '', ''),
+(64, 'Somi \'Dumb Dumb\' Concept Poster #1', '2021-07-23', 'sm2.jpg', '', ''),
+(65, 'Somi \'Dumb Dumb\' Title Poster #1', '2021-07-23', 'sm3.jpg', '', ''),
+(66, 'LØREN Comeback Release Poster', '2021-07-23', 'lr1.jpg', '', ''),
+(67, 'Somi \'Dumb Dumb\' Teaser Poster #1', '2021-07-24', 'sm4.jpg', '', ''),
+(68, 'Somi \'Dumb Dumb\' Teaser Poster #2', '2021-07-26', 'sm5.jpg', '', ''),
+(69, 'Somi \'Dumb Dumb\' Concept Poster #2', '2021-07-26', 'sm6.jpg', '', ''),
+(70, 'Somi \'Dumb Dumb\' Title Poster #2', '2021-07-26', 'sm7.jpg', '', ''),
+(71, 'LØREN \'Need (ooo-eee)\' Title Poster', '2021-07-26', 'lr2.jpg', '', ''),
+(72, 'LØREN \'Need (ooo-eee)\' M/V Teaser', '2021-07-27', '', '', 'Fq-sMIXu2DM'),
+(73, 'Somi \'Dumb Dumb\' Teaser Poster #3', '2021-07-28', 'sm8.jpg', '', ''),
+(74, 'Somi \'Dumb Dumb\' Concept Poster #3', '2021-07-28', 'sm9.jpg', '', ''),
+(75, 'Somi \'Dumb Dumb\' Title Poster #3', '2021-07-28', 'sm10.jpg', '', ''),
+(77, 'LØREN \'Need (ooo-eee)\' Credit Poster', '2021-07-28', 'lr31.jpg', '', ''),
+(78, 'LØREN \'Need (ooo-eee)\' D-Day Poster', '2021-07-29', 'E7bJzM8VIAEEbRR.jpg', '', ''),
+(79, 'Somi \'Dumb Dumb\' Teaser Poster #4', '2021-07-29', 'E7bvcKnVgAgVLBD.jpg', '', ''),
+(80, 'Somi \'Dumb Dumb\' Concept Poster #4', '2021-07-29', 'E7bvxBHVUAIrs6v.jpg', '', ''),
+(81, 'Somi \'Dumb Dumb\' Title Poster #4', '2021-07-29', 'E7bv0ABVcAMhHkB.jpg', '', ''),
+(82, 'LØREN \'Need (ooo-eee)\' M/V', '2021-07-29', '', '', 'NvArxvIepks'),
+(83, 'Somi Comeback Live [Dumb Dumb]', '2021-07-30', 'E7hYEO0UcAIxBMY.jpg', 'SOMI COMEBACK LIVE [DUMB DUMB]<br><br>\r\n2021.08.02 (MON) PM8(KST)<br>\r\nStream on SOMI’s official TikTok @somi_official_<br><br>\r\n\r\n\r\nSOMI is back! Wanna here SOMI\'s comeback behind stories? August 2nd 8PM, see you at TikTok live', ''),
+(84, 'Somi \'Dumb Dumb\' M/V Teaser', '2021-07-30', '', '', 's2cbnwMj8lQ');
 
 -- --------------------------------------------------------
 
@@ -296,24 +323,23 @@ CREATE TABLE `videos` (
   `id_album` int(11) NOT NULL,
   `video_name` varchar(100) NOT NULL,
   `video_release_date` date NOT NULL,
-  `link` varchar(100) NOT NULL,
-  `thumbnail` varchar(100) NOT NULL
+  `link` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
 --
 -- Dumping data for table `videos`
 --
 
-INSERT INTO `videos` (`id_video`, `id_album`, `video_name`, `video_release_date`, `link`, `thumbnail`) VALUES
-(6, 6, 'Birthday', '2019-06-13', 'oDJ4ct59NC4', 'birthday.jpg'),
-(7, 7, 'Mennal (Feat. Okasian)', '2019-10-02', 'vvlNOzConrg', 'mennal.jpg'),
-(8, 9, 'Emergency (Feat. Zion.T)', '2020-02-04', 'tXj_Viuvcrc', 'emergency.jpg'),
-(10, 10, 'What You Waiting For', '2020-07-22', 'lBYyAQ99ZFI', 'wuwf.jpg'),
-(11, 14, 'What You Waiting For (Feat. Anda)', '2019-03-06', 'u1xr0L1heHI', 'wywf.jpg'),
-(12, 15, 'The Song', '2017-01-31', 'ecxzqqHwe-4', 'thesong.jpg'),
-(13, 16, 'Snow (Feat. Lee Moon Sae)', '2017-12-04', 'fiGSDywrX1Y', 'snow.jpg'),
-(14, 17, 'Hello Tutorial (Feat. Seulgi of Red Velvet)', '2018-10-15', 'nqMYG2Riq54', 'hellotut.jpg'),
-(15, 18, 'May', '2019-11-06', 'I-hw1AkqFro', 'may.jpg');
+INSERT INTO `videos` (`id_video`, `id_album`, `video_name`, `video_release_date`, `link`) VALUES
+(6, 6, 'Birthday', '2019-06-13', 'oDJ4ct59NC4'),
+(7, 7, 'Mennal (Feat. Okasian)', '2019-10-02', 'vvlNOzConrg'),
+(8, 9, 'Emergency (Feat. Zion.T)', '2020-02-04', 'tXj_Viuvcrc'),
+(10, 10, 'What You Waiting For', '2020-07-22', 'lBYyAQ99ZFI'),
+(11, 14, 'What You Waiting For (Feat. Anda)', '2019-03-06', 'u1xr0L1heHI'),
+(12, 15, 'The Song', '2017-01-31', 'ecxzqqHwe-4'),
+(13, 16, 'Snow (Feat. Lee Moon Sae)', '2017-12-04', 'fiGSDywrX1Y'),
+(14, 17, 'Hello Tutorial (Feat. Seulgi of Red Velvet)', '2018-10-15', 'nqMYG2Riq54'),
+(15, 18, 'May', '2019-11-06', 'I-hw1AkqFro');
 
 --
 -- Indexes for dumped tables
@@ -392,7 +418,7 @@ ALTER TABLE `albums`
 -- AUTO_INCREMENT for table `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `id_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `awards`
@@ -410,7 +436,7 @@ ALTER TABLE `filmography`
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `id_notice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_notice` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `songs`

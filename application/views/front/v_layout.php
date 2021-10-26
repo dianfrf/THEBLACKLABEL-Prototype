@@ -12,7 +12,7 @@
         <script src="<?=base_url()?>Asset/js/bootstrap.min.js"></script>
         <script src="<?=base_url()?>Asset/js/lazysizes.min.js"></script>
     </head>
-    <body oncontextmenu='return false' onselectstart='return false'>
+    <body>
         <button id="btntop" title="Go to top"><i class="fas fa-chevron-up fa-lg"></i></button>
 
         <nav class="navbar navbar-expand-lg fixed-top">

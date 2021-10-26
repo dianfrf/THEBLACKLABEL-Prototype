@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <h1>RELEASES</h1>
         <div class="row rowalbum" id="loadreleases" style="margin-top:.7rem"></div>
+        <div id="pesan"></div>
     </div>
 </div>
 <script>
@@ -20,8 +21,10 @@
                     $('#loadreleases').append(data);
                     if(data == '') {
                         action = 'active';
+                        $("#pesan").html('<center><div class="loader" style="display:none !important"></div></center>');
                     } else {
                         action = 'inactive';
+                        $("#pesan").html('<center><div class="loader"></div></center>');
                     }
                 }
             });
