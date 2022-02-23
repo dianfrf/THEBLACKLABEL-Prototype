@@ -11,7 +11,6 @@
         {
             $this->load->view('admin/auth/v_adminlogin');
         }
-
         public function admin_login()
         {
             $this->form_validation->set_rules('username', 'Username', 'trim|required', array('required' => 'Username must be fill in.'));
@@ -40,7 +39,6 @@
                 redirect('TBL_Admin');
             }
         }
-
         public function admin_logout()
         {
             $this->session->sess_destroy();
